@@ -65,10 +65,23 @@ function Update () {
         }
         
     }
+    var dist = (transform.position - Camera.main.transform.position).z;
+    var leftBorder = Camera.main.ViewportToWorldPoint(Vector3(0,0,dist)).x;
+	var rightBorder = Camera.main.ViewportToWorldPoint(Vector3(1,0,dist)).x;
+	var bottomBorder = Camera.main.ViewportToWorldPoint(Vector3(0,0,dist)).y;     
+	var topBorder = Camera.main.ViewportToWorldPoint(Vector3(0,1,dist)).y; 
+	if(sprite.position.x<leftBorder || sprite.position.x > rightBorder ){
+		forwardVector.x *= -1;
+	}
+	else if(sprite.position.y>topBorder || sprite.position.y<bottomBorder){
+		forwardVector.y *= -1;
+	}
     // Destroy the asteroid as ist moves out of view
-    if (sprite.outOfView)
+ /*   if (sprite.outOfView)
     {
 		sprite.otCollider.enabled = true;
+
+		
         OT.DestroyObject(sprite);
-    }
+    }*/
 }

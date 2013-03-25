@@ -88,10 +88,26 @@ function Initialize()
         CreateObjectPools();
     // set our initialization notifier - we only want to initialize once
     initialized = true;
-    
-    for(var i = 0; i < 10; i++){
-   	 RandomBlock(OT.view.worldRect, 0.6f, 1.2f, null);
+    var difficulty:int = PlayerPrefs.GetInt("difficulty");
+    var numAsteroids: int = 0;
+    switch(difficulty){
+    	case 1:
+    		numAsteroids = 5;
+    		break;
+    	case 2:
+    		numAsteroids = 10;
+    		break;
+    	case 3:
+    		numAsteroids = 15;
+    		break;
+    	default:
+    		numAsteroids = 5;
+    		break;
     }
+    for(var i = 0; i < numAsteroids; i++){
+	   	 RandomBlock(OT.view.worldRect, 0.6f, 1.2f, null);
+	}
+    
 }
 
 // This method will explode an asteroid
@@ -143,7 +159,7 @@ function Update () {
     // 'already rotated' bullet when we shoot
 
     // check if the left mouse button was clicked
-    if (Input.GetMouseButtonDown(0))
+    if (Input.GetMouseButtonDown(0)&& GUIUtility.hotControl == 0)
     {
         // Create a new bullet
         var nBullet:OTSprite = OT.CreateSprite("bullet");
@@ -154,9 +170,9 @@ function Update () {
         gun.PlayOnce("shoot");
     }
 
-    // If we have less than 15 objects within Orthello we will create a random asteroid
+   /* // If we have less than 15 objects within Orthello we will create a random asteroid
     if (OT.objectCount <= 12)
-        RandomBlock(OT.view.worldRect, 0.6f, 1.2f, null);     
+        RandomBlock(OT.view.worldRect, 0.6f, 1.2f, null);     */
 }
 
 // The OnAnimationFinish delegate will be called when an animation or animation frameset

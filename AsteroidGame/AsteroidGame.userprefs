@@ -1,10 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Orthello\Examples\3 - Shooting Asteroids\JSExample3.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Asteroids\GameGUI.js">
     <Files>
-      <File FileName="Assets\Orthello\Examples\3 - Shooting Asteroids\JSExample3.js" Line="111" Column="30" />
-      <File FileName="Assets\Orthello\Examples\3 - Shooting Asteroids\JSBullet3.js" Line="1" Column="1" />
-      <File FileName="Assets\Orthello\Examples\3 - Shooting Asteroids\JSAsteroid3.js" Line="74" Column="2" />
+      <File FileName="Assets\Asteroids\TitleGUI.js" Line="34" Column="49" />
+      <File FileName="Assets\Asteroids\JSAsteroid3.js" Line="65" Column="1" />
+      <File FileName="Assets\Asteroids\JSExample3.js" Line="100" Column="13" />
+      <File FileName="Assets\Asteroids\JSBullet3.js" Line="106" Column="1" />
+      <File FileName="Assets\Asteroids\ObjectLabel.js" Line="16" Column="21" />
+      <File FileName="Assets\Asteroids\GameGUI.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

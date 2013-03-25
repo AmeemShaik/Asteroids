@@ -31,17 +31,20 @@ function OnGUI() {
 		GUILayout.BeginArea(Rect(Screen.width/2 - buttonWidth/2, Screen.height/2 - 200, buttonWidth, 400));
 		if(GUILayout.Button("Easy", GUILayout.Height(buttonHeight))){
 			difficulty = 1;
-			Application.LoadLevel("JSExample3");
+			PlayerPrefs.SetInt("difficulty", difficulty);
+			Application.LoadLevel("mainLevel");
 		}
 		GUILayout.Space(spacing);
 		if(GUILayout.Button("Medium", GUILayout.Height(buttonHeight))){
 			difficulty = 2;
-			Application.LoadLevel("JSExample3");
+			PlayerPrefs.SetInt("difficulty", difficulty);
+			Application.LoadLevel("mainLevel");
 		}
 		GUILayout.Space(spacing);
 		if(GUILayout.Button("Hard", GUILayout.Height(buttonHeight))){
 			difficulty = 3;
-			Application.LoadLevel("JSExample3");
+			PlayerPrefs.SetInt("difficulty", difficulty);
+			Application.LoadLevel("mainLevel");
 		}
 		GUILayout.Space(spacing);
 		if(GUILayout.Button("Go Back", GUILayout.Height(buttonHeight))){

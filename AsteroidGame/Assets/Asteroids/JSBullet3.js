@@ -26,6 +26,8 @@ private var ignoreCollisions:Number = 0;                // ignore debree collisi
 
 private var debree:Array = new Array();                 // created debree list 
 
+
+
 // Use this for initialization
 function Start () {
     // Get application main class
@@ -58,8 +60,15 @@ function Update () {
     // Update bullet position
     sprite.position += sprite.yVector * speed * Time.deltaTime;
     // Destroy bullet as it moves out of view
-    if (sprite.outOfView) 
-      OT.DestroyObject(sprite);
+    var dist = (transform.position - Camera.main.transform.position).z;
+    var leftBorder = Camera.main.ViewportToWorldPoint(Vector3(0,0,dist)).x;
+	var rightBorder = Camera.main.ViewportToWorldPoint(Vector3(1,0,dist)).x;
+	var topBorder = Camera.main.ViewportToWorldPoint(Vector3(0,0,dist)).y;
+	var bottomBorder = Camera.main.ViewportToWorldPoint(Vector3(1,0,dist)).x;
+	
+	/*if(sprite.position.x<leftBorder || sprite.position.x > rightBorder || sprite.position.y<(topBorder) || sprite.position.y>bottomBorder){
+		sprite.position = sprite.yVector*-1;
+	}*/
 }
 
 // This method will add a debree object to the ignore debree list.

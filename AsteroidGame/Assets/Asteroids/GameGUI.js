@@ -3,6 +3,8 @@ var questionsList:XmlNodeList;
 var questionImage : Texture2D;
 var popupImage : boolean = false;
 var currentQuestion = 0;
+var buttonHeight:int = 50;
+var buttonWidth:int = 100;
 
 function Start(){
 	loadQuestions();
@@ -23,10 +25,13 @@ function OnGUI() {
 		var difficulty = problem.ChildNodes[5].InnerText;
 		var correctAnswer = problem.ChildNodes[6].InnerText;
 		var image = problem.ChildNodes[7].InnerText;
- }
-		
-	GUI.Label (Rect (10, 10, Screen.width-(miniPicSize*2), 25), question);
-	GUI.Label (Rect (10, 30, Screen.width-miniPicSize*2, 30), answer1 + " " + answer2 + " " + answer3 + " " + answer4);
+ 	}
+
+	if(GUILayout.Button("Go Home", GUILayout.Height(buttonHeight),GUILayout.Width(buttonWidth))){
+				Application.LoadLevel("Title");
+			}
+	GUI.Label (Rect (Screen.width/2 - 150, 10, 300, 25), question);
+	GUI.Label (Rect (Screen.width/2- 75, 30, 150, 30), answer1 + " " + answer2 + " " + answer3 + " " + answer4);
 	if(GUI.Button (Rect (Screen.width - miniPicSize-5,5, miniPicSize, miniPicSize), questionImage)){
 		if(popupImage){popupImage = false;}
 		else{popupImage = true;}
