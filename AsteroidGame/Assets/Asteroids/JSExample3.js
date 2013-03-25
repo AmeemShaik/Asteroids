@@ -155,8 +155,8 @@ function Update () {
     }
 
     // If we have less than 15 objects within Orthello we will create a random asteroid
-    /*if (OT.objectCount <= 12)
-        RandomBlock(OT.view.worldRect, 0.6f, 1.2f, null);  */      
+    if (OT.objectCount <= 12)
+        RandomBlock(OT.view.worldRect, 0.6f, 1.2f, null);     
 }
 
 // The OnAnimationFinish delegate will be called when an animation or animation frameset
