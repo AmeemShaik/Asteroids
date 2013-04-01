@@ -1,19 +1,21 @@
 import System.Xml;
-var questionsList:XmlNodeList;
-var questionImage : Texture2D;
-var popupImage : boolean = false;
-var currentQuestion = 0;
-var buttonHeight:int = 50;
-var buttonWidth:int = 100;
-
-function Start(){
+public var questionsList:XmlNodeList;
+public var questionImage : Texture2D;
+public var popupImage : boolean = false;
+public var currentQuestion;
+public var buttonHeight:int = 50;
+public var buttonWidth:int = 100;
+function Awake(){
 	loadQuestions();
+	currentQuestion = 0;
+	var problem = getProblem() as XmlNode;
+	Camera.main.GetComponent.<JSExample3>().currentProblem = problem;
 }
 
 function OnGUI() {
 	GUI.contentColor = Color.white;
-	questionImage = Instantiate(Resources.Load("drug_label"));
 	var problem = getProblem() as XmlNode;
+	Camera.main.GetComponent.<JSExample3>().currentProblem = problem;
 	if(problem.HasChildNodes){
 		var question = problem.ChildNodes[0].InnerText;
 		var answer1 = problem.ChildNodes[1].InnerText;
@@ -24,7 +26,8 @@ function OnGUI() {
 		var correctAnswer = problem.ChildNodes[6].InnerText;
 		var image = problem.ChildNodes[7].InnerText;
  	}
-	
+ 	image = image.Substring(0, image.length-4);
+	questionImage = Instantiate(Resources.Load(image));
 	GUILayout.BeginArea (Rect (0,0,Screen.width,Screen.height));
 		GUILayout.BeginHorizontal();
 			if(GUILayout.Button("Go Home", GUILayout.Height(buttonHeight),GUILayout.Width(buttonWidth))){
@@ -93,4 +96,14 @@ function loadQuestions(){
 	var xmlDoc = new XmlDocument();
 	xmlDoc.LoadXml(xmlFile.text);
 	questionsList = xmlDoc.GetElementsByTagName("question");
+}
+function nextQuestion(){
+	if(currentQuestion+1 == questionsList.length){
+		Application.LoadLevel("Title");
+	}
+	else{
+		currentQuestion++;
+		var problem = getProblem() as XmlNode;
+		Camera.main.GetComponent.<JSExample3>().currentProblem = problem;
+	}
 }

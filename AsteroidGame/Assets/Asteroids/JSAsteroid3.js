@@ -21,14 +21,27 @@
 private var sprite:OTAnimatingSprite;               // this asteroid's sprite class
 private var forwardVector:Vector2  = Vector2.zero;      // this asteroid's forward vector
 private var sheet1:OTSpriteSheet;
-
-
+private var asteroidObj:GameObject;
+public var textObj : GameObject;
+public var isCorrect: boolean = false;
+var dist;
+var leftBorder;
+var rightBorder;
+var bottomBorder;
+var topBorder;
 // Use this for initialization
 function Start () {
     // get sprite class of this asteroid
     sprite = GetComponent("OTAnimatingSprite");
 	sheet1 = OT.ContainerByName("asteroid sheet 1");
-}
+	var name = sprite.name;
+	asteroidObj = GameObject.Find(name);
+	dist = (transform.position - Camera.main.transform.position).z;
+    leftBorder = Camera.main.ViewportToWorldPoint(Vector3(0,0,dist)).x;
+	rightBorder = Camera.main.ViewportToWorldPoint(Vector3(1,0,dist)).x;
+	bottomBorder = Camera.main.ViewportToWorldPoint(Vector3(0,0,dist)).y;     
+	topBorder = Camera.main.ViewportToWorldPoint(Vector3(0,1,dist)).y;
+} 
 
 // Update is called once per frame
 function Update () {
@@ -36,9 +49,13 @@ function Update () {
     // If we did not capture this sprite's formward vector we capture it once
     if (Vector2.Equals(forwardVector, Vector2.zero))
         forwardVector = transform.up;
-
+	
     // Update asteroid's position
     sprite.position += (forwardVector * 50 * Time.deltaTime);
+    var newPosition = asteroidObj.transform.position;
+    if(textObj){
+    	textObj.transform.position = newPosition;
+    }
     // Update asteroid's rotation
     sprite.rotation += 30 * Time.deltaTime;
     // If the asteroid is smaller than 30 pixels lets auto shrink it
@@ -65,11 +82,7 @@ function Update () {
         }
         
     }
-    var dist = (transform.position - Camera.main.transform.position).z;
-    var leftBorder = Camera.main.ViewportToWorldPoint(Vector3(0,0,dist)).x;
-	var rightBorder = Camera.main.ViewportToWorldPoint(Vector3(1,0,dist)).x;
-	var bottomBorder = Camera.main.ViewportToWorldPoint(Vector3(0,0,dist)).y;     
-	var topBorder = Camera.main.ViewportToWorldPoint(Vector3(0,1,dist)).y; 
+ 
 	if(sprite.position.x<leftBorder || sprite.position.x > rightBorder ){
 		forwardVector.x *= -1;
 	}

@@ -1,13 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Asteroids\GameGUI.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Asteroids\JSAsteroid3.js">
     <Files>
-      <File FileName="Assets\Asteroids\TitleGUI.js" Line="34" Column="49" />
-      <File FileName="Assets\Asteroids\JSAsteroid3.js" Line="65" Column="1" />
-      <File FileName="Assets\Asteroids\JSExample3.js" Line="100" Column="13" />
-      <File FileName="Assets\Asteroids\JSBullet3.js" Line="106" Column="1" />
-      <File FileName="Assets\Asteroids\ObjectLabel.js" Line="16" Column="21" />
-      <File FileName="Assets\Asteroids\GameGUI.js" Line="1" Column="1" />
+      <File FileName="Assets\Asteroids\JSAsteroid3.js" Line="64" Column="17" />
+      <File FileName="Assets\Asteroids\JSExample3.js" Line="171" Column="6" />
+      <File FileName="Assets\Asteroids\GameGUI.js" Line="97" Column="24" />
+      <File FileName="Assets\Asteroids\Problem.js" Line="14" Column="1" />
+      <File FileName="Assets\Asteroids\JSBullet3.js" Line="1" Column="1" />
+      <File FileName="Assets\Asteroids\TitleGUI.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

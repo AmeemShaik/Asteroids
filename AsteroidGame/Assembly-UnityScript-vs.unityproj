@@ -49,6 +49,8 @@
      <Compile Include="Assets\Asteroids\JSBullet3.js" />
      <Compile Include="Assets\Asteroids\JSExample3.js" />
      <Compile Include="Assets\Asteroids\ObjectLabel.js" />
+     <Compile Include="Assets\Asteroids\Problem.js" />
+     <Compile Include="Assets\Asteroids\Settings.js" />
      <Compile Include="Assets\Asteroids\TitleGUI.js" />
      <None Include="Assets\Orthello\-Read-Me.txt" />
      <None Include="Assets\Orthello\-Update-Upgrade info.txt" />

@@ -1,23 +1,63 @@
 <?xml version="1.0"?>
 <question_set>
 	<question>
-		<problem>What is the 2nd letter in the alphabet?</problem>
-		<answer1>A</answer1>
-		<answer2>B</answer2>
-		<answer3>C</answer3>
-		<answer4>D</answer4>
+		<problem>What is the address of the pharmacy?</problem>
+		<answer1>(A) 123 Main Street</answer1>
+		<answer2>(B) 456 Main Street</answer2>
+		<answer3>(C) 500 Amoxicillin Street</answer3>
+		<answer4>(D) 8291 Jones Street</answer4>
 		<difficulty>1</difficulty>
-		<correctAnswer>2</correctAnswer>
-		<image>img.jpg</image>
+		<correctAnswer>1</correctAnswer>
+		<image>dlabel1.png</image>
 	</question>
 	<question>
-		<problem>What is the 3nd letter in the alphabet?</problem>
-		<answer1>A</answer1>
-		<answer2>B</answer2>
-		<answer3>C</answer3>
-		<answer4>D</answer4>
+		<problem>How many calories in the entire container??</problem>
+		<answer1>(A) 1000</answer1>
+		<answer2>(B) 250</answer2>
+		<answer3>(C) 500</answer3>
+		<answer4>(D) 120</answer4>
+		<difficulty>2</difficulty>
+		<correctAnswer>1</correctAnswer>
+		<image>flabel1.png</image>
+	</question>
+	<question>
+		<problem>How many mg of amoxicillin are in each capsule?</problem>
+		<answer1>(A) 200</answer1>
+		<answer2>(B) 500</answer2>
+		<answer3>(C) 250</answer3>
+		<answer4>(D) 50</answer4>
+		<difficulty>1</difficulty>
+		<correctAnswer>2</correctAnswer>
+		<image>dlabel1.png</image>
+	</question>
+	<question>
+		<problem>The drug should not be used after what date?</problem>
+		<answer1>(A) 12/6/09</answer1>
+		<answer2>(B) 1/23/12</answer2>
+		<answer3>(C) 6/23/12</answer3>
+		<answer4>(D) 6/23/09</answer4>
+		<difficulty>1</difficulty>
+		<correctAnswer>3</correctAnswer>
+		<image>dlabel1.png</image>
+	</question>
+	<question>
+		<problem>Having 2 cups of this food would provide what percentage of one's daily sodium value?</problem>
+		<answer1>(A) 2%</answer1>
+		<answer2>(B) 1%</answer2>
+		<answer3>(C) 8%</answer3>
+		<answer4>(D) 4%</answer4>
 		<difficulty>2</difficulty>
 		<correctAnswer>3</correctAnswer>
-		<image>img2.jpg</image>
+		<image>flabel1.png</image>
+	</question>
+	<question>
+		<problem>Which of the following is not contained in this food?</problem>
+		<answer1>(A) Salt</answer1>
+		<answer2>(B) Brown Sugar</answer2>
+		<answer3>(C) Pepper</answer3>
+		<answer4>(D) White Sugar</answer4>
+		<difficulty>1</difficulty>
+		<correctAnswer>3</correctAnswer>
+		<image>flabel1.png</image>
 	</question>
 </question_set>

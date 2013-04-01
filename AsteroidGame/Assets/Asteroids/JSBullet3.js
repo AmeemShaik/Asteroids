@@ -100,7 +100,15 @@ public function OnCollision(owner:OTObject)
         // We have to ignore debree the following 0.1 seconds
         ignoreCollisions = 0.1f;
         // Lets Explode this asteroid
+		var name = owner.collisionObject.name;
+		var obj:GameObject = GameObject.Find(name);
+		OT.DestroyObject(sprite);
+        Destroy(obj.GetComponent.<JSAsteroid3>().textObj);
         app.Explode(owner.collisionObject, this);
-        OT.DestroyObject(sprite);
+        if(obj.GetComponent.<JSAsteroid3>().isCorrect){
+			Camera.main.GetComponent.<GameGUI>().nextQuestion();
+			Camera.main.GetComponent.<JSExample3>().Initialize();
+		}
+
     }
 }

@@ -20,12 +20,12 @@
 
 private var gun:OTAnimatingSprite;              // gun sprite reference
 private var initialized:boolean = false;        // initialization notifier
-
-
 // This method will create an asteroid at a random position on screen and with
 // relative min/max (0-1) size. An OTObject can be provided to act as a base to 
 // determine the new size.
 private var dp:int = 0;
+public var currentProblem;
+
 function RandomBlock(r:Rect, min:Number, max:Number, o:OTObject)
 {
     // Determine random 1-3 asteroid type
@@ -43,7 +43,7 @@ function RandomBlock(r:Rect, min:Number, max:Number, o:OTObject)
         case 3: sprite = OT.CreateSprite("asteroid3");
             break;
     }
-    
+    sprite.tag = "Finish";
     if (sprite != null)
     {
         // set sprite size
@@ -74,6 +74,11 @@ function CreateObjectPools()
 // application initialization
 function Initialize()
 {
+	var objects = GameObject.FindGameObjectsWithTag("Finish");
+	for(var j = 0; j < objects.length; j++){
+			OT.DestroyObject(objects[j]);
+	}
+	
     // Get reference to gun animation sprite
     gun = OT.ObjectByName("gun") as OTAnimatingSprite;
 	// Because Javascript does not support C# delegate we have to notify our sprite class that 
@@ -82,6 +87,7 @@ function Initialize()
 	// functions will be asutomaticly called when an event takes place.
 	// HINT : This technique can be used within a C# class as well.
     gun.InitCallBacks(this);
+    
     // Create our object pool if we want.
     OT.objectPooling = true;
     if (OT.objectPooling)
@@ -104,10 +110,30 @@ function Initialize()
     		numAsteroids = 5;
     		break;
     }
+    var choices = ["A","B","C","D"];
+    var correctAnswer:int = parseInt(currentProblem.ChildNodes[6].InnerText);
     for(var i = 0; i < numAsteroids; i++){
-	   	 RandomBlock(OT.view.worldRect, 0.6f, 1.2f, null);
+	   	var a:OTAnimatingSprite = RandomBlock(OT.view.worldRect, 0.6f, 1.2f, null);
+	   	if(i<4){
+		   	var name = a.name;
+		   	var obj:GameObject = GameObject.Find(name);
+		   	var astPosition = obj.transform.position;
+		   	var textObj : GameObject = new GameObject("TextObject");
+		   	textObj.tag = "Finish";
+		   	textObj.transform.position = astPosition;
+			var textMesh : TextMesh = textObj.AddComponent(TextMesh);
+			textObj.AddComponent(MeshRenderer);
+			var fontResource : Font = Resources.Load("Fonts/AgentOrange", Font);
+			textMesh.font = fontResource;
+			textMesh.fontSize = 500;
+			textMesh.text = choices[i];
+			textMesh.renderer.material = fontResource.material;
+			obj.GetComponent.<JSAsteroid3>().textObj = textObj;
+			if(i == correctAnswer){
+				obj.GetComponent.<JSAsteroid3>().isCorrect = true;
+			}
+		}
 	}
-    
 }
 
 // This method will explode an asteroid
