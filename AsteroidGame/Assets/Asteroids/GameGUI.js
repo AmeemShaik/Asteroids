@@ -98,12 +98,7 @@ function loadQuestions(){
 	questionsList = xmlDoc.GetElementsByTagName("question");
 }
 function nextQuestion(){
-	if(currentQuestion+1 == questionsList.length){
-		Application.LoadLevel("Title");
-	}
-	else{
-		currentQuestion++;
-		var problem = getProblem() as XmlNode;
-		Camera.main.GetComponent.<JSExample3>().currentProblem = problem;
-	}
+	currentQuestion++;
+	var problem = getProblem() as XmlNode;
+	Camera.main.GetComponent.<JSExample3>().currentProblem = problem;
 }
