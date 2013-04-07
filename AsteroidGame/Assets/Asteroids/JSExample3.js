@@ -25,6 +25,7 @@ private var initialized:boolean = false;        // initialization notifier
 // determine the new size.
 private var dp:int = 0;
 public var currentProblem;
+public var ammo:int;
 
 function RandomBlock(r:Rect, min:Number, max:Number, o:OTObject)
 {
@@ -74,6 +75,7 @@ function CreateObjectPools()
 // application initialization
 function Initialize()
 {
+	ammo = PlayerPrefs.GetInt("ammo");
 	var objects = GameObject.FindGameObjectsWithTag("Finish");
 	for(var j = 0; j < objects.length; j++){
 			OT.DestroyObject(objects[j]);
@@ -95,6 +97,7 @@ function Initialize()
     // set our initialization notifier - we only want to initialize once
     initialized = true;
     var difficulty:int = PlayerPrefs.GetInt("difficulty");
+
     var numAsteroids: int = 0;
     switch(difficulty){
     	case 1:
@@ -187,6 +190,7 @@ function Update () {
     // check if the left mouse button was clicked
     if (Input.GetMouseButtonDown(0)&& GUIUtility.hotControl == 0)
     {
+    	ammo--;
         // Create a new bullet
         var nBullet:OTSprite = OT.CreateSprite("bullet");
         // Set bullet's position at approximately the gun's shooting barrel
@@ -194,6 +198,10 @@ function Update () {
     	nBullet.rotation = gun.rotation;
         // Play the gun's shooting animation frameset once
         gun.PlayOnce("shoot");
+    }
+    if(ammo == 0){
+    	Camera.main.GetComponent.<GameGUI>().nextQuestion();
+		Initialize();
     }
 
    /* // If we have less than 15 objects within Orthello we will create a random asteroid
