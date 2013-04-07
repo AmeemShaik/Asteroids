@@ -8,15 +8,22 @@ public var buttonWidth:int = 100;
 public var problem;
 public var sWidth = Screen.width;
 public var sHeight = Screen.height;
-public var image;
+public var question; public var image; 
+public var answer1; public var answer1comment;
+public var answer2; public var answer2comment;
+public var answer3; public var answer3comment;
+public var answer4; public var answer4comment;
+public var correctAnswer; public var difficulty;
 function Awake(){
+	currentQuestion = -1;
 	loadQuestions();
-	currentQuestion = 0;
-	problem = getProblem() as XmlNode;
 	Camera.main.GetComponent.<JSExample3>().currentProblem = problem;
-	var image = problem.ChildNodes[7].InnerText;
-	image = image.Substring(0, image.length-4);
-	questionImage = Instantiate(Resources.Load(image));
+	
+	if(image != null){
+		var currentImage = image;
+		currentImage = currentImage.Substring(0, currentImage.length-4);
+		questionImage = Instantiate(Resources.Load(currentImage));
+	}
 }
 
 function OnGUI() {
@@ -27,11 +34,11 @@ function OnGUI() {
 				Application.LoadLevel("Title");
 			}
 			GUILayout.BeginVertical();
-				GUILayout.Label(problem.ChildNodes[0].InnerText);
-				GUILayout.Label(problem.ChildNodes[1].InnerText + 
-				" " + problem.ChildNodes[2].InnerText + 
-				" " + problem.ChildNodes[3].InnerText + 
-				" " + problem.ChildNodes[4].InnerText);
+				GUILayout.Label(question);
+				GUILayout.Label(answer1 + 
+				" " + answer2 + 
+				" " + answer3 + 
+				" " + answer4);
 			GUILayout.EndVertical();
 			if(GUILayout.Button(questionImage, GUILayout.Height(buttonHeight),GUILayout.Width(buttonWidth))){
 				if(popupImage){popupImage = false;}
@@ -47,21 +54,67 @@ function OnGUI() {
 	}
 }
 
-function getProblem(){
-	return questionsList[currentQuestion];
-}
-
 function loadQuestions(){
 	var xmlFile:TextAsset = Resources.Load("QuestionsXML") as TextAsset;
 	var xmlDoc = new XmlDocument();
 	xmlDoc.LoadXml(xmlFile.text);
 	questionsList = xmlDoc.GetElementsByTagName("question");
+	nextQuestion();
 }
 function nextQuestion(){
 	currentQuestion++;
-	problem = getProblem() as XmlNode;
+	problem = questionsList[currentQuestion] as XmlNode;
+	if(problem.HasChildNodes){
+		var childNodes = problem.ChildNodes;
+		for(var i=0; i<childNodes.Count; i++){
+			switch(childNodes[i].Name)
+			{
+			case "problem":
+				question = problem.ChildNodes[i].InnerText;
+				break;
+			case "image":
+				image = problem.ChildNodes[i].InnerText;
+				break;
+			case "answer1":
+				answer1 = problem.ChildNodes[i].InnerText;
+				break;
+			case "answer1comment":
+				answer1comment = problem.ChildNodes[i].InnerText;
+				break;
+			case "answer2":
+				answer2 = problem.ChildNodes[i].InnerText;
+				break;
+			case "answer2comment":
+				answer2comment = problem.ChildNodes[i].InnerText;
+				break;
+			case "answer3":
+				answer3 = problem.ChildNodes[i].InnerText;
+				break;
+			case "answer3comment":
+				answer3comment = problem.ChildNodes[i].InnerText;
+				break;
+			case "answer4":
+				answer4 = problem.ChildNodes[i].InnerText;
+				break;
+			case "answer4comment":
+				answer4comment = problem.ChildNodes[i].InnerText;
+				break;
+			case "correctAnswer":
+				correctAnswer = problem.ChildNodes[i].InnerText;
+				break;
+			case "difficulty":
+				difficulty = problem.ChildNodes[i].InnerText;
+				break;
+			}
+		}
+	}
+	
 	Camera.main.GetComponent.<JSExample3>().currentProblem = problem;
-	var image = problem.ChildNodes[7].InnerText;
-	image = image.Substring(0, image.length-4);
-	questionImage = Instantiate(Resources.Load(image));
+
+	
+	if(image != null){
+		var currentImage = image;
+		currentImage = currentImage.Substring(0, currentImage.length-4);
+		questionImage = Instantiate(Resources.Load(currentImage));
+	}
 }

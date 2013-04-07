@@ -114,7 +114,16 @@ function Initialize()
     		break;
     }
     var choices = ["A","B","C","D"];
-    var correctAnswer:int = parseInt(currentProblem.ChildNodes[6].InnerText);
+    
+	if(currentProblem.HasChildNodes){
+		var childNodes = currentProblem.ChildNodes;
+		for(var cc=0; cc<childNodes.Count; cc++){
+			if(childNodes[cc].Name=="correctAnswer")
+				answer = currentProblem.ChildNodes[cc].InnerText;
+		}
+	}
+
+    var correctAnswer:int = parseInt(answer);
     for(var i = 0; i < numAsteroids; i++){
 	   	var a:OTAnimatingSprite = RandomBlock(OT.view.worldRect, 0.6f, 1.2f, null);
 	   	if(i<4){

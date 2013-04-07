@@ -1,63 +1,1066 @@
-<?xml version="1.0"?>
-<question_set>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<question_set xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<question>
-		<problem>What is the address of the pharmacy?</problem>
-		<answer1>(A) 123 Main Street</answer1>
-		<answer2>(B) 456 Main Street</answer2>
-		<answer3>(C) 500 Amoxicillin Street</answer3>
-		<answer4>(D) 8291 Jones Street</answer4>
-		<difficulty>1</difficulty>
+		<problem>How many calories are in 1 serving of this burito?</problem>
+		<image>Burito Nutrition Label.png</image>
+		<answer1>120</answer1>
+		<answer1comment>correct</answer1comment>
+		<answer2>8g</answer2>
+		<answer3>135mg</answer3>
+		<answer4>30</answer4>
 		<correctAnswer>1</correctAnswer>
-		<image>dlabel1.png</image>
+		<difficulty>1</difficulty>
 	</question>
 	<question>
-		<problem>How many calories in the entire container??</problem>
-		<answer1>(A) 1000</answer1>
-		<answer2>(B) 250</answer2>
-		<answer3>(C) 500</answer3>
-		<answer4>(D) 120</answer4>
-		<difficulty>2</difficulty>
-		<correctAnswer>1</correctAnswer>
-		<image>flabel1.png</image>
+		<problem>How much sodium is in 1 serving of this burito?</problem>
+		<image>Burito Nutrition Label.png</image>
+		<answer1>120</answer1>
+		<answer2>8g</answer2>
+		<answer3>135mg</answer3>
+		<answer3comment>correct</answer3comment>
+		<answer4>30</answer4>
+		<correctAnswer>3</correctAnswer>
+		<difficulty>1</difficulty>
 	</question>
 	<question>
-		<problem>How many mg of amoxicillin are in each capsule?</problem>
-		<answer1>(A) 200</answer1>
-		<answer2>(B) 500</answer2>
-		<answer3>(C) 250</answer3>
-		<answer4>(D) 50</answer4>
-		<difficulty>1</difficulty>
+		<problem>How much protein is in 1 serving of this burito?</problem>
+		<image>Burito Nutrition Label.png</image>
+		<answer1>120</answer1>
+		<answer2>8g</answer2>
+		<answer2comment>correct</answer2comment>
+		<answer3>135mg</answer3>
+		<answer4>30</answer4>
 		<correctAnswer>2</correctAnswer>
-		<image>dlabel1.png</image>
-	</question>
-	<question>
-		<problem>The drug should not be used after what date?</problem>
-		<answer1>(A) 12/6/09</answer1>
-		<answer2>(B) 1/23/12</answer2>
-		<answer3>(C) 6/23/12</answer3>
-		<answer4>(D) 6/23/09</answer4>
 		<difficulty>1</difficulty>
-		<correctAnswer>3</correctAnswer>
-		<image>dlabel1.png</image>
 	</question>
 	<question>
-		<problem>Having 2 cups of this food would provide what percentage of one's daily sodium value?</problem>
-		<answer1>(A) 2%</answer1>
-		<answer2>(B) 1%</answer2>
-		<answer3>(C) 8%</answer3>
-		<answer4>(D) 4%</answer4>
-		<difficulty>2</difficulty>
-		<correctAnswer>3</correctAnswer>
-		<image>flabel1.png</image>
-	</question>
-	<question>
-		<problem>Which of the following is not contained in this food?</problem>
-		<answer1>(A) Salt</answer1>
-		<answer2>(B) Brown Sugar</answer2>
-		<answer3>(C) Pepper</answer3>
-		<answer4>(D) White Sugar</answer4>
+		<problem>How many calories are in 1 serving of chicken noodle soup?</problem>
+		<image>Chicken Noodle Soup Label.png</image>
+		<answer1>120</answer1>
+		<answer2>3g</answer2>
+		<answer3>890mg</answer3>
+		<answer4>60g</answer4>
+		<answer4comment>correct</answer4comment>
+		<correctAnswer>4</correctAnswer>
 		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>How much sodium is in 1 serving of chicken noodle soup?</problem>
+		<image>Chicken Noodle Soup Label.png</image>
+		<answer1>120</answer1>
+		<answer2>3g</answer2>
+		<answer3>890mg</answer3>
+		<answer3comment>correct</answer3comment>
+		<answer4>60g</answer4>
 		<correctAnswer>3</correctAnswer>
-		<image>flabel1.png</image>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>How much protein is in 1 serving of chicken noodle soup?</problem>
+		<image>Chicken Noodle Soup Label.png</image>
+		<answer1>120</answer1>
+		<answer2>3g</answer2>
+		<answer2comment>correct</answer2comment>
+		<answer3>890mg</answer3>
+		<answer4>60g</answer4>
+		<correctAnswer>2</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>How many calories are in 1 serving of this item?</problem>
+		<image>Nutrition Label 1.png</image>
+		<answer1>200</answer1>
+		<answer1comment>correct</answer1comment>
+		<answer2>7mg</answer2>
+		<answer3>13g</answer3>
+		<answer4>172</answer4>
+		<correctAnswer>1</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>How much sodium is in 1 serving of this item?</problem>
+		<image>Nutrition Label 1.png</image>
+		<answer1>200</answer1>
+		<answer2>7mg</answer2>
+		<answer2comment>correct</answer2comment>
+		<answer3>13g</answer3>
+		<answer4>172</answer4>
+		<correctAnswer>2</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>How much protein is in 1 serving of this item?</problem>
+		<image>Nutrition Label 1.png</image>
+		<answer1>200</answer1>
+		<answer2>7mg</answer2>
+		<answer3>13g</answer3>
+		<answer3comment>correct</answer3comment>
+		<answer4>172</answer4>
+		<correctAnswer>3</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>How many calories are in 1 serving of this item?</problem>
+		<image>Nutrition Label 2.png</image>
+		<answer1>228mg</answer1>
+		<answer2>280</answer2>
+		<answer2comment>correct</answer2comment>
+		<answer3>5g</answer3>
+		<answer4>660mg</answer4>
+		<correctAnswer>1</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>How much sodium is in 1 serving of this item?</problem>
+		<image>Nutrition Label 2.png</image>
+		<answer1>228mg</answer1>
+		<answer2>280</answer2>
+		<answer3>5g</answer3>
+		<answer4>660mg</answer4>
+		<answer4comment>correct</answer4comment>
+		<correctAnswer>4</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>How much protein is in 1 serving of this item?</problem>
+		<image>Nutrition Label 2.png</image>
+		<answer1>228mg</answer1>
+		<answer2>280</answer2>
+		<answer3>5g</answer3>
+		<answer3comment>correct</answer3comment>
+		<answer4>660mg</answer4>
+		<correctAnswer>3</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>How many calories are in 1 egg?</problem>
+		<image>Egg Nutrition Label.png</image>
+		<answer1>65mg</answer1>
+		<answer2>12</answer2>
+		<answer3>70</answer3>
+		<answer3comment>correct</answer3comment>
+		<answer4>6g</answer4>
+		<correctAnswer>3</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>How much sodium is in 1 egg?</problem>
+		<image>Egg Nutrition Label.png</image>
+		<answer1>65mg</answer1>
+		<answer1comment>correct</answer1comment>
+		<answer2>12</answer2>
+		<answer3>70</answer3>
+		<answer4>6g</answer4>
+		<correctAnswer>1</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>How much protein is in 1 egg?</problem>
+		<image>Egg Nutrition Label.png</image>
+		<answer1>65mg</answer1>
+		<answer2>12</answer2>
+		<answer3>70</answer3>
+		<answer4>6g</answer4>
+		<answer4comment>correct</answer4comment>
+		<correctAnswer>4</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often?</problem>
+		<image>grocerystore.png</image>
+		<answer1>Avacado</answer1>
+		<answer1comment>Perfect!! Avacadoes have a lot of Potassium, so you should not eat them very much.</answer1comment>
+		<answer2>Tortillas</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Bagel (not bran or whole wheat)</answer3>
+		<answer3comment>Try again…This is actually a good food choice.</answer3comment>
+		<answer4>Lemons</answer4>
+		<answer4comment>Try again…This is actually a good food choice.</answer4comment>
+		<correctAnswer>1</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore4.png</image>
+		<answer1>Avacado</answer1>
+		<answer1comment>Try again…This is actually NOT a good food choice.</answer1comment>
+		<answer2>Tortillas</answer2>
+		<answer2comment>Super Star!!</answer2comment>
+		<answer3>Steak</answer3>
+		<answer3comment>Try again…This is actually NOT a good food choice.</answer3comment>
+		<answer4>Fish</answer4>
+		<answer4comment>Try again…This is actually NOT a good food choice.</answer4comment>
+		<correctAnswer>2</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often or NOT AT ALL?</problem>
+		<image>grocerystore2.png</image>
+		<answer1>Bacon</answer1>
+		<answer1comment>Wonderful!! Bacon has a lot of salt, so you should not eat it very much.</answer1comment>
+		<answer2>Unsalted popcorn</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Grits</answer3>
+		<answer3comment>Try again…This is actually a good food choice.</answer3comment>
+		<answer4>Lettuce</answer4>
+		<answer4comment>Try again…This is actually a good food choice.</answer4comment>
+		<correctAnswer>1</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore.png</image>
+		<answer1>Bagel (not bran or whole wheat)</answer1>
+		<answer1comment>Awesome!!</answer1comment>
+		<answer2>Whole Wheat Bread</answer2>
+		<answer2comment>Try again…This is actually NOT a good food choice.</answer2comment>
+		<answer3>Bran Cereal</answer3>
+		<answer3comment>Try again…This is actually NOT a good food choice.</answer3comment>
+		<answer4>Bacon</answer4>
+		<answer4comment>Try again…This is actually NOT a good food choice.</answer4comment>
+		<correctAnswer>1</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore.png</image>
+		<answer1>Bananas</answer1>
+		<answer1comment>Try again…This is actually NOT a good food choice.</answer1comment>
+		<answer2>White bread</answer2>
+		<answer2comment>Amazing!!</answer2comment>
+		<answer3>Yogurt</answer3>
+		<answer3comment>Try again…This is actually NOT a good food choice.</answer3comment>
+		<answer4>Steak</answer4>
+		<answer4comment>Try again…This is actually NOT a good food choice.</answer4comment>
+		<correctAnswer>2</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore3.png</image>
+		<answer1>Beans</answer1>
+		<answer1comment>Try again…This is actually NOT a good food choice.</answer1comment>
+		<answer2>Kiwis</answer2>
+		<answer2comment>Try again…This is actually NOT a good food choice.</answer2comment>
+		<answer3>Lettuce</answer3>
+		<answer3comment>Great job!!</answer3comment>
+		<answer4>Bananas</answer4>
+		<answer4comment>Try again…This is actually NOT a good food choice.</answer4comment>
+		<correctAnswer>3</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you  NOT EAT?</problem>
+		<image>grocerystore4.png</image>
+		<answer1>Bell peppers</answer1>
+		<answer1comment>Try again…This is actually a good food choice.</answer1comment>
+		<answer2>White bread</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Cucumbers</answer3>
+		<answer3comment>Try again…This is actually a good food choice.</answer3comment>
+		<answer4>Potatoes</answer4>
+		<answer4comment>Wonderful!! Potatoes have a lot of potassium, so you should not eat them very much.</answer4comment>
+		<correctAnswer>4</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore2.png</image>
+		<answer1>Bran Cereal</answer1>
+		<answer1comment>Try again…This is actually NOT a good food choice.</answer1comment>
+		<answer2>White Rice</answer2>
+		<answer2comment>Awesome!!</answer2comment>
+		<answer3>Ham</answer3>
+		<answer3comment>Try again…This is actually NOT a good food choice.</answer3comment>
+		<answer4>Yogurt</answer4>
+		<answer4comment>Try again…This is actually NOT a good food choice.</answer4comment>
+		<correctAnswer>2</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore3.png</image>
+		<answer1>Brown rice</answer1>
+		<answer1comment>Try again…This is actually NOT a good food choice.</answer1comment>
+		<answer2>Pretzel</answer2>
+		<answer2comment>Try again…This is actually NOT a good food choice.</answer2comment>
+		<answer3>Salad Dressing</answer3>
+		<answer3comment>Try again…This is actually NOT a good food choice.</answer3comment>
+		<answer4>Honeydew Melon</answer4>
+		<answer4comment>Wonderful!!</answer4comment>
+		<correctAnswer>4</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often?</problem>
+		<image>grocerystore.png</image>
+		<answer1>Cola</answer1>
+		<answer1comment>Awesome!!  Cola and other dark colored sodas have a lot of phosphorus, so you should not drink them very much.</answer1comment>
+		<answer2>Corn</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Apples</answer3>
+		<answer3comment>Try again…This is actually a good food choice.</answer3comment>
+		<answer4>Bell peppers</answer4>
+		<answer4comment>Try again…This is actually a good food choice.</answer4comment>
+		<correctAnswer>1</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore3.png</image>
+		<answer1>Cola</answer1>
+		<answer1comment>Try again…This is actually NOT a good food choice.</answer1comment>
+		<answer2>Watermelon</answer2>
+		<answer2comment>Awesome!!</answer2comment>
+		<answer3>Potato Chips</answer3>
+		<answer3comment>Try again…This is actually NOT a good food choice.</answer3comment>
+		<answer4>Frozen Meal</answer4>
+		<answer4comment>Try again…This is actually NOT a good food choice.</answer4comment>
+		<correctAnswer>2</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often or NOT AT ALL?</problem>
+		<image>grocerystore.png</image>
+		<answer1>Corn</answer1>
+		<answer1comment>Try again…This is actually a good food choice.</answer1comment>
+		<answer2>Grapefruit</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Cucumbers</answer3>
+		<answer3comment>Try again…This is actually a good food choice.</answer3comment>
+		<answer4>French Fries</answer4>
+		<answer4comment>Wonderful!! French fries have a lot of salt, so you should not eat them very much.</answer4comment>
+		<correctAnswer>4</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often?</problem>
+		<image>grocerystore2.png</image>
+		<answer1>Cucumbers</answer1>
+		<answer1comment>Try again…This is actually a good food choice.</answer1comment>
+		<answer2>Grapes</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Eggplant</answer3>
+		<answer3comment>Try again…This is actually a good food choice.</answer3comment>
+		<answer4>Frozen Meal</answer4>
+		<answer4comment>Great job!!  Frozen meals have a lot of salt, so you should not eat them very much.</answer4comment>
+		<correctAnswer>4</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often?</problem>
+		<image>grocerystore3.png</image>
+		<answer1>Eggplant</answer1>
+		<answer1comment>Try again…This is actually a good food choice.</answer1comment>
+		<answer2>Honeydew Melon</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Garlic</answer3>
+		<answer3comment>Try again…This is actually a good food choice.</answer3comment>
+		<answer4>Hot Dog</answer4>
+		<answer4comment>Awesome!!  Hot Dogs have a lot of phosphorus and sodium, so you should not eat them very much.</answer4comment>
+		<correctAnswer>4</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore4.png</image>
+		<answer1>Eggplant</answer1>
+		<answer1comment>Amazing!!</answer1comment>
+		<answer2>Raisins</answer2>
+		<answer2comment>Try again…This is actually NOT a good food choice.</answer2comment>
+		<answer3>Bananas</answer3>
+		<answer3comment>Try again…This is actually NOT a good food choice.</answer3comment>
+		<answer4>Baked Beans</answer4>
+		<answer4comment>Try again…This is actually NOT a good food choice.</answer4comment>
+		<correctAnswer>1</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often?</problem>
+		<image>grocerystore3.png</image>
+		<answer1>Eggs</answer1>
+		<answer1comment>Great job!!  Eggs have a lot of protein, so you should not eat them very much.</answer1comment>
+		<answer2>Eggplant</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Cabbage</answer3>
+		<answer3comment>Try again…This is actually a good food choice.</answer3comment>
+		<answer4>Plums</answer4>
+		<answer4comment>Try again…This is actually a good food choice.</answer4comment>
+		<correctAnswer>1</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore.png</image>
+		<answer1>Eggs</answer1>
+		<answer1comment>Try again…This is actually NOT a good food choice.</answer1comment>
+		<answer2>Bananas</answer2>
+		<answer2comment>Try again…This is actually NOT a good food choice.</answer2comment>
+		<answer3>Raw Celery</answer3>
+		<answer3comment>Great job!!</answer3comment>
+		<answer4>Brown rice</answer4>
+		<answer4comment>Try again…This is actually NOT a good food choice.</answer4comment>
+		<correctAnswer>3</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often?</problem>
+		<image>grocerystore4.png</image>
+		<answer1>Fish</answer1>
+		<answer1comment>That's correct!! Fish has a lot of protein and phosphorus, so you should not eat them very much.</answer1comment>
+		<answer2>Garlic</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Corn</answer3>
+		<answer3comment>Try again…This is actually a good food choice.</answer3comment>
+		<answer4>Watermelon</answer4>
+		<answer4comment>Try again…This is actually a good food choice.</answer4comment>
+		<correctAnswer>1</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore4.png</image>
+		<answer1>Fish</answer1>
+		<answer1comment>Try again…This is actually NOT a good food choice.</answer1comment>
+		<answer2>Orange Juice</answer2>
+		<answer2comment>Try again…This is actually NOT a good food choice.</answer2comment>
+		<answer3>Pretzel</answer3>
+		<answer3comment>Try again…This is actually NOT a good food choice.</answer3comment>
+		<answer4>Kale</answer4>
+		<answer4comment>Super Star!!</answer4comment>
+		<correctAnswer>4</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often?</problem>
+		<image>grocerystore4.png</image>
+		<answer1>Fresh Mushrooms</answer1>
+		<answer1comment>Try again…This is actually a good food choice.</answer1comment>
+		<answer2>Unsalted popcorn</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Whole Wheat Bread</answer3>
+		<answer3comment>Great job!!  Whole Wheat bread has a lot of potassium, so you should not eat it very much.</answer3comment>
+		<answer4>Raw Celery</answer4>
+		<answer4comment>Try again…This is actually a good food choice.</answer4comment>
+		<correctAnswer>3</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often?</problem>
+		<image>grocerystore4.png</image>
+		<answer1>Garlic</answer1>
+		<answer1comment>Try again…This is actually a good food choice.</answer1comment>
+		<answer2>Lemons</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Grapefruit</answer3>
+		<answer3comment>Try again…This is actually a good food choice.</answer3comment>
+		<answer4>Instant Soup</answer4>
+		<answer4comment>Perfect!! Instant soups have a lot of salt, so you should not eat them very much.</answer4comment>
+		<correctAnswer>4</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore3.png</image>
+		<answer1>Grits</answer1>
+		<answer1comment>Wonderful!!</answer1comment>
+		<answer2>Raisins</answer2>
+		<answer2comment>Try again…This is actually NOT a good food choice.</answer2comment>
+		<answer3>Fish</answer3>
+		<answer3comment>Try again…This is actually NOT a good food choice.</answer3comment>
+		<answer4>Instant Soup</answer4>
+		<answer4comment>Try again…This is actually NOT a good food choice.</answer4comment>
+		<correctAnswer>1</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore3.png</image>
+		<answer1>Ham</answer1>
+		<answer1comment>Try again…This is actually NOT a good food choice.</answer1comment>
+		<answer2>Brown rice</answer2>
+		<answer2comment>Try again…This is actually NOT a good food choice.</answer2comment>
+		<answer3>Avacado</answer3>
+		<answer3comment>Try again…This is actually NOT a good food choice.</answer3comment>
+		<answer4>Fresh Mushrooms</answer4>
+		<answer4comment>Awesome!!</answer4comment>
+		<correctAnswer>4</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore4.png</image>
+		<answer1>Hot Dog</answer1>
+		<answer1comment>Try again…This is actually NOT a good food choice.</answer1comment>
+		<answer2>Avacado</answer2>
+		<answer2comment>Try again…This is actually NOT a good food choice.</answer2comment>
+		<answer3>Peppers</answer3>
+		<answer3comment>Wonderful!!</answer3comment>
+		<answer4>Instant Soup</answer4>
+		<answer4comment>Try again…This is actually NOT a good food choice.</answer4comment>
+		<correctAnswer>3</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often?</problem>
+		<image>grocerystore.png</image>
+		<answer1>Kiwis</answer1>
+		<answer1comment>That's correct!! Kiwis have a lot of potassium, so you should not eat them very much.</answer1comment>
+		<answer2>Lettuce</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Grapes</answer3>
+		<answer3comment>Try again…This is actually a good food choice.</answer3comment>
+		<answer4>Corn</answer4>
+		<answer4comment>Try again…This is actually a good food choice.</answer4comment>
+		<correctAnswer>1</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore3.png</image>
+		<answer1>Kiwis</answer1>
+		<answer1comment>Try again…This is actually NOT a good food choice.</answer1comment>
+		<answer2>Baked Beans</answer2>
+		<answer2comment>Try again…This is actually NOT a good food choice.</answer2comment>
+		<answer3>Apples</answer3>
+		<answer3comment>Super Star!!</answer3comment>
+		<answer4>Ham</answer4>
+		<answer4comment>Try again…This is actually NOT a good food choice.</answer4comment>
+		<correctAnswer>3</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often?</problem>
+		<image>grocerystore2.png</image>
+		<answer1>Lunch Meat</answer1>
+		<answer1comment>Awesome!!  Lunch meats have a lot of salt, so you should not eat them very much.</answer1comment>
+		<answer2>Limes</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Honeydew Melon</answer3>
+		<answer3comment>Try again…This is actually a good food choice.</answer3comment>
+		<answer4>Cucumbers</answer4>
+		<answer4comment>Try again…This is actually a good food choice.</answer4comment>
+		<correctAnswer>1</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore.png</image>
+		<answer1>Lunch Meat</answer1>
+		<answer1comment>Try again…This is actually NOT a good food choice.</answer1comment>
+		<answer2>Plums</answer2>
+		<answer2comment>Super Star!!</answer2comment>
+		<answer3>Bacon</answer3>
+		<answer3comment>Try again…This is actually NOT a good food choice.</answer3comment>
+		<answer4>Potato Chips</answer4>
+		<answer4comment>Try again…This is actually NOT a good food choice.</answer4comment>
+		<correctAnswer>2</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore2.png</image>
+		<answer1>Mangoes</answer1>
+		<answer1comment>Great job!!</answer1comment>
+		<answer2>Avacado</answer2>
+		<answer2comment>Try again…This is actually NOT a good food choice.</answer2comment>
+		<answer3>Eggs</answer3>
+		<answer3comment>Try again…This is actually NOT a good food choice.</answer3comment>
+		<answer4>Baked Beans</answer4>
+		<answer4comment>Try again…This is actually NOT a good food choice.</answer4comment>
+		<correctAnswer>1</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often?</problem>
+		<image>grocerystore3.png</image>
+		<answer1>Milk</answer1>
+		<answer1comment>That's correct!! Milk has a lot of protein and potassium, so you should not drink very much of it.</answer1comment>
+		<answer2>Mangoes</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Pineapples</answer3>
+		<answer3comment>Try again…This is actually a good food choice.</answer3comment>
+		<answer4>Eggplant</answer4>
+		<answer4comment>Try again…This is actually a good food choice.</answer4comment>
+		<correctAnswer>1</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you  NOT EAT?</problem>
+		<image>grocerystore4.png</image>
+		<answer1>Orange Juice</answer1>
+		<answer1comment>Great job!!  Orange Juice has a lot of potassium, so you should not drink it very much.</answer1comment>
+		<answer2>Fresh Mushrooms</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Plums</answer3>
+		<answer3comment>Try again…This is actually a good food choice.</answer3comment>
+		<answer4>Garlic</answer4>
+		<answer4comment>Try again…This is actually a good food choice.</answer4comment>
+		<correctAnswer>1</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore4.png</image>
+		<answer1>Orange Juice</answer1>
+		<answer1comment>Try again…This is actually NOT a good food choice.</answer1comment>
+		<answer2>Bacon</answer2>
+		<answer2comment>Try again…This is actually NOT a good food choice.</answer2comment>
+		<answer3>Apricots</answer3>
+		<answer3comment>Amazing!!</answer3comment>
+		<answer4>Frozen Meal</answer4>
+		<answer4comment>Try again…This is actually NOT a good food choice.</answer4comment>
+		<correctAnswer>3</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore2.png</image>
+		<answer1>Orange Juice</answer1>
+		<answer1comment>Try again…This is actually NOT a good food choice.</answer1comment>
+		<answer2>Cabbage</answer2>
+		<answer2comment>Super Star!!</answer2comment>
+		<answer3>Brown rice</answer3>
+		<answer3comment>Try again…This is actually NOT a good food choice.</answer3comment>
+		<answer4>French Fries</answer4>
+		<answer4comment>Try again…This is actually NOT a good food choice.</answer4comment>
+		<correctAnswer>2</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often?</problem>
+		<image>grocerystore2.png</image>
+		<answer1>Peaches</answer1>
+		<answer1comment>Try again…This is actually a good food choice.</answer1comment>
+		<answer2>Tortillas</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Cabbage</answer3>
+		<answer3comment>Try again…This is actually a good food choice.</answer3comment>
+		<answer4>Ham</answer4>
+		<answer4comment>That's correct!! Ham a lot of protein, phosphorus, and salt so you should not eat it very much.</answer4comment>
+		<correctAnswer>4</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore4.png</image>
+		<answer1>Peaches</answer1>
+		<answer1comment>Great job!!</answer1comment>
+		<answer2>Bran Cereal</answer2>
+		<answer2comment>Try again…This is actually NOT a good food choice.</answer2comment>
+		<answer3>Baked Beans</answer3>
+		<answer3comment>Try again…This is actually NOT a good food choice.</answer3comment>
+		<answer4>French Fries</answer4>
+		<answer4comment>Try again…This is actually NOT a good food choice.</answer4comment>
+		<correctAnswer>1</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often?</problem>
+		<image>grocerystore.png</image>
+		<answer1>Peanut Butter</answer1>
+		<answer1comment>Wonderful!! Peanut butter has lot of protein, so you should not eat it very much.</answer1comment>
+		<answer2>Raw Onions</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Watermelon</answer3>
+		<answer3comment>Try again…This is actually a good food choice.</answer3comment>
+		<answer4>Grapefruit</answer4>
+		<answer4comment>Try again…This is actually a good food choice.</answer4comment>
+		<correctAnswer>1</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore2.png</image>
+		<answer1>Peanut Butter</answer1>
+		<answer1comment>Try again…This is actually NOT a good food choice.</answer1comment>
+		<answer2>Bran Cereal</answer2>
+		<answer2comment>Try again…This is actually NOT a good food choice.</answer2comment>
+		<answer3>Raw Onions</answer3>
+		<answer3comment>Wonderful!!</answer3comment>
+		<answer4>Raisins</answer4>
+		<answer4comment>Try again…This is actually NOT a good food choice.</answer4comment>
+		<correctAnswer>3</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often or NOT AT ALL?</problem>
+		<image>grocerystore3.png</image>
+		<answer1>Pears</answer1>
+		<answer1comment>Try again…This is actually a good food choice.</answer1comment>
+		<answer2>Unsalted popcorn</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Corn</answer3>
+		<answer3comment>Try again…This is actually a good food choice.</answer3comment>
+		<answer4>Potato Chips</answer4>
+		<answer4comment>Awesome!!  Potato chips have a lot of salt, so you should not eat them very much.</answer4comment>
+		<correctAnswer>4</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore3.png</image>
+		<answer1>Pears</answer1>
+		<answer1comment>Wonderful!!</answer1comment>
+		<answer2>Bananas</answer2>
+		<answer2comment>Try again…This is actually NOT a good food choice.</answer2comment>
+		<answer3>Peanut Butter</answer3>
+		<answer3comment>Try again…This is actually NOT a good food choice.</answer3comment>
+		<answer4>Bacon</answer4>
+		<answer4comment>Try again…This is actually NOT a good food choice.</answer4comment>
+		<correctAnswer>1</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often?</problem>
+		<image>grocerystore.png</image>
+		<answer1>Pineapples</answer1>
+		<answer1comment>Try again…This is actually a good food choice.</answer1comment>
+		<answer2>Cucumbers</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Eggplant</answer3>
+		<answer3comment>Try again…This is actually a good food choice.</answer3comment>
+		<answer4>Raisins</answer4>
+		<answer4comment>Great job!! Raisins have a lot of potassium, so you should not eat them very much.</answer4comment>
+		<correctAnswer>4</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often?</problem>
+		<image>grocerystore2.png</image>
+		<answer1>Plums</answer1>
+		<answer1comment>Try again…This is actually a good food choice.</answer1comment>
+		<answer2>Salad Dressing</answer2>
+		<answer2comment>That's correct!! Salad dressings have a lot of salt, so you should not eat very much of it.</answer2comment>
+		<answer3>Cucumbers</answer3>
+		<answer3comment>Try again…This is actually a good food choice.</answer3comment>
+		<answer4>Bagel (not bran or whole wheat)</answer4>
+		<answer4comment>Try again…This is actually a good food choice.</answer4comment>
+		<correctAnswer>2</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore.png</image>
+		<answer1>Potatoes</answer1>
+		<answer1comment>Try again…This is actually NOT a good food choice.</answer1comment>
+		<answer2>French Fries</answer2>
+		<answer2comment>Try again…This is actually NOT a good food choice.</answer2comment>
+		<answer3>Grapes</answer3>
+		<answer3comment>Awesome!!</answer3comment>
+		<answer4>Instant Soup</answer4>
+		<answer4comment>Try again…This is actually NOT a good food choice.</answer4comment>
+		<correctAnswer>3</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore3.png</image>
+		<answer1>Potatoes</answer1>
+		<answer1comment>Try again…This is actually NOT a good food choice.</answer1comment>
+		<answer2>Garlic</answer2>
+		<answer2comment>Amazing!!</answer2comment>
+		<answer3>Raisins</answer3>
+		<answer3comment>Try again…This is actually NOT a good food choice.</answer3comment>
+		<answer4>Potato Chips</answer4>
+		<answer4comment>Try again…This is actually NOT a good food choice.</answer4comment>
+		<correctAnswer>2</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often?</problem>
+		<image>grocerystore2.png</image>
+		<answer1>Pretzel</answer1>
+		<answer1comment>Perfect!! Pretzels have a lot of salt, so you should not eat them very much.</answer1comment>
+		<answer2>Cucumbers</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Apricots</answer3>
+		<answer3comment>Try again…This is actually a good food choice.</answer3comment>
+		<answer4>Pineapples</answer4>
+		<answer4comment>Try again…This is actually a good food choice.</answer4comment>
+		<correctAnswer>1</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore4.png</image>
+		<answer1>Raisins</answer1>
+		<answer1comment>Try again…This is actually NOT a good food choice.</answer1comment>
+		<answer2>Frozen Meal</answer2>
+		<answer2comment>Try again…This is actually NOT a good food choice.</answer2comment>
+		<answer3>Cola</answer3>
+		<answer3comment>Try again…This is actually NOT a good food choice.</answer3comment>
+		<answer4>Lemons</answer4>
+		<answer4comment>Great job!!</answer4comment>
+		<correctAnswer>4</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often?</problem>
+		<image>grocerystore.png</image>
+		<answer1>Raw Onions</answer1>
+		<answer1comment>Try again…This is actually a good food choice.</answer1comment>
+		<answer2>White bread</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Yogurt</answer3>
+		<answer3comment>That's correct!! Yogurt has a lot of protein and phosphorus, so you should not eat it very much.</answer3comment>
+		<answer4>Pineapples</answer4>
+		<answer4comment>Try again…This is actually a good food choice.</answer4comment>
+		<correctAnswer>3</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore2.png</image>
+		<answer1>Rice milk (not enriched)</answer1>
+		<answer1comment>Great job!!</answer1comment>
+		<answer2>Brown rice</answer2>
+		<answer2comment>Try again…This is actually NOT a good food choice.</answer2comment>
+		<answer3>Beans</answer3>
+		<answer3comment>Try again…This is actually NOT a good food choice.</answer3comment>
+		<answer4>Frozen Meal</answer4>
+		<answer4comment>Try again…This is actually NOT a good food choice.</answer4comment>
+		<correctAnswer>1</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore2.png</image>
+		<answer1>Salad Dressing</answer1>
+		<answer1comment>Try again…This is actually NOT a good food choice.</answer1comment>
+		<answer2>Pineapples</answer2>
+		<answer2comment>Amazing!!</answer2comment>
+		<answer3>French Fries</answer3>
+		<answer3comment>Try again…This is actually NOT a good food choice.</answer3comment>
+		<answer4>Pretzel</answer4>
+		<answer4comment>Try again…This is actually NOT a good food choice.</answer4comment>
+		<correctAnswer>2</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore.png</image>
+		<answer1>Steak</answer1>
+		<answer1comment>Try again…This is actually NOT a good food choice.</answer1comment>
+		<answer2>Potatoes</answer2>
+		<answer2comment>Try again…This is actually NOT a good food choice.</answer2comment>
+		<answer3>Frozen Meal</answer3>
+		<answer3comment>Try again…This is actually NOT a good food choice.</answer3comment>
+		<answer4>Cucumbers</answer4>
+		<answer4comment>Super Star!!</answer4comment>
+		<correctAnswer>4</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore2.png</image>
+		<answer1>Tomatoes</answer1>
+		<answer1comment>Try again…This is actually NOT a good food choice.</answer1comment>
+		<answer2>Potato Chips</answer2>
+		<answer2comment>Try again…This is actually NOT a good food choice.</answer2comment>
+		<answer3>Lunch Meat</answer3>
+		<answer3comment>Try again…This is actually NOT a good food choice.</answer3comment>
+		<answer4>Grapefruit</answer4>
+		<answer4comment>Great job!!</answer4comment>
+		<correctAnswer>4</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often?</problem>
+		<image>grocerystore3.png</image>
+		<answer1>Tortillas</answer1>
+		<answer1comment>Try again…This is actually a good food choice.</answer1comment>
+		<answer2>Baked Beans</answer2>
+		<answer2comment>Great job!! Baked Beans have a lot of potassium and protein, so you should not eat them very much.</answer2comment>
+		<answer3>Raw Celery</answer3>
+		<answer3comment>Try again…This is actually a good food choice.</answer3comment>
+		<answer4>Limes</answer4>
+		<answer4comment>Try again…This is actually a good food choice.</answer4comment>
+		<correctAnswer>2</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often?</problem>
+		<image>grocerystore3.png</image>
+		<answer1>Tortillas</answer1>
+		<answer1comment>Try again…This is actually a good food choice.</answer1comment>
+		<answer2>Apricots</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Bran Cereal</answer3>
+		<answer3comment>Perfect!! Bran Cereal has a lot of potassium, so you should not eat it very much.</answer3comment>
+		<answer4>Peaches</answer4>
+		<answer4comment>Try again…This is actually a good food choice.</answer4comment>
+		<correctAnswer>3</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often?</problem>
+		<image>grocerystore4.png</image>
+		<answer1>Unsalted popcorn</answer1>
+		<answer1comment>Try again…This is actually a good food choice.</answer1comment>
+		<answer2>Bananas</answer2>
+		<answer2comment>Perfect!! Bananas have a lot of potassium, so you should not eat them very much.</answer2comment>
+		<answer3>Rice milk (not enriched)</answer3>
+		<answer3comment>Try again…This is actually a good food choice.</answer3comment>
+		<answer4>Mangoes</answer4>
+		<answer4comment>Try again…This is actually a good food choice.</answer4comment>
+		<correctAnswer>2</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often?</problem>
+		<image>grocerystore4.png</image>
+		<answer1>Unsalted popcorn</answer1>
+		<answer1comment>Try again…This is actually a good food choice.</answer1comment>
+		<answer2>Cabbage</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Brown rice</answer3>
+		<answer3comment>That's correct!! Brown Rice has a lot of potassium, so you should not eat it very much.</answer3comment>
+		<answer4>Pears</answer4>
+		<answer4comment>Try again…This is actually a good food choice.</answer4comment>
+		<correctAnswer>3</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you  NOT EAT?</problem>
+		<image>grocerystore3.png</image>
+		<answer1>Watermelon</answer1>
+		<answer1comment>Try again…This is actually a good food choice.</answer1comment>
+		<answer2>Tortillas</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Tomatoes</answer3>
+		<answer3comment>Perfect!! Tomatoes have a lot of potassium, so you should not eat them very much.</answer3comment>
+		<answer4>Grits</answer4>
+		<answer4comment>Try again…This is actually a good food choice.</answer4comment>
+		<correctAnswer>3</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often?</problem>
+		<image>grocerystore.png</image>
+		<answer1>White bread</answer1>
+		<answer1comment>Try again…This is actually a good food choice.</answer1comment>
+		<answer2>Beans</answer2>
+		<answer2comment>Awesome!!  Beans have a lot of protein and phosphorus, so you should not eat them very much.</answer2comment>
+		<answer3>Lemons</answer3>
+		<answer3comment>Try again…This is actually a good food choice.</answer3comment>
+		<answer4>Fresh Mushrooms</answer4>
+		<answer4comment>Try again…This is actually a good food choice.</answer4comment>
+		<correctAnswer>2</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods should you eat LESS often?</problem>
+		<image>grocerystore2.png</image>
+		<answer1>White Rice</answer1>
+		<answer1comment>Try again…This is actually a good food choice.</answer1comment>
+		<answer2>Apples</answer2>
+		<answer2comment>Try again…This is actually a good food choice.</answer2comment>
+		<answer3>Steak</answer3>
+		<answer3comment>Great job!!  Steak, and other beef has a lot of protein and phosphorus, so you should not eat it very much.</answer3comment>
+		<answer4>Raw Onions</answer4>
+		<answer4comment>Try again…This is actually a good food choice.</answer4comment>
+		<correctAnswer>3</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore.png</image>
+		<answer1>Whole Wheat Bread</answer1>
+		<answer1comment>Try again…This is actually NOT a good food choice.</answer1comment>
+		<answer2>Instant Soup</answer2>
+		<answer2comment>Try again…This is actually NOT a good food choice.</answer2comment>
+		<answer3>Hot Dog</answer3>
+		<answer3comment>Try again…This is actually NOT a good food choice.</answer3comment>
+		<answer4>Limes</answer4>
+		<answer4comment>Wonderful!!</answer4comment>
+		<correctAnswer>4</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>Which of the foods is GOOD for your eat?</problem>
+		<image>grocerystore2.png</image>
+		<answer1>Yogurt</answer1>
+		<answer1comment>Try again…This is actually NOT a good food choice.</answer1comment>
+		<answer2>Tomatoes</answer2>
+		<answer2comment>Try again…This is actually NOT a good food choice.</answer2comment>
+		<answer3>Instant Soup</answer3>
+		<answer3comment>Try again…This is actually NOT a good food choice.</answer3comment>
+		<answer4>Corn</answer4>
+		<answer4comment>Amazing!!</answer4comment>
+		<correctAnswer>4</correctAnswer>
+		<difficulty>1</difficulty>
+	</question>
+	<question>
+		<problem>How many calories are in 1 serving of this item?</problem>
+		<image>Nutrition Label 3.png</image>
+	</question>
+	<question>
+		<problem>How much sodium is in 1 serving of this item?</problem>
+		<image>Nutrition Label 3.png</image>
+	</question>
+	<question>
+		<problem>How much protein is in 1 serving of this item?</problem>
+		<image>Nutrition Label 3.png</image>
+	</question>
+	<question>
+		<problem>How many calories are in 1 serving of this item?</problem>
+		<image>Nutrition Label 4.png</image>
+	</question>
+	<question>
+		<problem>How much sodium is in 1 serving of this item?</problem>
+		<image>Nutrition Label 4.png</image>
+	</question>
+	<question>
+		<problem>How much protein is in 1 serving of this item?</problem>
+		<image>Nutrition Label 4.png</image>
+	</question>
+	<question>
+		<problem>How many calories are in 1 serving of this item?</problem>
+		<image>Nutrition Label 5.png</image>
+	</question>
+	<question>
+		<problem>How much sodium is in 1 serving of this item?</problem>
+		<image>Nutrition Label 5.png</image>
+	</question>
+	<question>
+		<problem>How much protein is in 1 serving of this item?</problem>
+		<image>Nutrition Label 5.png</image>
+	</question>
+	<question>
+		<problem>How many calories are in 1 serving of this item?</problem>
+		<image>Nutrition Label 6.png</image>
+	</question>
+	<question>
+		<problem>How much sodium is in 1 serving of this item?</problem>
+		<image>Nutrition Label 6.png</image>
+	</question>
+	<question>
+		<problem>How much protein is in 1 serving of this item?</problem>
+		<image>Nutrition Label 6.png</image>
+	</question>
+	<question>
+		<problem>How many calories are in 1 serving of this item?</problem>
+		<image>Nutrition Label 7.png</image>
+	</question>
+	<question>
+		<problem>How much sodium is in 1 serving of this item?</problem>
+		<image>Nutrition Label 7.png</image>
+	</question>
+	<question>
+		<problem>How much protein is in 1 serving of this item?</problem>
+		<image>Nutrition Label 7.png</image>
+	</question>
+	<question>
+		<problem>How many calories are in 1 potato?</problem>
+		<image>Potato Nutrition Label.png</image>
+	</question>
+	<question>
+		<problem>How much sodium is in 1 potato?</problem>
+		<image>Potato Nutrition Label.png</image>
+	</question>
+	<question>
+		<problem>How much protein is in 1 potato?</problem>
+		<image>Potato Nutrition Label.png</image>
 	</question>
 </question_set>
