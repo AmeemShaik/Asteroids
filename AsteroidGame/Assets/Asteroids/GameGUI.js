@@ -1,6 +1,7 @@
 import System.Xml;
 public var questionsList:XmlNodeList;
 public var questionImage : Texture2D;
+public var ammoImage : Texture2D;
 public var popupImage : boolean = false;
 public var currentQuestion;
 public var buttonHeight:int = 50;
@@ -14,6 +15,8 @@ public var answer2; public var answer2comment;
 public var answer3; public var answer3comment;
 public var answer4; public var answer4comment;
 public var correctAnswer; public var difficulty;
+public var ammo;
+
 function Awake(){
 	currentQuestion = -1;
 	loadQuestions();
@@ -24,6 +27,7 @@ function Awake(){
 		currentImage = currentImage.Substring(0, currentImage.length-4);
 		questionImage = Instantiate(Resources.Load(currentImage));
 	}
+	ammoImage = Instantiate(Resources.Load("shotBall"));
 }
 
 function OnGUI() {
@@ -35,15 +39,46 @@ function OnGUI() {
 			}
 			GUILayout.BeginVertical();
 				GUILayout.Label(question);
-				GUILayout.Label(answer1 + 
-				" " + answer2 + 
-				" " + answer3 + 
-				" " + answer4);
+				GUILayout.BeginHorizontal();
+					GUILayout.BeginVertical();
+						GUILayout.Label("(A) " + answer1);
+						//GUILayout.FlexibleSpace();
+						GUILayout.Label("(C) " + answer2);
+						//GUILayout.FlexibleSpace();
+					GUILayout.EndVertical();
+					GUILayout.BeginVertical();
+						GUILayout.Label("(B) " + answer1);
+						//GUILayout.FlexibleSpace();
+						GUILayout.Label("(D) " + answer2);
+						//GUILayout.FlexibleSpace();
+					GUILayout.EndVertical();
+				GUILayout.EndHorizontal();
+				/*
+				GUILayout.BeginHorizontal();
+					GUILayout.Label("(C) " + answer3);
+					GUILayout.FlexibleSpace();
+					GUILayout.Label("(D) " + answer4);
+					//GUILayout.FlexibleSpace();
+				GUILayout.EndHorizontal();*/
 			GUILayout.EndVertical();
 			if(GUILayout.Button(questionImage, GUILayout.Height(buttonHeight),GUILayout.Width(buttonWidth))){
 				if(popupImage){popupImage = false;}
 				else{popupImage = true;}
 			}
+		GUILayout.EndHorizontal();
+		GUILayout.BeginHorizontal(); //Second horizontal has ball ammo
+			//GUILayout.FlexibleSpace(); //Space pushes ammo to right side of screen
+			//GUILayout.BeginArea(Rect(0, 0, Screen.width, Screen.height));
+			GUILayout.BeginVertical(); //Places ammo vertically on right side
+				GUILayout.BeginVertical();
+					//var ammo = 3;
+					for(var i=0; i< ammo; i++){
+						GUILayout.Label(ammoImage);
+					}
+				GUILayout.EndVertical();
+				//Code for progress bar goes here
+			GUILayout.EndVertical();
+			//GUILayout.EndArea();
 		GUILayout.EndHorizontal();
 	GUILayout.EndArea();
 	

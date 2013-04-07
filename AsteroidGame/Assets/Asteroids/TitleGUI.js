@@ -5,7 +5,7 @@ var spacing:int = 100;
 var titleMenu : boolean = true;
 var popupDifficulty : boolean = false;
 var difficulty;
-var ammo;
+public var ammo;
 
 function OnGUI() {
 	if(titleMenu){

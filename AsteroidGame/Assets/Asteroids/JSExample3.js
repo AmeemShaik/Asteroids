@@ -81,6 +81,8 @@ function Initialize()
 			OT.DestroyObject(objects[j]);
 	}
 	
+	camera.main.GetComponent.<GameGUI>().ammo = this.ammo;
+	
     // Get reference to gun animation sprite
     gun = OT.ObjectByName("gun") as OTAnimatingSprite;
 	// Because Javascript does not support C# delegate we have to notify our sprite class that 
@@ -200,6 +202,7 @@ function Update () {
     if (Input.GetMouseButtonDown(0)&& GUIUtility.hotControl == 0)
     {
     	ammo--;
+    	camera.main.GetComponent.<GameGUI>().ammo = this.ammo;
         // Create a new bullet
         var nBullet:OTSprite = OT.CreateSprite("bullet");
         // Set bullet's position at approximately the gun's shooting barrel
