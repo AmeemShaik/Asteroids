@@ -125,7 +125,7 @@ function Initialize()
 		}
 	}
 
-    var correctAnswer:int = parseInt(answer);
+    var correctAnswer:int = parseInt(answer)-1;
     for(var i = 0; i < numAsteroids; i++){
 	   	var a:OTAnimatingSprite = RandomBlock(OT.view.worldRect, 0.6f, 1.2f, null);
 	   	if(i<4){

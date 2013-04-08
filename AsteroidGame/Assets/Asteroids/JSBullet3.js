@@ -106,9 +106,41 @@ public function OnCollision(owner:OTObject)
         Destroy(obj.GetComponent.<JSAsteroid3>().textObj);
         app.Explode(owner.collisionObject, this);
         if(obj.GetComponent.<JSAsteroid3>().isCorrect){
-			Camera.main.GetComponent.<GameGUI>().nextQuestion();
-			Camera.main.GetComponent.<JSExample3>().Initialize();
-		}
+	         Camera.main.GetComponent.<GameGUI>().answeredQuestion = 0;
+
+   			 Camera.main.GetComponent.<GameGUI>().showComment = true;
+
+         nextQ();
+  }else{
+   if(obj.GetComponent.<JSAsteroid3>().textObj != null){
+    var asteroidMesh = obj.GetComponent.<JSAsteroid3>().textObj.GetComponent(TextMesh) as TextMesh;
+    var s = asteroidMesh.text as String;
+    var aQ : int;
+    switch(s)
+    {
+    case "A":
+     aQ = 1;
+     break;
+    case "B":
+     aQ = 2;
+     break;
+    case "C":
+     aQ = 3;
+     break;
+    case "D":
+     aQ = 4;
+     break;
+    }
+        Camera.main.GetComponent.<GameGUI>().answeredQuestion = aQ;
+
+    Camera.main.GetComponent.<GameGUI>().showComment = true;
+   }
+  }
 
     }
+}
+
+function nextQ(){
+ Camera.main.GetComponent.<GameGUI>().nextQuestion();
+ Camera.main.GetComponent.<JSExample3>().Initialize();
 }
