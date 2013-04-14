@@ -67,6 +67,7 @@ function OnGUI() {
 			}
 		GUILayout.EndHorizontal();
 		//GUILayout.Space(20);
+		/*
 		GUILayout.BeginHorizontal();
 			GUILayout.BeginVertical();
 			GUILayout.Label("5/10");
@@ -81,8 +82,9 @@ function OnGUI() {
 				GUI.DrawTexture(theRect, progressBG); //Replace questionImage with progressbar texture
 			GUILayout.EndVertical();
 		GUILayout.EndHorizontal();
+		*/
 		//GUILayout.FlexibleSpace();
-		//GUILayout.Space(20);
+		GUILayout.Space(20);
 		GUILayout.BeginHorizontal(); //Second horizontal has ball ammo
 			//GUILayout.BeginVertical();
 				GUILayout.BeginVertical();
