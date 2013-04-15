@@ -109,10 +109,9 @@ function OnGUI() {
 	  	if(answeredQuestion == 0){
 	  	  if(GUILayout.Button("Correct Answer!", style, GUILayout.Height(Screen.height*.85))){
 		  	showComment=false;
-		  }
+		  } 
 		}
 		else if(eval("answer"+answeredQuestion+"comment")!=null){
-	  		Debug.Log("answer"+answeredQuestion+"comment");
 		  	if(GUILayout.Button("Wrong Answer! \n" + eval("answer"+answeredQuestion+"comment"), style, GUILayout.Height(Screen.height*.85))){
 		   		showComment=false;
 			}

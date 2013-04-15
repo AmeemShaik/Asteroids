@@ -85,8 +85,12 @@ function Initialize()
 	for(var j = 0; j < objects.length; j++){
 			OT.DestroyObject(objects[j]);
 	}
-	
-	camera.main.GetComponent.<GameGUI>().ammo = this.ammo;
+	for(var c in Camera.allCameras){
+		if(c.gameObject.name == "QuestionPanel"){
+			c.GetComponent.<GameGUI>().ammo = this.ammo;
+		}
+	}
+	//camera.main.GetComponent.<GameGUI>().ammo = this.ammo;
 	
     // Get reference to gun animation sprite
     gun = OT.ObjectByName("gun") as OTAnimatingSprite;
@@ -211,7 +215,11 @@ function Update () {
     {   
     	audio.PlayOneShot(laserSFX);
     	ammo--;
-    	camera.main.GetComponent.<GameGUI>().ammo = this.ammo;
+    	for(var c in Camera.allCameras){
+			if(c.gameObject.name == "QuestionPanel"){
+				c.GetComponent.<GameGUI>().ammo = this.ammo;
+			}
+		}
         // Create a new bullet
         var nBullet:OTSprite = OT.CreateSprite("bullet");
         // Set bullet's position at approximately the gun's shooting barrel
@@ -220,8 +228,13 @@ function Update () {
         // Play the gun's shooting animation frameset once
         gun.PlayOnce("shoot");
     }
+    
     if(ammo == 0){
-    	Camera.main.GetComponent.<GameGUI>().nextQuestion();
+    	for(var c in Camera.allCameras){
+			if(c.gameObject.name == "QuestionPanel"){
+				c.GetComponent.<GameGUI>().nextQuestion();
+			}
+		}
 		Initialize();
     }
 

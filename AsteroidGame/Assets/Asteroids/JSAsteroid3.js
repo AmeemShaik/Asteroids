@@ -61,7 +61,7 @@ function Update () {
     sprite.rotation += 30 * Time.deltaTime;
     // If the asteroid is smaller than 30 pixels lets auto shrink it
     if (sprite.size.x < 50 || sprite.size.y < 50)
-    {
+    { 
 		sprite.Stop();
 		sprite.depth = 100;
 		sprite.frameIndex = 0;

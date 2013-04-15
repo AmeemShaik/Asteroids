@@ -103,11 +103,13 @@ public function OnCollision(owner:OTObject)
         Destroy(obj.GetComponent.<JSAsteroid3>().textObj);  
         app.Explode(owner.collisionObject, this, true);
         if(obj.GetComponent.<JSAsteroid3>().isCorrect){
-	         Camera.main.GetComponent.<GameGUI>().answeredQuestion = 0;
-
-   			 Camera.main.GetComponent.<GameGUI>().showComment = true;
-
-         nextQ();
+		for(var c in Camera.allCameras){
+			if(c.gameObject.name == "QuestionPanel"){
+				c.GetComponent.<GameGUI>().answeredQuestion = 0;
+				c.GetComponent.<GameGUI>().showComment = true;
+			}
+		}
+        nextQ();
   }else{
 	if(obj.GetComponent.<JSAsteroid3>().textObj != null){
 	    var asteroidMesh = obj.GetComponent.<JSAsteroid3>().textObj.GetComponent(TextMesh) as TextMesh;
@@ -128,14 +130,22 @@ public function OnCollision(owner:OTObject)
 	     aQ = 4;
 	     break;
 	    }
-        Camera.main.GetComponent.<GameGUI>().answeredQuestion = aQ;
-    	Camera.main.GetComponent.<GameGUI>().showComment = true;
+	    for(var c in Camera.allCameras){
+		if(c.gameObject.name == "QuestionPanel"){
+				c.GetComponent.<GameGUI>().answeredQuestion = aQ;
+				c.GetComponent.<GameGUI>().showComment = true;
+			}
+		}
 	}
    }
   }
 }
 
 function nextQ(){
- Camera.main.GetComponent.<GameGUI>().nextQuestion();
- Camera.main.GetComponent.<JSExample3>().Initialize();
+	for(var c in Camera.allCameras){
+		if(c.gameObject.name == "QuestionPanel"){
+			c.GetComponent.<GameGUI>().nextQuestion();
+		}
+	}
+	Camera.main.GetComponent.<JSExample3>().Initialize();
 }
