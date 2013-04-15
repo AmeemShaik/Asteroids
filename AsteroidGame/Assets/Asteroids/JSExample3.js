@@ -26,6 +26,9 @@ private var initialized:boolean = false;        // initialization notifier
 private var dp:int = 0;
 public var currentProblem;
 public var ammo:int;
+public var explosionSFX : AudioClip;
+public var laserSFX : AudioClip;
+
 
 function RandomBlock(r:Rect, min:Number, max:Number, o:OTObject)
 {
@@ -75,6 +78,8 @@ function CreateObjectPools()
 // application initialization
 function Initialize()
 {
+	explosionSFX = Resources.Load("explosion");
+	laserSFX = Resources.Load("laser");
 	ammo = PlayerPrefs.GetInt("ammo");
 	var objects = GameObject.FindGameObjectsWithTag("Finish");
 	for(var j = 0; j < objects.length; j++){
@@ -151,8 +156,11 @@ function Initialize()
 }
 
 // This method will explode an asteroid
-public function Explode(o:OTObject, bullet:JSBullet3)
+public function Explode(o:OTObject, bullet:JSBullet3, sound:boolean)
 {
+	if(sound && explosionSFX.isReadyToPlay){
+		audio.PlayOneShot(explosionSFX, 0.2f);
+	}
     // Determine how many debree has to be be created
     var blocks:int = 2 + Mathf.Floor(Random.value * 2);
     // Create debree
@@ -174,7 +182,7 @@ public function Explode(o:OTObject, bullet:JSBullet3)
         // Recusively explode 2 asteroids if they are big enough, to get a nice
         // exploding debree effect.
         if (b < 2 && a.size.x > 30)
-            Explode(a, bullet);
+            Explode(a, bullet, false);
     }
     // Notify that this asteroid has to be destroyed
     OT.DestroyObject(o);
@@ -200,7 +208,8 @@ function Update () {
 
     // check if the left mouse button was clicked
     if (Input.GetMouseButtonDown(0)&& GUIUtility.hotControl == 0)
-    {
+    {   
+    	audio.PlayOneShot(laserSFX);
     	ammo--;
     	camera.main.GetComponent.<GameGUI>().ammo = this.ammo;
         // Create a new bullet

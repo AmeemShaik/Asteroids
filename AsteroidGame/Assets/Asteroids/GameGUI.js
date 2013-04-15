@@ -35,9 +35,9 @@ function Awake(){
 	ammoImage = Instantiate(Resources.Load("shotBall"));
 	progressBG = Instantiate(Resources.Load("progressBG"));
 	progressFG = Instantiate(Resources.Load("progressFG"));
-		style.normal.background = MakeTex(1, 1, Color.black);
-  style.normal.textColor = Color.white;
-  style.alignment = TextAnchor.MiddleCenter;
+	style.normal.background = MakeTex(1, 1, Color.black);
+  	style.normal.textColor = Color.white;
+  	style.alignment = TextAnchor.MiddleCenter;
 
 }
 
@@ -67,10 +67,10 @@ function OnGUI() {
 			}
 		GUILayout.EndHorizontal();
 		//GUILayout.Space(20);
-		/*
+		
 		GUILayout.BeginHorizontal();
 			GUILayout.BeginVertical();
-			GUILayout.Label("5/10");
+			//GUILayout.Label("5/10");
 				GUILayout.BeginVertical();
 					GUILayout.Label("");
 				GUILayout.EndVertical();
@@ -80,9 +80,10 @@ function OnGUI() {
 				theRect.height = ammoImage.height*3;
 				//GUI.Box(theRect, progressBG);
 				GUI.DrawTexture(theRect, progressBG); //Replace questionImage with progressbar texture
+				GUI.DrawTexture(new Rect(theRect.x+10, theRect.y+10, theRect.width*.75, theRect.height*.75), progressFG);
 			GUILayout.EndVertical();
 		GUILayout.EndHorizontal();
-		*/
+		
 		//GUILayout.FlexibleSpace();
 		GUILayout.Space(20);
 		GUILayout.BeginHorizontal(); //Second horizontal has ball ammo
@@ -102,24 +103,22 @@ function OnGUI() {
 		GUILayout.EndArea();
 	}
 	
-	 if(showComment){
-  //GUI.Box(Rect(0, Screen.height*.15, Screen.width, Screen.height*.85), answer1comment,style);
-  
-  GUILayout.BeginArea(Rect(0, Screen.height*.15, Screen.width, Screen.height));
-  if(answeredQuestion == 0){
-  	  if(GUILayout.Button("Correct Answer!", style, GUILayout.Height(Screen.height*.85))){
-	   showComment=false;
-	  }
-
-  	}else if(eval("answer"+answeredQuestion+"comment")!=null){
-  	Debug.Log("answer"+answeredQuestion+"comment");
-	  if(GUILayout.Button("Wrong Answer! \n" + eval("answer"+answeredQuestion+"comment"), style, GUILayout.Height(Screen.height*.85))){
-	   showComment=false;
-	  }
-  }
-  GUILayout.EndArea();
- }
-	
+	if(showComment){
+	  	//GUI.Box(Rect(0, Screen.height*.15, Screen.width, Screen.height*.85), answer1comment,style);
+	  	GUILayout.BeginArea(Rect(0, Screen.height*.15, Screen.width, Screen.height));
+	  	if(answeredQuestion == 0){
+	  	  if(GUILayout.Button("Correct Answer!", style, GUILayout.Height(Screen.height*.85))){
+		  	showComment=false;
+		  }
+		}
+		else if(eval("answer"+answeredQuestion+"comment")!=null){
+	  		Debug.Log("answer"+answeredQuestion+"comment");
+		  	if(GUILayout.Button("Wrong Answer! \n" + eval("answer"+answeredQuestion+"comment"), style, GUILayout.Height(Screen.height*.85))){
+		   		showComment=false;
+			}
+		}
+	  	GUILayout.EndArea();
+ 	}
 }
 
 function MakeTex(width: int, height: int, col: Color) {
@@ -142,6 +141,7 @@ function loadQuestions(){
 	questionsList = xmlDoc.GetElementsByTagName("question");
 	nextQuestion();
 }
+
 function nextQuestion(){
 	currentQuestion++;
 	problem = questionsList[currentQuestion] as XmlNode;

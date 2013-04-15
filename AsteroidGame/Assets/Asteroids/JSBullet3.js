@@ -17,16 +17,13 @@
 // Bullet behaviour class
 // ------------------------------------------------------------------------
 
-
 private var sprite:OTSprite;                            // this bullet's sprite class
 private var app:JSExample3;                              // main application class
 
 private var speed:int = 1000;                           // bullet speed
 private var ignoreCollisions:Number = 0;                // ignore debree collisions time
 
-private var debree:Array = new Array();                 // created debree list 
-
-
+private var debree:Array = new Array();                 // created debree list
 
 // Use this for initialization
 function Start () {
@@ -84,7 +81,7 @@ public function AddDebree(debreeObject:OTAnimatingSprite)
 // !IMPORTANT - This sprite's collidable setting has to be true otherwide
 // collision delegates will not be called
 public function OnCollision(owner:OTObject)
-{
+{   	        
     // check if the asteroid we are colliding with is not in our
     // ignore debree list.		
 	var found:boolean = false;
@@ -103,8 +100,8 @@ public function OnCollision(owner:OTObject)
 		var name = owner.collisionObject.name;
 		var obj:GameObject = GameObject.Find(name);
 		OT.DestroyObject(sprite);
-        Destroy(obj.GetComponent.<JSAsteroid3>().textObj);
-        app.Explode(owner.collisionObject, this);
+        Destroy(obj.GetComponent.<JSAsteroid3>().textObj);  
+        app.Explode(owner.collisionObject, this, true);
         if(obj.GetComponent.<JSAsteroid3>().isCorrect){
 	         Camera.main.GetComponent.<GameGUI>().answeredQuestion = 0;
 
@@ -112,32 +109,30 @@ public function OnCollision(owner:OTObject)
 
          nextQ();
   }else{
-   if(obj.GetComponent.<JSAsteroid3>().textObj != null){
-    var asteroidMesh = obj.GetComponent.<JSAsteroid3>().textObj.GetComponent(TextMesh) as TextMesh;
-    var s = asteroidMesh.text as String;
-    var aQ : int;
-    switch(s)
-    {
-    case "A":
-     aQ = 1;
-     break;
-    case "B":
-     aQ = 2;
-     break;
-    case "C":
-     aQ = 3;
-     break;
-    case "D":
-     aQ = 4;
-     break;
-    }
+	if(obj.GetComponent.<JSAsteroid3>().textObj != null){
+	    var asteroidMesh = obj.GetComponent.<JSAsteroid3>().textObj.GetComponent(TextMesh) as TextMesh;
+	    var s = asteroidMesh.text as String;
+	    var aQ : int;
+	    switch(s)
+	    {
+	    case "A":
+	     aQ = 1;
+	     break;
+	    case "B":
+	     aQ = 2;
+	     break;
+	    case "C":
+	     aQ = 3;
+	     break;
+	    case "D":
+	     aQ = 4;
+	     break;
+	    }
         Camera.main.GetComponent.<GameGUI>().answeredQuestion = aQ;
-
-    Camera.main.GetComponent.<GameGUI>().showComment = true;
+    	Camera.main.GetComponent.<GameGUI>().showComment = true;
+	}
    }
   }
-
-    }
 }
 
 function nextQ(){

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <question_set xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<question>
-		<problem>How many calories are in 1 serving of this burito?</problem>
+		<problem>How many calories are in 1 serving of this burrito?</problem>
 		<image>Burito Nutrition Label.png</image>
 		<answer1>120</answer1>
 		<answer1comment>correct</answer1comment>

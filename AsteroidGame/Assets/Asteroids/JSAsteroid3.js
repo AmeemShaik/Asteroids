@@ -29,6 +29,7 @@ var leftBorder;
 var rightBorder;
 var bottomBorder;
 var topBorder;
+
 // Use this for initialization
 function Start () {
     // get sprite class of this asteroid
