@@ -133,6 +133,20 @@ public function OnCollision(owner:OTObject)
 	    for(var c in Camera.allCameras){
 		if(c.gameObject.name == "QuestionPanel"){
 				c.GetComponent.<GameGUI>().answeredQuestion = aQ;
+				switch(aQ){
+					case 1:
+						c.GetComponent.<GameGUI>().answeredQuestionComment = c.GetComponent.<GameGUI>().answer1comment;
+						break;
+					case 2:
+						c.GetComponent.<GameGUI>().answeredQuestionComment = c.GetComponent.<GameGUI>().answer2comment;
+						break;
+					case 3:
+						c.GetComponent.<GameGUI>().answeredQuestionComment = c.GetComponent.<GameGUI>().answer3comment;
+						break;
+					case 4:
+						c.GetComponent.<GameGUI>().answeredQuestionComment = c.GetComponent.<GameGUI>().answer4comment;
+						break;
+					}
 				c.GetComponent.<GameGUI>().showComment = true;
 			}
 		}

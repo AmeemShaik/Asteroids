@@ -21,6 +21,7 @@ public var answer3; public var answer3comment;
 public var answer4; public var answer4comment;
 public var correctAnswer; public var difficulty;
 public var ammo;
+public var answeredQuestionComment;
 
 function Awake(){
 	currentQuestion = -1;
@@ -118,8 +119,11 @@ function OnGUI() {
 		  	showComment=false;
 		  } 
 		}
-		else if(eval("answer"+answeredQuestion+"comment")!=null){
-		  	if(GUILayout.Button("Wrong Answer! \n" + eval("answer"+answeredQuestion+"comment"), style, GUILayout.Height(Screen.height*.85))){
+		else{
+			if(answeredQuestionComment==null){
+				answeredQuestionComment = "";
+			}
+		  	if(GUILayout.Button("Wrong Answer! \n" + answeredQuestionComment, style, GUILayout.Height(Screen.height*.85))){
 		   		showComment=false;
 			}
 		}
