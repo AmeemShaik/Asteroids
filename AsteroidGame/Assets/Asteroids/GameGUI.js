@@ -24,6 +24,7 @@ public var answer4; public var answer4comment;
 public var correctAnswer; public var difficulty;
 public var ammo;
 public var answeredQuestionComment;
+public var ammoEnd = false;
 
 function Awake(){
 	currentQuestion = -1;
@@ -122,7 +123,20 @@ function OnGUI() {
 		   		showComment=false;
 			}
 		}
-	  	GUILayout.EndArea();
+		if(Camera.main.GetComponent.<JSExample3>().ammo == 0){
+			nextQuestion();
+			Camera.main.GetComponent.<JSExample3>().Initialize();
+		}
+		GUILayout.EndArea();
+ 	}
+ 	else if(ammoEnd){
+ 		GUILayout.BeginArea(Rect(0, Screen.height*.15, Screen.width, Screen.height));
+ 		if(GUILayout.Button("No ammo left! \n", style, GUILayout.Height(Screen.height*.85))){
+ 			nextQuestion();
+	   		ammoEnd=false;
+	   		Camera.main.GetComponent.<JSExample3>().Initialize();
+		}
+		GUILayout.EndArea();
  	}
 }
 
@@ -140,7 +154,7 @@ function MakeTex(width: int, height: int, col: Color) {
 }
 
 function loadQuestions(){
-	var xmlFile:TextAsset = Resources.Load("QuestionsXML") as TextAsset;
+	var xmlFile:TextAsset = Resources.Load("testQuestions") as TextAsset;
 	var xmlDoc = new XmlDocument();
 	xmlDoc.LoadXml(xmlFile.text);
 	questionsList = xmlDoc.GetElementsByTagName("question");

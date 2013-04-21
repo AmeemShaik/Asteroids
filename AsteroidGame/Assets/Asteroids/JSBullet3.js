@@ -24,7 +24,12 @@ private var speed:int = 1000;                           // bullet speed
 private var ignoreCollisions:Number = 0;                // ignore debree collisions time
 
 private var debree:Array = new Array();                 // created debree list
-
+private var alive = true;
+private var leftBorder;
+private var rightBorder;
+private var topBorder;
+private var bottomBorder;
+private var ammo;
 // Use this for initialization
 function Start () {
     // Get application main class
@@ -37,6 +42,16 @@ function Start () {
 	// functions will be asutomaticly called when an event takes place.
 	// HINT : This technique can be used within a C# class as well.
     sprite.InitCallBacks(this);
+    var dist = (transform.position - Camera.main.transform.position).z;
+    leftBorder = Camera.main.ViewportToWorldPoint(Vector3(0,0,dist)).x;
+	rightBorder = Camera.main.ViewportToWorldPoint(Vector3(1,0,dist)).x;
+	topBorder = Camera.main.ViewportToWorldPoint(Vector3(0,0,dist)).y;
+	bottomBorder = Camera.main.ViewportToWorldPoint(Vector3(0,1,dist)).y;
+	for(var c in Camera.allCameras){
+		if(c.gameObject.name == "QuestionPanel"){
+			ammo = c.GetComponent.<GameGUI>().ammo;
+		}
+	}
 }
 
 // Update is called once per frame
@@ -57,15 +72,16 @@ function Update () {
     // Update bullet position
     sprite.position += sprite.yVector * speed * Time.deltaTime;
     // Destroy bullet as it moves out of view
-    var dist = (transform.position - Camera.main.transform.position).z;
-    var leftBorder = Camera.main.ViewportToWorldPoint(Vector3(0,0,dist)).x;
-	var rightBorder = Camera.main.ViewportToWorldPoint(Vector3(1,0,dist)).x;
-	var topBorder = Camera.main.ViewportToWorldPoint(Vector3(0,0,dist)).y;
-	var bottomBorder = Camera.main.ViewportToWorldPoint(Vector3(1,0,dist)).x;
-	
-	/*if(sprite.position.x<leftBorder || sprite.position.x > rightBorder || sprite.position.y<(topBorder) || sprite.position.y>bottomBorder){
-		sprite.position = sprite.yVector*-1;
-	}*/
+
+	if(ammo==0&&(sprite.position.x<leftBorder || sprite.position.x > rightBorder || sprite.position.y<(topBorder) || sprite.position.y>bottomBorder)){
+		for(var c in Camera.allCameras){
+			if(c.gameObject.name == "QuestionPanel"){
+				c.GetComponent.<GameGUI>().ammoEnd = true;
+			}
+		}
+		Destroy(sprite);
+		Destroy(this);
+	}
 }
 
 // This method will add a debree object to the ignore debree list.
@@ -151,6 +167,17 @@ public function OnCollision(owner:OTObject)
 			}
 		}
 	}
+	else{
+		if(ammo==0){
+			for(var c in Camera.allCameras){
+				if(c.gameObject.name == "QuestionPanel"){
+					c.GetComponent.<GameGUI>().ammoEnd = true;
+				}
+			}
+			Destroy(sprite);
+			Destroy(this);	
+		}
+	  }
    }
   }
 }

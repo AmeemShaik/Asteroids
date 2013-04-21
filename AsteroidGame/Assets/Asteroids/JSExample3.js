@@ -210,16 +210,6 @@ function Update () {
         // Play the gun's shooting animation frameset once
         gun.PlayOnce("shoot");
     }
-    
-    if(ammo == 0){
-    	for(var c in Camera.allCameras){
-			if(c.gameObject.name == "QuestionPanel"){
-				c.GetComponent.<GameGUI>().nextQuestion();
-			}
-		}
-		Initialize();
-    }
-
    /* // If we have less than 15 objects within Orthello we will create a random asteroid
     if (OT.objectCount <= 12)
         RandomBlock(OT.view.worldRect, 0.6f, 1.2f, null);     */
