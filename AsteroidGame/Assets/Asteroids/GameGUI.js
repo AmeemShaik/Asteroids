@@ -80,7 +80,7 @@ function OnGUI() {
 				GUILayout.FlexibleSpace();
 				var theRect = GUILayoutUtility.GetLastRect();
 				theRect.width = ammoImage.width;
-				theRect.height = ammoImage.height*3;
+				theRect.height = ammoImage.height*2.5;
 				progress = Camera.main.GetComponent.<JSExample3>().progress;
 				GUI.DrawTexture(new Rect(theRect.x, theRect.y, theRect.width, theRect.height+theRect.height/10), progressBG);
 				GUI.DrawTexture(new Rect(theRect.x+10, theRect.y+10, theRect.width*.5, theRect.height), progressMG);
