@@ -26,6 +26,7 @@ private var initialized:boolean = false;        // initialization notifier
 private var dp:int = 0;
 public var currentProblem;
 public var ammo:int;
+public var progress:int;
 public var explosionSFX : AudioClip;
 public var laserSFX : AudioClip;
 
@@ -215,6 +216,7 @@ function Update () {
     {   
     	audio.PlayOneShot(laserSFX);
     	ammo--;
+    	progress++;
     	for(var c in Camera.allCameras){
 			if(c.gameObject.name == "QuestionPanel"){
 				c.GetComponent.<GameGUI>().ammo = this.ammo;

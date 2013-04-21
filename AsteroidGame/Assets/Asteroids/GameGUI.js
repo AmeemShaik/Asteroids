@@ -83,10 +83,11 @@ function OnGUI() {
 				theRect.height = ammoImage.height*3;
 				//GUI.Box(theRect, progressBG);
 				//GUI.DrawTexture(theRect, progressBG); //Replace questionImage with progressbar texture
+				progress = Camera.main.GetComponent.<JSExample3>().progress;
 				if(progress/10 <= 1){
 					GUI.DrawTexture(new Rect(theRect.x+10, theRect.y+10, theRect.width*.75, theRect.height*(progress/10)), progressFG);
 				}
-				else{progress = 0;}
+				else{Camera.main.GetComponent.<JSExample3>().progress = 0;}
 				GUILayout.EndVertical();
 		GUILayout.EndHorizontal();
 		
