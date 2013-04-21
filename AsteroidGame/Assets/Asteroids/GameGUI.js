@@ -8,10 +8,10 @@ public var popupImage : boolean = false;
 public var showComment : boolean = false;
 public var currentQuestion;
 public var answeredQuestion : int;
-public var buttonHeight:int = 50;
+public var buttonHeight:int = 75;
 public var buttonWidth:int = 100;
 public var problem;
-public var progress;
+public var progress : float;
 public var sWidth = Screen.width;
 public var sHeight = Screen.height;
 public var question; public var image; 
@@ -32,9 +32,10 @@ function Awake(){
 		currentImage = currentImage.Substring(0, currentImage.length-4);
 		questionImage = Instantiate(Resources.Load(currentImage));
 	}
-	ammoImage = Instantiate(Resources.Load("shotBall"));
+	ammoImage = Instantiate(Resources.Load("missile"));
 	progressBG = Instantiate(Resources.Load("progressBG"));
 	progressFG = Instantiate(Resources.Load("progressFG"));
+	progress = 0;
 	style.normal.background = MakeTex(1, 1, Color.black);
   	style.normal.textColor = Color.white;
   	style.alignment = TextAnchor.MiddleCenter;
@@ -62,8 +63,9 @@ function OnGUI() {
 				GUILayout.EndHorizontal();
 			GUILayout.EndVertical();
 			if(GUILayout.Button(questionImage, GUILayout.Height(buttonHeight),GUILayout.Width(buttonWidth))){
-				if(popupImage){popupImage = false;}
-				else{popupImage = true;}
+				//if(popupImage){popupImage = false;}
+				//else{popupImage = true;}
+				progress++;
 			}
 		GUILayout.EndHorizontal();
 		//GUILayout.Space(20);
@@ -72,16 +74,20 @@ function OnGUI() {
 			GUILayout.BeginVertical();
 			//GUILayout.Label("5/10");
 				GUILayout.BeginVertical();
-					GUILayout.Label("");
+					GUILayout.Label("Warp");
+					GUILayout.Label("Power");
 				GUILayout.EndVertical();
 				GUILayout.FlexibleSpace();
 				var theRect = GUILayoutUtility.GetLastRect();
 				theRect.width = ammoImage.width;
 				theRect.height = ammoImage.height*3;
 				//GUI.Box(theRect, progressBG);
-				GUI.DrawTexture(theRect, progressBG); //Replace questionImage with progressbar texture
-				GUI.DrawTexture(new Rect(theRect.x+10, theRect.y+10, theRect.width*.75, theRect.height*.75), progressFG);
-			GUILayout.EndVertical();
+				//GUI.DrawTexture(theRect, progressBG); //Replace questionImage with progressbar texture
+				if(progress/10 <= 1){
+					GUI.DrawTexture(new Rect(theRect.x+10, theRect.y+10, theRect.width*.75, theRect.height*(progress/10)), progressFG);
+				}
+				else{progress = 0;}
+				GUILayout.EndVertical();
 		GUILayout.EndHorizontal();
 		
 		//GUILayout.FlexibleSpace();
