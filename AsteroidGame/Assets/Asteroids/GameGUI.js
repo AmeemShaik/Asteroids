@@ -3,7 +3,9 @@ public var questionsList:XmlNodeList;
 public var style = new GUIStyle();
 public var questionImage : Texture2D;
 public var ammoImage : Texture2D;
-public var progressBG : Texture2D; public var progressFG : Texture2D;
+public var progressBG : Texture2D; 
+public var progressMG : Texture2D;
+public var progressFG : Texture2D;
 public var popupImage : boolean = false;
 public var showComment : boolean = false;
 public var currentQuestion;
@@ -35,6 +37,7 @@ function Awake(){
 	}
 	ammoImage = Instantiate(Resources.Load("missile"));
 	progressBG = Instantiate(Resources.Load("progressBG"));
+	progressMG = Instantiate(Resources.Load("progressMG"));
 	progressFG = Instantiate(Resources.Load("progressFG"));
 	progress = 0;
 	style.normal.background = MakeTex(1, 1, Color.black);
@@ -64,16 +67,12 @@ function OnGUI() {
 				GUILayout.EndHorizontal();
 			GUILayout.EndVertical();
 			if(GUILayout.Button(questionImage, GUILayout.Height(buttonHeight),GUILayout.Width(buttonWidth))){
-				//if(popupImage){popupImage = false;}
-				//else{popupImage = true;}
-				progress++;
+				if(popupImage){popupImage = false;}
+				else{popupImage = true;}
 			}
-		GUILayout.EndHorizontal();
-		//GUILayout.Space(20);
-		
+		GUILayout.EndHorizontal();		
 		GUILayout.BeginHorizontal();
 			GUILayout.BeginVertical();
-			//GUILayout.Label("5/10");
 				GUILayout.BeginVertical();
 					GUILayout.Label("Warp");
 					GUILayout.Label("Power");
@@ -82,26 +81,22 @@ function OnGUI() {
 				var theRect = GUILayoutUtility.GetLastRect();
 				theRect.width = ammoImage.width;
 				theRect.height = ammoImage.height*3;
-				//GUI.Box(theRect, progressBG);
-				//GUI.DrawTexture(theRect, progressBG); //Replace questionImage with progressbar texture
 				progress = Camera.main.GetComponent.<JSExample3>().progress;
+				GUI.DrawTexture(new Rect(theRect.x, theRect.y, theRect.width, theRect.height+theRect.height/10), progressBG);
+				GUI.DrawTexture(new Rect(theRect.x+10, theRect.y+10, theRect.width*.5, theRect.height), progressMG);
 				if(progress/10 <= 1){
-					GUI.DrawTexture(new Rect(theRect.x+10, theRect.y+10, theRect.width*.75, theRect.height*(progress/10)), progressFG);
+					GUI.DrawTexture(new Rect(theRect.x+10, theRect.y+10, theRect.width*.5, theRect.height*(progress/10)), progressFG);
 				}
 				else{Camera.main.GetComponent.<JSExample3>().progress = 0;}
 				GUILayout.EndVertical();
 		GUILayout.EndHorizontal();
-		
-		//GUILayout.FlexibleSpace();
 		GUILayout.Space(20);
-		GUILayout.BeginHorizontal(); //Second horizontal has ball ammo
-			//GUILayout.BeginVertical();
+		GUILayout.BeginHorizontal(); //Second horizontal contains ammo
 				GUILayout.BeginVertical();
 					for(var i=0; i< ammo; i++){
 						GUILayout.Label(ammoImage);
 					}
 				GUILayout.EndVertical();
-				//GUILayout.FlexibleSpace();
 		GUILayout.EndHorizontal();
 	GUILayout.EndArea();
 	
