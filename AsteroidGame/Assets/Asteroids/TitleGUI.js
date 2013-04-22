@@ -4,17 +4,17 @@ var buttonHeight:int = 50;
 var spacing:int = 100;
 var titleMenu : boolean = true;
 var popupDifficulty : boolean = false;
+var enterName : boolean = false;
 var difficulty;
 public var ammo;
+public var playerName = "";
 
 function OnGUI() {
 	if(titleMenu){
 		GUILayout.BeginArea(Rect(Screen.width/2 - buttonWidth/2, Screen.height/2 - 200, buttonWidth, 400));
 			if(GUILayout.Button("Start Game", GUILayout.Height(buttonHeight))){
-				popupDifficulty = true;
+				enterName = true;
 				titleMenu = false;
-				//if(popupDifficulty){popupDifficulty = false;}
-				//else{popupDifficulty = true;}
 			}
 			GUILayout.Space(spacing);
 			if(GUILayout.Button("Tutorial", GUILayout.Height(buttonHeight))){
@@ -58,6 +58,20 @@ function OnGUI() {
 			popupDifficulty = false;
 			titleMenu = true;
 		}
+		GUILayout.EndArea();
+	}
+	
+	if(enterName){
+		GUILayout.BeginArea(new Rect(Screen.width/2-buttonWidth/2, Screen.height/2-buttonHeight/2, buttonWidth, buttonHeight*5));
+			GUILayout.BeginVertical();
+				GUILayout.Label("Enter your name, Space Cadet.");
+				playerName = GUILayout.TextArea(playerName, 20);
+				if(GUILayout.Button("Go", GUILayout.Height(buttonHeight))){
+					PlayerPrefs.SetString("playerName", playerName);
+					popupDifficulty = true;
+					enterName = false;
+				}
+			GUILayout.EndVertical();
 		GUILayout.EndArea();
 	}
 }

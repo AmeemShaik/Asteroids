@@ -27,10 +27,14 @@ public var answeredQuestionComment;
 public var ammoEnd = false;
 public var timeSpent = 0.0f;
 var isWorkingOnQuestion = true;
+public var playerName;
+
+
 function Awake(){
 	currentQuestion = -1;
 	loadQuestions();
 	Camera.main.GetComponent.<JSExample3>().currentProblem = problem;
+	playerName = PlayerPrefs.GetString("playerName");
 	
 	if(image != null){
 		var currentImage = image;
