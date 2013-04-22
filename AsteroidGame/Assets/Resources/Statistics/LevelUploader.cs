@@ -17,8 +17,7 @@ public class LevelUploader : MonoBehaviour
 	{
 		//making a dummy xml level file
 		XmlDocument map = new XmlDocument();
-		map.LoadXml("<level></level>");
-	   
+		map.Load ("Assets/Resources/Statistics/Stats.xml");
 		//converting the xml to bytes to be ready for upload
 		byte[] levelData =Encoding.UTF8.GetBytes(map.OuterXml);
 	   

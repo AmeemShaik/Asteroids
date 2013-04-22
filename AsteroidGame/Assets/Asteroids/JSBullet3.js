@@ -30,8 +30,16 @@ private var rightBorder;
 private var topBorder;
 private var bottomBorder;
 private var ammo;
+
+var doc;
+var element;
 // Use this for initialization
 function Start () {
+	doc = new XmlDocument();
+	doc.Load("Assets/Resources/Statistics/Stats.xml");
+    element = doc.CreateElement("question");
+	populateStatistics();
+
     // Get application main class
     app = Camera.main.GetComponent("JSExample3");
     // Get this bullet's sprite class
@@ -119,12 +127,29 @@ public function OnCollision(owner:OTObject)
         Destroy(obj.GetComponent.<JSAsteroid3>().textObj);  
         app.Explode(owner.collisionObject, this, true);
         if(obj.GetComponent.<JSAsteroid3>().isCorrect){
-		for(var c in Camera.allCameras){
-			if(c.gameObject.name == "QuestionPanel"){
-				c.GetComponent.<GameGUI>().answeredQuestion = 0;
-				c.GetComponent.<GameGUI>().showComment = true;
+			for(var c in Camera.allCameras){
+				if(c.gameObject.name == "QuestionPanel"){
+					c.GetComponent.<GameGUI>().answeredQuestion = 0;
+					c.GetComponent.<GameGUI>().showComment = true;
+					c.GetComponent.<GameGUI>().isWorkingOnQuestion = false;
+														
+					//Populating ammo_remaining element for statistics
+					var innerEle3 = doc.CreateElement("ammo_remaining");
+					var ammo = c.GetComponent.<GameGUI>().ammo;
+					innerEle3.InnerText = ammo + "";
+					element.AppendChild(innerEle3);
+					
+					//Populating time spent element for statistics
+					var innerEle4 = doc.CreateElement("time_spent");
+					var rounded = Mathf.Round(c.GetComponent.<GameGUI>().timeSpent * 10)/10;
+					innerEle4.InnerText = rounded+"";
+					element.AppendChild(innerEle4);
+				}
 			}
-		}
+		//Populating correctly_answered element for statistics
+		var innerEle = doc.CreateElement("correctly_answered");
+		innerEle.InnerText = "yes";
+		element.AppendChild(innerEle);
         nextQ();
   }else{
 	if(obj.GetComponent.<JSAsteroid3>().textObj != null){
@@ -182,11 +207,37 @@ public function OnCollision(owner:OTObject)
   }
 }
 
-function nextQ(){
+function populateStatistics(){
 	for(var c in Camera.allCameras){
 		if(c.gameObject.name == "QuestionPanel"){
+			//Populating question_number element for statistics
+			var innerEle2 = doc.CreateElement("question_number");
+			var currQuestion = c.GetComponent.<GameGUI>().currentQuestion;
+			currQuestion++;
+			innerEle2.InnerText = currQuestion + "";
+			element.AppendChild(innerEle2);
+
+		}
+	}
+}
+
+function nextQ(){
+	//This function calls next question, so this is an appropriate 
+	//time to create a new question node in statistics
+	doc.GetElementsByTagName("responded")[0].AppendChild(element);
+	doc.Save("Assets/Resources/Statistics/Stats.xml");
+    element = doc.CreateElement("question");
+	
+	//Question Logic: go to next question
+	for(var c in Camera.allCameras){
+		if(c.gameObject.name == "QuestionPanel"){
+
+			
 			c.GetComponent.<GameGUI>().nextQuestion();
 		}
 	}
+	
 	Camera.main.GetComponent.<JSExample3>().Initialize();
+	populateStatistics();
+
 }

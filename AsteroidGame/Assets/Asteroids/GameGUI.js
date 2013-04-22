@@ -25,7 +25,8 @@ public var correctAnswer; public var difficulty;
 public var ammo;
 public var answeredQuestionComment;
 public var ammoEnd = false;
-
+public var timeSpent = 0.0f;
+var isWorkingOnQuestion = true;
 function Awake(){
 	currentQuestion = -1;
 	loadQuestions();
@@ -46,7 +47,12 @@ function Awake(){
   	style.alignment = TextAnchor.MiddleCenter;
 
 }
-
+function Update () {
+	if (isWorkingOnQuestion)
+		timeSpent += Time.deltaTime;
+		
+	//Debug.Log(isWorkingOnQuestion);
+}
 function OnGUI() {
 	GUI.contentColor = Color.white;
 	GUILayout.BeginArea (Rect (0,0,Screen.width,Screen.height));
@@ -112,6 +118,7 @@ function OnGUI() {
 	  	GUILayout.BeginArea(Rect(0, Screen.height*.15, Screen.width, Screen.height));
 	  	if(answeredQuestion == 0){
 	  	  if(GUILayout.Button("Correct Answer!", style, GUILayout.Height(Screen.height*.85))){
+	  	  	isWorkingOnQuestion=true;
 		  	showComment=false;
 		  } 
 		}
@@ -154,7 +161,7 @@ function MakeTex(width: int, height: int, col: Color) {
 }
 
 function loadQuestions(){
-	var xmlFile:TextAsset = Resources.Load("testQuestions") as TextAsset;
+	var xmlFile:TextAsset = Resources.Load("QuestionsXML") as TextAsset;
 	var xmlDoc = new XmlDocument();
 	xmlDoc.LoadXml(xmlFile.text);
 	questionsList = xmlDoc.GetElementsByTagName("question");
@@ -162,6 +169,8 @@ function loadQuestions(){
 }
 
 function nextQuestion(){
+	timeSpent = 0.0f;
+	//isWorkingOnQuestion=true;
 	currentQuestion++;
 	problem = questionsList[currentQuestion] as XmlNode;
 	if(problem.HasChildNodes){
