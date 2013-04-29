@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: b413f20f531da4b4e8d8b55970854cb6
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - questionImage: {instanceID: 0}
+  - ammoImage: {fileID: 2800000, guid: 18e6ec66f4b81c246b0c3edc57b65b3d, type: 3}
+  - progressBG: {fileID: 2800000, guid: c9535e2fbe228564e9105329167f0195, type: 3}
+  - progressFG: {fileID: 2800000, guid: e6ed4fc98f8cb57469ea3666807a04cd, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
