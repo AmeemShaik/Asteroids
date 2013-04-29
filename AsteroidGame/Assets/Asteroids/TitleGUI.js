@@ -1,7 +1,7 @@
 //var cubeRenderer:Renderer;
 var buttonWidth:int = 200;
-var buttonHeight:int = 50;
-var spacing:int = 100;
+var buttonHeight:int = 25;
+var spacing:int = 25;
 var titleMenu : boolean = true;
 var popupDifficulty : boolean = false;
 var enterName : boolean = false;
@@ -11,7 +11,7 @@ public var playerName = "";
 
 function OnGUI() {
 	if(titleMenu){
-		GUILayout.BeginArea(Rect(Screen.width/2 - buttonWidth/2, Screen.height/2 - 200, buttonWidth, 400));
+		GUILayout.BeginArea(Rect(Screen.width/2 - buttonWidth/2, Screen.height/2 - 200, buttonWidth, 500));
 			if(GUILayout.Button("Start Game", GUILayout.Height(buttonHeight))){
 				enterName = true;
 				titleMenu = false;
@@ -19,6 +19,10 @@ function OnGUI() {
 			GUILayout.Space(spacing);
 			if(GUILayout.Button("Tutorial", GUILayout.Height(buttonHeight))){
 				Application.LoadLevel("Tutorial");
+			}
+			GUILayout.Space(spacing);
+			if(GUILayout.Button("Submit Stats", GUILayout.Height(buttonHeight))){
+				//Do Something Sai
 			}
 			GUILayout.Space(spacing);
 			if(GUILayout.Button("Exit", GUILayout.Height(buttonHeight))){
@@ -65,13 +69,21 @@ function OnGUI() {
 		GUILayout.BeginArea(new Rect(Screen.width/2-buttonWidth/2, Screen.height/2-buttonHeight/2, buttonWidth, buttonHeight*5));
 			GUILayout.BeginVertical();
 				GUILayout.Label("Enter your name, Space Cadet.");
-				playerName = GUILayout.TextArea(playerName, 20);
+				playerName = GUILayout.TextArea(playerName, 25);
 				if(GUILayout.Button("Go", GUILayout.Height(buttonHeight))){
-					PlayerPrefs.SetString("playerName", playerName);
-					popupDifficulty = true;
-					enterName = false;
+					//if(isValid(playerName)){
+						PlayerPrefs.SetString("playerName", playerName);
+						popupDifficulty = true;
+						enterName = false;
+					//}
+					//else{
+					//	playerName = "Not valid. Try Again!";
+					//}
 				}
 			GUILayout.EndVertical();
 		GUILayout.EndArea();
 	}
 }
+
+//Checks if a string only contains letters and numbers
+//function isValid(str) {return /^\w+$/.test(str);}

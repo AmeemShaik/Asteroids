@@ -1,3 +1,21 @@
 <?xml version="1.0"?>
 <responded>
+  <question>
+    <question_number>1</question_number>
+    <ammo_remaining>2</ammo_remaining>
+    <time_spent>0.5</time_spent>
+    <correctly_answered>yes</correctly_answered>
+  </question>
+  <question>
+    <question_number>2</question_number>
+    <ammo_remaining>-17</ammo_remaining>
+    <time_spent>3.6</time_spent>
+    <correctly_answered>yes</correctly_answered>
+  </question>
+  <question>
+    <question_number>4</question_number>
+    <ammo_remaining>1</ammo_remaining>
+    <time_spent>0.4</time_spent>
+    <correctly_answered>yes</correctly_answered>
+  </question>
 </responded>
