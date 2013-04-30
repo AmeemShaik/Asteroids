@@ -12,6 +12,7 @@ public var playerName = "";
 function OnGUI() {
 	if(titleMenu){
 		GUILayout.BeginArea(Rect(Screen.width/2 - buttonWidth/2, Screen.height/2 - 200, buttonWidth, 500));
+			GUILayout.Space(spacing);
 			if(GUILayout.Button("Start Game", GUILayout.Height(buttonHeight))){
 				enterName = true;
 				titleMenu = false;
@@ -20,10 +21,7 @@ function OnGUI() {
 			if(GUILayout.Button("Tutorial", GUILayout.Height(buttonHeight))){
 				Application.LoadLevel("Tutorial");
 			}
-			GUILayout.Space(spacing);
-			if(GUILayout.Button("Submit Stats", GUILayout.Height(buttonHeight))){
-				//Do Something Sai
-			}
+			
 			GUILayout.Space(spacing);
 			if(GUILayout.Button("Exit", GUILayout.Height(buttonHeight))){
 				Application.Quit();

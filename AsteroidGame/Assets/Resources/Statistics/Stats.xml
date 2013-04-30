@@ -36,4 +36,10 @@
     <time_spent>0.6</time_spent>
     <correctly_answered>yes</correctly_answered>
   </question>
+  <question>
+    <question_number>1</question_number>
+    <ammo_remaining>0</ammo_remaining>
+    <time_spent>2.9</time_spent>
+    <correctly_answered>yes</correctly_answered>
+  </question>
 </responded>
