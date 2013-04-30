@@ -44,7 +44,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Standard Assets\LevelUploader.cs" />
      <Compile Include="Assets\Standard Assets\OT\Graphics\OTView.cs" />
      <Compile Include="Assets\Standard Assets\OT\Graphics\Sprites\Atlas\OTAtlasData.cs" />
      <Compile Include="Assets\Standard Assets\OT\Graphics\Sprites\Atlas\OTSpriteAtlas.cs" />
@@ -119,9 +118,9 @@
      <Compile Include="Assets\Standard Assets\OT\_Base\OTSounds.cs" />
      <Compile Include="Assets\Standard Assets\OT\_Base\OTTimeCycle.cs" />
      <Compile Include="Assets\Standard Assets\OT\_Base\OTTouch.cs" />
-     <None Include="Assets\Resources\Statistics\Stats.xml" />
      <None Include="Assets\Orthello\-Read-Me.txt" />
      <None Include="Assets\Orthello\-Update-Upgrade info.txt" />
+     <None Include="Assets\Resources\Statistics\Stats - Copy.xml" />
      <None Include="Assets\Standard Assets\OT\_Base\TintedAlpha.shader" />
      <None Include="Assets\Resources\QuestionsXML.xml" />
   </ItemGroup>

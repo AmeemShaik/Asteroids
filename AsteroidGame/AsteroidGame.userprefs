@@ -1,12 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\LevelUploader.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Asteroids\JSBullet3.js">
     <Files>
-      <File FileName="Assets\Asteroids\TitleGUI.js" Line="16" Column="1" />
-      <File FileName="Assets\Asteroids\GameGUI.js" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Statistics\LevelUploader.cs" Line="19" Column="39" />
       <File FileName="Assets\Resources\Statistics\TestScript.js" Line="1" Column="1" />
-      <File FileName="Assets\Asteroids\JSBullet3.js" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\LevelUploader.cs" Line="93" Column="36" />
+      <File FileName="Assets\Asteroids\GameGUI.js" Line="31" Column="2" />
+      <File FileName="Assets\Asteroids\JSBullet3.js" Line="129" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
