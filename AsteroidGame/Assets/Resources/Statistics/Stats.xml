@@ -18,4 +18,22 @@
     <time_spent>0.4</time_spent>
     <correctly_answered>yes</correctly_answered>
   </question>
+  <question>
+    <question_number>1</question_number>
+    <ammo_remaining>-1</ammo_remaining>
+    <time_spent>9.6</time_spent>
+    <correctly_answered>yes</correctly_answered>
+  </question>
+  <question>
+    <question_number>2</question_number>
+    <ammo_remaining>-44</ammo_remaining>
+    <time_spent>10.4</time_spent>
+    <correctly_answered>yes</correctly_answered>
+  </question>
+  <question>
+    <question_number>3</question_number>
+    <ammo_remaining>1</ammo_remaining>
+    <time_spent>0.6</time_spent>
+    <correctly_answered>yes</correctly_answered>
+  </question>
 </responded>
