@@ -111,52 +111,39 @@ public function OnCollision(owner:OTObject)
 {   	        
 	if(owner.collisionObject.name!="forceField"){
 	Camera.main.GetComponent.<JSExample3>().bulletExists = false;
-    // check if the asteroid we are colliding with is not in our
-    // ignore debree list.		
-	var found:boolean = false;
-	for (var i:int = 0; i<debree.length; i++)
-		if (debree[i] == owner.collisionObject)
-		{
-			found = true;
-			break;
-		}
-	
-    if (!found)
-    {
-        // We have to ignore debree the following 0.1 seconds
-        ignoreCollisions = 0.1f;
-        // Lets Explode this asteroid
-		var name = owner.collisionObject.name;
-		var obj:GameObject = GameObject.Find(name);
-		OT.DestroyObject(sprite);
-        Destroy(obj.GetComponent.<JSAsteroid3>().textObj);  
-        app.Explode(owner.collisionObject, this, true);
-        if(obj.GetComponent.<JSAsteroid3>().isCorrect){
-			for(var c in Camera.allCameras){
-				if(c.gameObject.name == "QuestionPanel"){
-					c.GetComponent.<GameGUI>().answeredQuestion = 0;
-					c.GetComponent.<GameGUI>().showComment = true;
-					c.GetComponent.<GameGUI>().isWorkingOnQuestion = false;
-					c.GetComponent.<GameGUI>().progress++;							
-					//Populating ammo_remaining element for statistics
-					var innerEle3 = doc.CreateElement("ammo_remaining");
-					var ammo = c.GetComponent.<GameGUI>().ammo;
-					innerEle3.InnerText = ammo + "";
-					element.AppendChild(innerEle3);
-					
-					//Populating time spent element for statistics
-					var innerEle4 = doc.CreateElement("time_spent");
-					var rounded = Mathf.Round(c.GetComponent.<GameGUI>().timeSpent * 10)/10;
-					innerEle4.InnerText = rounded+"";
-					element.AppendChild(innerEle4);
-				}
+    // Lets Explode this asteroid
+	var name = owner.collisionObject.name;
+	var obj:GameObject = GameObject.Find(name);
+	OT.DestroyObject(sprite);
+    Destroy(obj.GetComponent.<JSAsteroid3>().textObj);  
+    app.Explode(owner.collisionObject, this, true);
+    if(obj.GetComponent.<JSAsteroid3>().isCorrect){
+		for(var c in Camera.allCameras){
+			if(c.gameObject.name == "QuestionPanel"){
+				c.GetComponent.<GameGUI>().answeredQuestion = 0;
+				c.GetComponent.<GameGUI>().showComment = true;
+				c.GetComponent.<GameGUI>().isWorkingOnQuestion = false;
+				c.GetComponent.<GameGUI>().progress++;							
+				//Populating ammo_remaining element for statistics
+				var innerEle3 = doc.CreateElement("ammo_remaining");
+				var ammoStat = c.GetComponent.<GameGUI>().ammo;
+				innerEle3.InnerText = ammoStat + "";
+				element.AppendChild(innerEle3);
+				
+				//Populating time spent element for statistics
+				var innerEle4 = doc.CreateElement("time_spent");
+				var rounded = Mathf.Round(c.GetComponent.<GameGUI>().timeSpent * 10)/10;
+				innerEle4.InnerText = rounded+"";
+				element.AppendChild(innerEle4);
 			}
-		//Populating correctly_answered element for statistics
-		var innerEle = doc.CreateElement("correctly_answered");
-		innerEle.InnerText = "yes";
-		element.AppendChild(innerEle);
-        nextQ();
-  }else{
+		}
+	//Populating correctly_answered element for statistics
+	var innerEle = doc.CreateElement("correctly_answered");
+	innerEle.InnerText = "yes";
+	element.AppendChild(innerEle);
+    nextQ();
+  }
+  else{
 	if(obj.GetComponent.<JSAsteroid3>().textObj != null){
 	    var asteroidMesh = obj.GetComponent.<JSAsteroid3>().textObj.GetComponent(TextMesh) as TextMesh;
 	    var s = asteroidMesh.text as String;
@@ -177,39 +164,40 @@ public function OnCollision(owner:OTObject)
 	     break;
 	    }
 	    for(var c in Camera.allCameras){
-		if(c.gameObject.name == "QuestionPanel"){
-				c.GetComponent.<GameGUI>().answeredQuestion = aQ;
-				switch(aQ){
-					case 1:
-						c.GetComponent.<GameGUI>().answeredQuestionComment = c.GetComponent.<GameGUI>().answer1comment;
-						break;
-					case 2:
-						c.GetComponent.<GameGUI>().answeredQuestionComment = c.GetComponent.<GameGUI>().answer2comment;
-						break;
-					case 3:
-						c.GetComponent.<GameGUI>().answeredQuestionComment = c.GetComponent.<GameGUI>().answer3comment;
-						break;
-					case 4:
-						c.GetComponent.<GameGUI>().answeredQuestionComment = c.GetComponent.<GameGUI>().answer4comment;
-						break;
+			if(c.gameObject.name == "QuestionPanel"){
+					c.GetComponent.<GameGUI>().answeredQuestion = aQ;
+					switch(aQ){
+						case 1:
+							c.GetComponent.<GameGUI>().answeredQuestionComment = c.GetComponent.<GameGUI>().answer1comment;
+							break;
+						case 2:
+							c.GetComponent.<GameGUI>().answeredQuestionComment = c.GetComponent.<GameGUI>().answer2comment;
+							break;
+						case 3:
+							c.GetComponent.<GameGUI>().answeredQuestionComment = c.GetComponent.<GameGUI>().answer3comment;
+							break;
+						case 4:
+							c.GetComponent.<GameGUI>().answeredQuestionComment = c.GetComponent.<GameGUI>().answer4comment;
+							break;
+						}
+					c.GetComponent.<GameGUI>().showComment = true;
 					}
-				c.GetComponent.<GameGUI>().showComment = true;
+				}
 			}
-		}
-	}
-	else{
+	 else{
 		if(ammo==0){
 			for(var c in Camera.allCameras){
 				if(c.gameObject.name == "QuestionPanel"){
 					c.GetComponent.<GameGUI>().ammoEnd = true;
 				}
 			}
-			Destroy(sprite);
-			Destroy(this);	
+			var innerEle2 = doc.CreateElement("correctly_answered");
+			innerEle2.InnerText = "no";
+			element.AppendChild(innerEle2);
+			
 		}
 	  }
-   }
-  }
+   	}
   }
 }
 

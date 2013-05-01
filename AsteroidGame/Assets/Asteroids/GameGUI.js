@@ -105,10 +105,10 @@ function OnGUI() {
 				theRect = GUILayoutUtility.GetLastRect();
 				theRect.width = ammoImage.width;
 				theRect.height = ammoImage.height*2.5;
-				GUI.DrawTexture(new Rect(theRect.x, theRect.y, theRect.width, theRect.height+theRect.height/7), progressBG);
+				GUI.DrawTexture(new Rect(theRect.x, theRect.y, theRect.width, theRect.height+theRect.height/8), progressBG);
 				GUI.DrawTexture(new Rect(theRect.x+10, theRect.y+10, theRect.width*.5, theRect.height), progressMG);
-				if(progress/7 <= 1){
-					GUI.DrawTexture(new Rect(theRect.x+10, theRect.y+theRect.height+10-(theRect.height*(progress/7)), theRect.width*.5, theRect.height*(progress/7)), progressFG);
+				if(progress/8 <= 1){
+					GUI.DrawTexture(new Rect(theRect.x+10, theRect.y+theRect.height+10-(theRect.height*(progress/8)), theRect.width*.5, theRect.height*(progress/8)), progressFG);
 				}
 				else{progress = 0;}
 				GUILayout.EndVertical();
@@ -152,12 +152,13 @@ function OnGUI() {
 		}
 		GUILayout.EndArea();
  	}
- 	else if(ammoEnd){
+ 	else if(ammoEnd&&ammo==0){
  		GUILayout.BeginArea(Rect(0, Screen.height*.15, Screen.width, Screen.height));
  		if(GUILayout.Button("No ammo left! \n", style, GUILayout.Height(Screen.height))){
  			nextQuestion();
-	   		ammoEnd=false;
 	   		Camera.main.GetComponent.<JSExample3>().Initialize();
+	   		ammoEnd=false;
+	   		
 		}
 		GUILayout.EndArea();
  	}
@@ -235,6 +236,9 @@ function nextQuestion(){
 				}
 				currentQuestion = -1;
 			}
+		}
+		else{
+			progress = 0;
 		}
 		questionCount = 0;
 	}
