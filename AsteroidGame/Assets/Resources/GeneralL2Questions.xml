@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<question_set xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<question>
+		<id>1</id>
+		<problem>Why are baked beans a food that you should eat  LESS often?</problem>
+		<image>baked beans.png</image>
+		<answer1>You should eat baked beans less often because baked beans have a lot of salt in them.</answer1>
+		<answer2>You should eat baked beans less often because baked Beans have a lot of potassium and protein in them.</answer2>
+		<answer3>You should eat baked beans less often because baked beans have a lot of phosphorus in them.</answer3>
+		<answer4>You should eat baked beans less often because baked beans have a lot of sugar in them.</answer4>
+		<correctAnswer>2</correctAnswer>
+	</question>
+	<question>
+		<id>2</id>
+		<problem>Why are bananas a food that you should eat  LESS often?</problem>
+		<image>bananas.png</image>
+		<answer1>You should eat bananas less often because bananas have a lot of salt in them.</answer1>
+		<answer2>You should eat bananas less often because bananas have a lot of potassium in them.</answer2>
+		<answer3>You should eat bananas less often because bananas have a lot of phosphorus in them.</answer3>
+		<answer4>You should eat bananas less often because bananas have a lot of protein in them.</answer4>
+		<correctAnswer>2</correctAnswer>
+	</question>
+	<question>
+		<id>3</id>
+		<problem>Why are beans a food that you should eat  LESS often?</problem>
+		<image>beans.png</image>
+		<answer1>You should eat beans less often because beans have a lot of salt in them.</answer1>
+		<answer2>You should eat beans less often because beans have a lot of protein and phosphorus</answer2>
+		<answer3>You should eat beans less often because beans have a lot of phosphorus in them.</answer3>
+		<answer4>You should eat beans less often because beans have a lot of sugar in them.</answer4>
+		<correctAnswer>2</correctAnswer>
+	</question>
+	<question>
+		<id>4</id>
+		<problem>Why are cucumbers a better choice than pickles?</problem>
+		<image>cucumbers.png</image>
+		<answer1>Cucumbers are better than pickles because cucumbers have less protein in them.</answer1>
+		<answer2>Cucumbers are better than pickles because cucumbers have less phosphorus in them.</answer2>
+		<answer3>Cucumbers are better than pickles because cucumbers have less potassium in them.</answer3>
+		<answer4>Cucumbers are better than pickles because cucumbers have less salt in them.</answer4>
+		<correctAnswer>4</correctAnswer>
+	</question>
+	<question>
+		<id>5</id>
+		<problem>Why are grapes a better choice than raisins?</problem>
+		<image>grapes.png</image>
+		<answer1>Grapes are better than raisins because grapes have less protein in them.</answer1>
+		<answer2>Grapes are better than raisins because grapes have less phosphorus in them.</answer2>
+		<answer3>Grapes are better than raisins because grapes have less potassium in them.</answer3>
+		<answer4>Grapes are better than raisins because grapes have less salt in them.</answer4>
+		<correctAnswer>3</correctAnswer>
+	</question>
+	<question>
+		<id>6</id>
+		<problem>Why are lemons a better choice than kiwi?</problem>
+		<image>lemon.png</image>
+		<answer1>Lemons are better than kiwis because lemons have less protein than kiwis.</answer1>
+		<answer2>Lemons are better than kiwis because lemons have less protein in them.</answer2>
+		<answer3>Lemons are better than kiwis because lemons have less phosphorus in them.</answer3>
+		<answer4>Lemons are better than kiwis because lemons have less potassium in them.</answer4>
+		<correctAnswer>4</correctAnswer>
+	</question>
+	<question>
+		<id>7</id>
+		<problem>Why are pineapples a better choice than oranges?</problem>
+		<image>pineapple.png</image>
+		<answer1>Pineapples are better than oranges because pineapples have less protein in them.</answer1>
+		<answer2>Pineapples are better than oranges because pineapples have less potassium in them.</answer2>
+		<answer3>Pineapples are better than oranges because pineapples have less fat in them.</answer3>
+		<answer4>Pineapples are better than oranges because pineapples have less salt in them.</answer4>
+		<correctAnswer>2</correctAnswer>
+	</question>
+	<question>
+		<id>8</id>
+		<problem>Why are pretzels a food that you should eat  LESS often?</problem>
+		<image>pretzel.png</image>
+		<answer1>You should eat pretzels less often because pretzels have a lot of salt on them.</answer1>
+		<answer2>You should eat pretzels less often because pretzels have a lot of potassium in them.</answer2>
+		<answer3>You should eat pretzels less often because they have a lot of phosphorus in them.</answer3>
+		<answer4>You should eat pretzels less often because pretzels have a lot of protein in them.</answer4>
+		<correctAnswer>1</correctAnswer>
+	</question>
+	<question>
+		<id>9</id>
+		<problem>Why is bran cereal a food that you should eat  LESS often?</problem>
+		<image>bran cereal.png</image>
+		<answer1>You should eat bran cereal less often because bran cereal has a lot of salt in it.</answer1>
+		<answer2>You should eat bran cereal less often because it has a lot of phosphorus in it.</answer2>
+		<answer3>You eat Bran Cereal less often because it has a lot of potassium in it.</answer3>
+		<answer4>You should eat bran cereal less often because it has a lot of protein in it.</answer4>
+		<correctAnswer>3</correctAnswer>
+	</question>
+	<question>
+		<id>10</id>
+		<problem>Why is brown rice a food that you should eat  LESS often?</problem>
+		<image>brownrice.png</image>
+		<answer1>You should eat brown rice less often because brown rice has a lot of sugar in it.</answer1>
+		<answer2>You should eat brown rice less often because brown rice has a lot of fat in it.</answer2>
+		<answer3>You should eat brown rice less often because brown rice has a lot of potassium in it.</answer3>
+		<answer4>You should eat brown rice less often because brown rice has a lot of salt in it.</answer4>
+		<correctAnswer>3</correctAnswer>
+	</question>
+	<question>
+		<id>11</id>
+		<problem>Why is corn a better choice than avocadoes?</problem>
+		<image>corn.png</image>
+		<answer1>Corn is better than avocadoes because corn has less protein in it.</answer1>
+		<answer2>Corn is better than avocadoes because corn has less salt in it.</answer2>
+		<answer3>Corn is better than avocadoes because corn has less protein in it.</answer3>
+		<answer4>Corn is better than avocadoes because corn has less potassium in it.</answer4>
+		<correctAnswer>4</correctAnswer>
+	</question>
+	<question>
+		<id>12</id>
+		<problem>Why are grapefruits a better choice than oranges?</problem>
+		<image>grapefruit.png</image>
+		<answer1>Grapefruits are better than oranges because grapefruits have less protein in them.</answer1>
+		<answer2>Grapefruits are better than oranges because grapefruits have less fat in them.</answer2>
+		<answer3>Grapefruits are better than oranges because grapefruits have less salt in them.</answer3>
+		<answer4>Grapefruits are better than oranges because grapefruits have less potassium.</answer4>
+		<correctAnswer>4</correctAnswer>
+	</question>
+	<question>
+		<id>13</id>
+		<problem>Why is rice milk a better choice than regular cow's milk?</problem>
+		<image>ricemilk.png</image>
+		<answer1>Rice milk is a better than cow's milk because rice milk has less protein in it.</answer1>
+		<answer2>Rice milk is a better than cow's milk because rice milk has less potassium in it.</answer2>
+		<answer3>Rice milk is a better than cow's milk because rice milk has less phosphorus in it.</answer3>
+		<answer4>Rice milk is a better than cow's milk because rice milk has less salt in it.</answer4>
+		<correctAnswer>1</correctAnswer>
+	</question>
+	<question>
+		<id>14</id>
+		<problem>Why is steak a food that you should eat  LESS often?</problem>
+		<image>steak.png</image>
+		<answer1>You should eat steak less often because steak, and other beef has a lot of sugar in it.</answer1>
+		<answer2>You should eat steak less often because steak, and other beef has a lot of potassium in it.</answer2>
+		<answer3>You should eat steak less often because steak, and other beef has a lot of protein and phosphorus in it.</answer3>
+		<answer4>You should eat steak less often because steak, and other beef has a lot of bran in it.</answer4>
+		<correctAnswer>3</correctAnswer>
+	</question>
+	<question>
+		<id>15</id>
+		<problem>Why is yogurt a food that you should eat  LESS often?</problem>
+		<image>yogurt.png</image>
+		<answer1>You should eat yogurt less often because yogurt has a lot of potassium in it.</answer1>
+		<answer2>You should eat yogurt less often because it has a lot of salt in it.</answer2>
+		<answer3>Yogurt has a lot of protein and phosphorus</answer3>
+		<answer4>You should eat yogurt less often because yogurt has a lot of fat in it.</answer4>
+		<correctAnswer>3</correctAnswer>
+	</question>
+	<question>
+		<id>16</id>
+		<problem>If you ate this whole container of food, how much sodium would you be eating?</problem>
+		<image>Nutrition Label 3.png</image>
+		<answer1>150mg</answer1>
+		<answer1comment>This is how much sodium you would eat if you ate 2 servings (1 cup)</answer1comment>
+		<answer2>37.5mg</answer2>
+		<answer2comment>This is how much sodium you would eat if you ate half a serving (1/4 cup).</answer2comment>
+		<answer3>75mg</answer3>
+		<answer3comment>This is how much sodium is in 1 serving (1/2 cup).</answer3comment>
+		<answer4>300mg</answer4>
+		<answer4comment>Correct! This is how much sodium is in the whole container (2 cups, 4 servings).</answer4comment>
+		<correctAnswer>4</correctAnswer>
+	</question>
+	<question>
+		<id>17</id>
+		<problem>If you ate this whole container of food, how much protein would you be eating?</problem>
+		<image>Nutrition Label 3.png</image>
+		<answer1>2g</answer1>
+		<answer1comment>This is how much protein you would eat if you ate half a serving (1/4 cup).</answer1comment>
+		<answer2>8g</answer2>
+		<answer2comment>This is how much protein you would eat if you ate 2 servings (1 cup)</answer2comment>
+		<answer3>16g</answer3>
+		<answer3comment>Correct! This is how much protein is in the whole container (2 cups, 4 servings).</answer3comment>
+		<answer4>4g</answer4>
+		<answer4comment>This is how much protein you would eat in 1 serving (1/2 cup).</answer4comment>
+		<correctAnswer>3</correctAnswer>
+	</question>
+	<question>
+		<id>18</id>
+		<problem>If you ate this whole container of food, how many calories would you be eating?</problem>
+		<image>Nutrition Label 3.png</image>
+		<answer1>1000</answer1>
+		<answer1comment>Correct! This is how many calories in the whole container (2 cups, 4 servings).</answer1comment>
+		<answer2>250</answer2>
+		<answer2comment>This is how many calories you would eat in 1 serving (1/2 cup).</answer2comment>
+		<answer3>125</answer3>
+		<answer3comment>This is how many calories you would eat if you ate half a serving (1/4 cup).</answer3comment>
+		<answer4>500</answer4>
+		<answer4comment>This is how many calories you would eat if you ate 2 servings (1 cup)</answer4comment>
+		<correctAnswer>1</correctAnswer>
+	</question>
+	<question>
+		<id>19</id>
+		<problem>If you ate this whole can of chicken noodle soup, how much sodium would you be eating?</problem>
+		<image>Chicken Noodle Soup Label.png</image>
+		<answer1>445mg</answer1>
+		<answer1comment>This is the amount of sodium you would eat if you ate half a serving (1/4 cup).</answer1comment>
+		<answer2>1,780mg</answer2>
+		<answer2comment>This is the amount of sodium you would eat if you ate 2 servings (1 cup)</answer2comment>
+		<answer3>2,225mg</answer3>
+		<answer3comment>Correct! This is the amount of sodium in the whole can of soup (2.5 servings).</answer3comment>
+		<answer4>890mg</answer4>
+		<answer4comment>This is the amount of sodium you would eat in 1 serving (1/2 cup).</answer4comment>
+		<correctAnswer>3</correctAnswer>
+	</question>
+	<question>
+		<id>20</id>
+		<problem>If you ate this whole can of chicken noodle soup, how much protein would you be eating?</problem>
+		<image>Chicken Noodle Soup Label.png</image>
+		<answer1>7.5g</answer1>
+		<answer1comment>Correct! This is the amount of protein in the whole can of soup (2.5 servings).</answer1comment>
+		<answer2>3g</answer2>
+		<answer2comment>This is the amount of protein you would eat in 1 serving (1/2 cup).</answer2comment>
+		<answer3>1.5g</answer3>
+		<answer3comment>This is the amount of protein you would eat if you ate half a serving (1/4 cup).</answer3comment>
+		<answer4>6g</answer4>
+		<answer4comment>This is the amount of protein you would eat if you ate 2 servings (1 cup)</answer4comment>
+		<correctAnswer>1</correctAnswer>
+	</question>
+	<question>
+		<id>21</id>
+		<problem>If you ate this whole can of chicken noodle soup, how many calories would you be eating?</problem>
+		<image>Chicken Noodle Soup Label.png</image>
+		<answer1>120</answer1>
+		<answer1comment>This is the amount of calories you would eat if you ate 2 servings (1 cup)</answer1comment>
+		<answer2>30</answer2>
+		<answer2comment>This is the amount of calories if you ate half a serving (1/4 cup).</answer2comment>
+		<answer3>60</answer3>
+		<answer3comment>This is the amount of calories for 1 serving (1/2 cup).</answer3comment>
+		<answer4>150</answer4>
+		<answer4comment>Correct! This is the amount of calories in the whole can of soup (2.5 servings).</answer4comment>
+		<correctAnswer>4</correctAnswer>
+	</question>
+	<question>
+		<id>22</id>
+		<problem>If you ate this whole container of food, how much sodium would you be eating?</problem>
+		<image>Nutrition Label 5.png</image>
+		<answer1>1,880mg</answer1>
+		<answer1comment>Correct! This is the amount of sodium in the whole container of food (2 servings).</answer1comment>
+		<answer2>2,820mg</answer2>
+		<answer2comment>This is the amount of sodium you would eat if you ate 3 servings (3 cups)</answer2comment>
+		<answer3>470mg</answer3>
+		<answer3comment>This is the amount of sodium you would eat if you ate half a serving (1/2 cup).</answer3comment>
+		<answer4>940mg</answer4>
+		<answer4comment>This is the amount of sodium you would eat in 1 serving (1 cup).</answer4comment>
+		<correctAnswer>1</correctAnswer>
+	</question>
+	<question>
+		<id>23</id>
+		<problem>If you ate this whole container of food, how much protein would you be eating?</problem>
+		<image>Nutrition Label 5.png</image>
+		<answer1>5g</answer1>
+		<answer1comment>This is how much protein you would eat if you ate half a serving (1/2 cup).</answer1comment>
+		<answer2>15g</answer2>
+		<answer2comment>This is how much protein you would eat if you ate 3 servings (3 cups)</answer2comment>
+		<answer3>20g</answer3>
+		<answer3comment>Correct! This is how much protein is in the whole container (2 servings).</answer3comment>
+		<answer4>10g</answer4>
+		<answer4comment>This is how much protein you would eat in 1 serving (1 cup).</answer4comment>
+		<correctAnswer>3</correctAnswer>
+	</question>
+	<question>
+		<id>24</id>
+		<problem>If you ate this whole container of food, how many calories would you be eating?</problem>
+		<image>Nutrition Label 5.png</image>
+		<answer1>750</answer1>
+		<answer1comment>This is how many calories you would eat if you ate 3 servings (3 cups)</answer1comment>
+		<answer2>250</answer2>
+		<answer2comment>This is how many calories you would eat in 1 serving (1 cup).</answer2comment>
+		<answer3>125</answer3>
+		<answer3comment>This is how many calories you would eat if you ate half a serving (1/2 cup).</answer3comment>
+		<answer4>500</answer4>
+		<answer4comment>Correct! This is how many calories in the whole container (2 servings).</answer4comment>
+		<correctAnswer>4</correctAnswer>
+	</question>
+	<question>
+		<id>25</id>
+		<problem>What do your kidneys do when you eat too much salt?</problem>
+		<image>kidneys.png</image>
+		<answer1>Your blood pressure could get too high.</answer1>
+		<answer2>Your bones could get thin and might break.</answer2>
+		<answer2comment>This is what could happen when you eat too much phosphorus.</answer2comment>
+		<answer3>Your body could have problems with your heart beat.</answer3>
+		<answer3comment>This is what could happen if you eat too much potassium.</answer3comment>
+		<answer4>All of the above.</answer4>
+		<correctAnswer>1</correctAnswer>
+	</question>
+	<question>
+		<id>26</id>
+		<problem>Why are kidneys important to your red blood cells?</problem>
+		<image>redbloodcells.png</image>
+		<answer1>The kidneys make red blood cells.</answer1>
+		<answer2>The kidneys make a hormone (erythropoietin, also called epo) that helps your bones make new red blood cells.</answer2>
+		<answer3>The kidneys make red blood cells turn red.</answer3>
+		<answer4>The kidneys make a hormone (renin) that helps your bones make new red blood cells.</answer4>
+		<correctAnswer>2</correctAnswer>
+	</question>
+	<question>
+		<id>27</id>
+		<problem>Why should people with chronic kidney disease eat less phosphorus that other people?</problem>
+		<image>phosphorus.png</image>
+		<answer1>Too much phosphorus can make you have problems with your heart beat.</answer1>
+		<answer1comment>This is what could happen if you eat too much potassium, but phosphorus does not do that.</answer1comment>
+		<answer2>Too much phosphorus can make your bones thin (and maybe break) and make your skin itchy.</answer2>
+		<answer3>Too much phosphorus can make you have really high blood pressure.</answer3>
+		<answer3comment>Too much sodium can make you have high blood pressure, but phosphorus does not do that.</answer3comment>
+		<answer4>All of the above.</answer4>
+		<correctAnswer>2</correctAnswer>
+	</question>
+	<question>
+		<id>28</id>
+		<problem>If your kidneys do not work well, what happens to your blood pressure?</problem>
+		<image>bloodpressure.png</image>
+		<answer1>Your blood pressure will probably get really high.</answer1>
+		<answer2>Your blood pressure will probably get really low.</answer2>
+		<answer3>Your blood pressure will probably stay the same.</answer3>
+		<answer4>Your blood pressure will work the same as someone who does not have kidney problems.</answer4>
+	</question>
+	<question>
+		<id>29</id>
+		<problem>If your kidneys do not work well and you do not take care of them, what can happen to your brain?</problem>
+		<image>brain.png</image>
+		<answer1>It can cause you to have headaches.</answer1>
+		<answer2>It can make you think more slowly.</answer2>
+		<answer3>It can make you really tired.</answer3>
+		<answer4>All of the above.</answer4>
+		<correctAnswer>4</correctAnswer>
+	</question>
+	<question>
+		<id>30</id>
+		<problem>Why do doctors and your parents ask you to take your medications and only eat certain foods even when you don't even feel sick?</problem>
+		<image>medications.png</image>
+		<answer1>Your kidneys cannot get better than they are now, but taking medications and eating right helps keep your kidneys healthier longer.</answer1>
+		<answer2>Your doctor and your parents care about your health.</answer2>
+		<answer3>By the time you start feeling bad from your kidney problems, your kidneys could already be in BIG trouble.</answer3>
+		<answer4>All of the above.</answer4>
+		<correctAnswer>4</correctAnswer>
+	</question>
+	<question>
+		<id>31</id>
+		<problem>How can doctors know for sure if you are taking your medications or not?</problem>
+		<image>medications.png</image>
+		<answer1>Doctors can tell by looking at blood tests and urine tests (when you pee in a cup at the doctors office).</answer1>
+		<answer2>Doctors can only know if you tell them.</answer2>
+		<answer3>Doctors can only tell by looking at your medical record from your last doctor's visit.</answer3>
+		<answer4>All of the above.</answer4>
+		<correctAnswer>1</correctAnswer>
+	</question>
+	<question>
+		<id>32</id>
+		<problem>When do you need to throw away this medication?</problem>
+		<image>PrescriptionLabelCalcitriol.png</image>
+		<answer1>41520</answer1>
+		<answer1comment>The label says "discard by 9/03/2013"</answer1comment>
+		<answer2>41342</answer2>
+		<answer3>41155</answer3>
+		<answer3comment>This is the date that Amber Test got this medication from the drug store.</answer3comment>
+		<answer4>40977</answer4>
+		<correctAnswer>1</correctAnswer>
+	</question>
+	<question>
+		<id>33</id>
+		<problem>How many times can you go back to the drug store (pharmacy) to get more of this medication?</problem>
+		<image>PrescriptionLabelCellcept.png</image>
+		<answer1>You can go back to the pharmacy to get this as many times as you would like to do so.</answer1>
+		<answer1comment>This is not on the label.</answer1comment>
+		<answer2>2</answer2>
+		<answer2comment>The label says "refill 2 times by 9/03/2013."</answer2comment>
+		<answer3>60</answer3>
+		<answer3comment>The labels says "60 TA" but does not have anything to do with the refills.</answer3comment>
+		<answer4>0 (zero)</answer4>
+		<answer4comment>The label says "0 of 2" but that just means that you have not run out of refills.</answer4comment>
+		<correctAnswer>2</correctAnswer>
+	</question>
+	<question>
+		<id>34</id>
+		<problem>How do you take this medication (Clonidine)?</problem>
+		<image>PrescriptionLabelClonidine.png</image>
+		<answer1>Rub the patch on your skin one time every week.</answer1>
+		<answer2>Put a new patch on your skin every week and take the old one off AFTER you put the new one on.</answer2>
+		<answer2comment>The label says "apply patch once weekly" and "remove patch before each type BEFORE applying new patch" in the green section at the bottom of the label.</answer2comment>
+		<answer3>Put a new patch on the roof of your mouth each week and take the old one off.</answer3>
+		<answer3comment>At the bottom of the label in blue, it says "for external use only."  This means it should not be put anywhere inside of your body.</answer3comment>
+		<answer4>Put a new patch on your skin every week and take the old one off BEFORE you put the new one on.</answer4>
+		<answer4comment>The label says "apply patch once weekly" and "remove patch before each type BEFORE applying new patch" in the green section at the bottom of the label.</answer4comment>
+		<correctAnswer>4</correctAnswer>
+	</question>
+	<question>
+		<id>35</id>
+		<problem>Where should you keep this medication (Epogen) in your home?</problem>
+		<image>PrescriptionLabelEpogen.png</image>
+		<answer1>In the medicine cabinet in your bathroom.</answer1>
+		<answer2>On your nightstand next to your bed.</answer2>
+		<answer3>In the refrigerator.</answer3>
+		<answer3comment>The pink label says "Keep in refrigerator. Do not freeze"</answer3comment>
+		<answer4>In the freezer.</answer4>
+		<answer4comment>The pink label says "Keep in refrigerator. Do not freeze"</answer4comment>
+		<correctAnswer>3</correctAnswer>
+	</question>
+	<question>
+		<id>36</id>
+		<problem>What are some things that could happen if you take this medication (Lisinopril)?</problem>
+		<image>PrescriptionLabelLisinopril.png</image>
+		<answer1>dry cough</answer1>
+		<answer1comment>The green label says "may cause dry cough."</answer1comment>
+		<answer2>Vomiting (throwing up)</answer2>
+		<answer2comment>This is not on the label.</answer2comment>
+		<answer3>Drowsiness</answer3>
+		<answer3comment>The yellow label says "may cause dizziness" not drowsiness.</answer3comment>
+		<answer4>All of the above</answer4>
+		<correctAnswer>1</correctAnswer>
+	</question>
+	<question>
+		<id>37</id>
+		<problem>When you are taking this medication (Neoral) when should you call your doctor?</problem>
+		<image>PrescriptionLabelNeoral.png</image>
+		<answer1>If you think you might be getting sick.</answer1>
+		<answer1comment>The green label says "Tell your doctor immediately if you have signs of infection"</answer1comment>
+		<answer2>If you are a female thinking about breastfeeding your baby.</answer2>
+		<answer2comment>The pink label says "Breastfeeding is not recommended while using this drug. Consult your doctor or pharmacist."</answer2comment>
+		<answer3>If you are taking other herbs, vitamins, and supplements.</answer3>
+		<answer3comment>The orange label says "Herbal/dietary supplement products may interact with this medication. Discuss...with your Doctor or Pharmacist before taking."</answer3comment>
+		<answer4>All of the above.</answer4>
+		<answer4comment>The pink, green and orange labels ask you to call your doctor in all three of those cases.</answer4comment>
+		<correctAnswer>4</correctAnswer>
+	</question>
+	<question>
+		<id>38</id>
+		<problem>What are some things that could happen if you take this medication (Norvasc)?</problem>
+		<image>PrescriptionLabelNorvasc.png</image>
+		<answer1>dry cough</answer1>
+		<answer1comment>This is not on the label.</answer1comment>
+		<answer2>Vomiting (throwing up)</answer2>
+		<answer2comment>This is not on the label.</answer2comment>
+		<answer3>Dizziness</answer3>
+		<answer3comment>The yellow label says "may cause dizziness."</answer3comment>
+		<answer4>All of the above</answer4>
+		<correctAnswer>3</correctAnswer>
+	</question>
+	<question>
+		<id>39</id>
+		<problem>When should you take this medication (Prednisone)?</problem>
+		<image>PrescriptionLabelPrednisone.png</image>
+		<answer1>At bedtime</answer1>
+		<answer1comment>The label says take "every morning" and the pink section says take "exactly as directed."</answer1comment>
+		<answer2>In the morning while eating breakfast.</answer2>
+		<answer2comment>The label says take "every morning" and the yellow section says "take with food."</answer2comment>
+		<answer3>An hour before eating your breakfast.</answer3>
+		<answer3comment>The yellow label says "take with food."</answer3comment>
+		<answer4>Any time that you can remember during the day.</answer4>
+		<answer4comment>The pink label says "it is very important that you take or use this exactly as directed. Do not skip doses or discontinue unless directed by your doctor."</answer4comment>
+		<correctAnswer>2</correctAnswer>
+	</question>
+	<question>
+		<id>40</id>
+		<problem>How many TIMES A DAY do you take this medication (Renagel)?</problem>
+		<image>PrescriptionLabelRenagel.png</image>
+		<answer1>3</answer1>
+		<answer1comment>The label says "take 2 tablets by mouth THREE TIMES DAILY"</answer1comment>
+		<answer2>2</answer2>
+		<answer2comment>The label says "take 2 TABLETS by mouth three times daily"</answer2comment>
+		<answer3>12</answer3>
+		<answer3comment>The label says "refill 12 times."</answer3comment>
+		<answer4>6</answer4>
+		<correctAnswer>1</correctAnswer>
+	</question>
+	<question>
+		<id>41</id>
+		<problem>How many tablets (pills) do you take in one day?</problem>
+		<image>PrescriptionLabelRenagel.png</image>
+		<answer1>2</answer1>
+		<answer1comment>This is the number of tablets you take at one time.</answer1comment>
+		<answer2>6</answer2>
+		<answer2comment>The label says "take 2 tablets by mouth three times daily." So 2 tablets x 3 times a day = total of 6 tablets in one day.</answer2comment>
+		<answer3>3</answer3>
+		<answer3comment>This is how many times you take the tablets in one day.</answer3comment>
+		<answer4>12</answer4>
+		<answer4comment>The label says "refill 12 times."</answer4comment>
+		<correctAnswer>2</correctAnswer>
+	</question>
+	<question>
+		<id>42</id>
+		<problem>How many TIMES A DAY do you take this medication (Prograf)?</problem>
+		<image>PrescriptionLabelPrograf.png</image>
+		<answer1>4</answer1>
+		<answer1comment>This is the total number of pills you should take in one day.</answer1comment>
+		<answer2>3</answer2>
+		<answer2comment>This is the number of refills left for this medication. "Refill 3 times"</answer2comment>
+		<answer3>1</answer3>
+		<answer3comment>Prograf is a 1MG capsule.</answer3comment>
+		<answer4>2</answer4>
+		<answer4comment>The label says "take 2 capsules by mouth TWICE a day"</answer4comment>
+		<correctAnswer>4</correctAnswer>
+	</question>
+	<question>
+		<id>43</id>
+		<problem>How many capsules (pills) do you take in one day?</problem>
+		<image>PrescriptionLabelPrograf.png</image>
+		<answer1>3</answer1>
+		<answer1comment>This is the number of refills left for this medication. "Refill 3 times"</answer1comment>
+		<answer2>2</answer2>
+		<answer2comment>This is the number of capsules you take at once.  Two is also the number of times you take the capsules in one day. The label says "Take 2 capsules by mouth TWICE daily."</answer2comment>
+		<answer3>4</answer3>
+		<answer3comment>The labels says "Take 2 capsules by mouth twice daily." So 2 capsules x 2 times a day = total of 4 capsules in one day.</answer3comment>
+		<answer4>1</answer4>
+		<answer4comment>Prograf is a 1MG capsule.</answer4comment>
+		<correctAnswer>3</correctAnswer>
+	</question>
+	<question>
+		<id>44</id>
+		<problem>How do you tell if something you want to eat has phosphorus in it?</problem>
+		<image>phosphorus.png</image>
+		<answer1>It is always written on the front of the package.</answer1>
+		<answer2>It is always written at the top of the nutrition label.</answer2>
+		<answer3>It is always listed in the list of ingredients at the bottom of the nutrition label.</answer3>
+		<answer3comment>Any word that has "PHOS" in it means that it has phosphorus. Ex: PHOSphate, pyroPHOSphate, and so on.</answer3comment>
+		<answer4>There is no way to tell by looking at a package if something has phosphorus in it.</answer4>
+		<correctAnswer>3</correctAnswer>
+	</question>
+	<question>
+		<id>45</id>
+		<problem>How many TIMES A DAY do you take this medication (Neoral)?</problem>
+		<image>PrescriptionLabelNeoral.png</image>
+		<answer1>10</answer1>
+		<answer1comment>This is the total number of pills you should take in one day.</answer1comment>
+		<answer2>6</answer2>
+		<answer2comment>This is the number of refills left for this medication. "Refill 3 times"</answer2comment>
+		<answer3>5</answer3>
+		<answer3comment>This is the number of capsules you take at one time.  The label says "take 5 capsules by mouth twice a day"</answer3comment>
+		<answer4>2</answer4>
+		<answer4comment>The label says "take 5 capsules by mouth TWICE a day"</answer4comment>
+		<correctAnswer>4</correctAnswer>
+	</question>
+	<question>
+		<id>46</id>
+		<problem>How many capsules (pills) do you take in one day?</problem>
+		<image>PrescriptionLabelNeoral.png</image>
+		<answer1>6</answer1>
+		<answer1comment>This is the number of refills left for this medication. "Refill 6 times"</answer1comment>
+		<answer2>5</answer2>
+		<answer2comment>This is the number of capsules you take at one time.  The label says "take 5 capsules by mouth twice a day"</answer2comment>
+		<answer3>10</answer3>
+		<answer3comment>The labels says "Take 5 capsules by mouth twice daily." So 5 capsules x 2 times a day = total of 10 capsules in one day.</answer3comment>
+		<answer4>1</answer4>
+		<answer4comment>Prograf is a 1MG capsule.</answer4comment>
+		<correctAnswer>3</correctAnswer>
+	</question>
+</question_set>

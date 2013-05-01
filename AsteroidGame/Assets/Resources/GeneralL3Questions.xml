@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<question_set xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<question>
+		<id>1</id>
+		<problem>Why is this can of chicken noodle soup a food that you should avoid?</problem>
+		<image>Chicken Noodle Soup Label.png</image>
+		<answer1>There is a lot of phosphorus in it.</answer1>
+		<answer1comment>This label does not show the list of ingredients, so you cannot tell if it has phosphorus it in.</answer1comment>
+		<answer2>There is a lot of sodium in it.</answer2>
+		<answer2comment>This soup contains 890mg of sodium, which is 39% of the daily value (DV).  You should try to keep sodium at around 5% DV to keep it low.</answer2comment>
+		<answer3>There is a lot of potassium in it.</answer3>
+		<answer3comment>This label does not show the list of ingredients, so you cannot tell if it has a lot of potassium in it.</answer3comment>
+		<answer4>It has a lot of fat in it.</answer4>
+		<answer4comment>There is only 1.5g of total fat in one serving (3.75g for the entire can) which is not very much.</answer4comment>
+		<correctAnswer>2</correctAnswer>
+	</question>
+	<question>
+		<id>2</id>
+		<problem>If you were in a rush, and had to eat fast food one day, why would a hamburger be better than a double cheeseburger?</problem>
+		<image>fastfood.png</image>
+		<answer1>The hamburger will have less sodium.</answer1>
+		<answer2>The hamburger will have less fat.</answer2>
+		<answer3>The hamburger will have fewer calories.</answer3>
+		<answer4>All of the above.</answer4>
+		<correctAnswer>4</correctAnswer>
+	</question>
+	<question>
+		<id>3</id>
+		<problem>Let's say you were at a cook-out, and there were only sodas available.  Why would a ginger ale be better than a dark-colored soda for a person with chronic kidney disease?</problem>
+		<image>sodacan.png</image>
+		<answer1>Ginger ale has fewer calories.</answer1>
+		<answer1comment>Calories in ginger ale and dark colas are about the same.</answer1comment>
+		<answer2>Ginger ale has less phosphorus.</answer2>
+		<answer2comment>Lighter colored sodas have less phosphorus.</answer2comment>
+		<answer3>Ginger ale has less sodium.</answer3>
+		<answer3comment>Sodium in ginger ale and dark colas are about the same.</answer3comment>
+		<answer4>All of the above.</answer4>
+		<correctAnswer>2</correctAnswer>
+	</question>
+	<question>
+		<id>4</id>
+		<problem>Let's say you were at a cook-out, and there were only hot dogs and hamburgers available to eat.  Why would a hamburger be better than a hot dog for a person with chronic kidney disease?</problem>
+		<image>cookout.png</image>
+		<answer1>Hamburgers are always less meat than hot dogs.</answer1>
+		<answer2>Hamburgers can be eaten with tomatoes and avocadoes to make them healthier.</answer2>
+		<answer2comment>Tomatoes and avocadoes have a lot of potassium in them.  They should not be eaten very often by people with chronic kidney disease.</answer2comment>
+		<answer3>Hamburgers have less phosphorus and nitrates than hot dogs.</answer3>
+		<answer4>All of the above.</answer4>
+		<correctAnswer>3</correctAnswer>
+	</question>
+	<question>
+		<id>5</id>
+		<problem>Does this food have so much sodium that you should not eat it?</problem>
+		<image>Nutrition Label 7.png</image>
+		<answer1>There is only 18g of sodium, so the sodium is NOT TOO HIGH in this food.</answer1>
+		<answer1comment>There are 18g of fat, not 18g of sodium.</answer1comment>
+		<answer2>There are 18g of sodium, and that is really high.  So the sodium is TOO HIGH in this food.</answer2>
+		<answer2comment>There are 18g of fat, not 18g of sodium. If it did have 18g of sodium that would be too high.</answer2comment>
+		<answer3>There is no sodium in this food, so the sodium is not too high.</answer3>
+		<answer3comment>The label says that there is 0mg of sodium.</answer3comment>
+		<answer4>There is no sodium on this label, but it may be listed somewhere else.</answer4>
+		<answer4comment>Sodium is always listed around the same place on the nutrition label, so it would not be hidden anywhere else.</answer4comment>
+		<correctAnswer>3</correctAnswer>
+	</question>
+	<question>
+		<id>6</id>
+		<problem>You really want to eat a potato.  How can you make it a little better for you to eat?</problem>
+		<image>potato.png</image>
+		<answer1>Leeching the potatoes.</answer1>
+		<answer1comment>Leeching is when you cut up the potatoes and then put the pieces in a huge pot of hot or boiling water for a few hours.  This removes a lot of the potassium from the potatoes.</answer1comment>
+		<answer2>Cutting the potatoes into small pieces.</answer2>
+		<answer2comment>This does not lower the potassium in the potatoes.</answer2comment>
+		<answer3>Adding salt to the potatoes.</answer3>
+		<answer3comment>Adding salt to the potatoes will make them a little more unhealthy because of the extra salt.</answer3comment>
+		<answer4>Adding a "no-salt" seasoning to the potatoes.</answer4>
+		<answer4comment>A lot of "no-salt" seasonings have a lot of potassium, so this could make them potatoes a little more unhealthy because of the extra potassium.</answer4comment>
+		<correctAnswer>1</correctAnswer>
+	</question>
+	<question>
+		<id>7</id>
+		<problem>Does this food have so much phosphorus that you should not eat it?</problem>
+		<image>Nutrition Label 5.png</image>
+		<answer1>There are only 2 items with phosphorus and that is okay to eat sometimes, but not every day.</answer1>
+		<answer1comment>Foods that have 2 items with phosphorus are okay in small portions, but not every day.  Try to stick to foods with 0 or 1 item with phosphorus.</answer1comment>
+		<answer2>There is no phosphorus in this food so it is okay to eat.</answer2>
+		<answer3>There are 2 items with phosphorus, so it is NEVER okay to eat this food.</answer3>
+		<answer4>There is no phosphorus in this food, but you should NOT eat it because they may have the phosphorus written somewhere else.</answer4>
+		<answer4comment>Nutrition labels must list all ingredients so the phosphorus would not be listed anywhere else.</answer4comment>
+		<correctAnswer>1</correctAnswer>
+	</question>
+	<question>
+		<id>8</id>
+		<problem>Your doctor tells you that you have anemia.  Why can that happen with people if their kidneys do not work well?</problem>
+		<image>redbloodcells.png</image>
+		<answer1>If your kidneys do not work well, you could get really high blood pressure.  High blood pressure is called anemia.</answer1>
+		<answer1comment>Eating too much salt can cause high blood pressure, but not anemia.</answer1comment>
+		<answer2>If your kidneys do not work well, your bones can get weak and maybe even break.  When your bones are weak, this is called anemia.</answer2>
+		<answer2comment>Eating too much phosphorus, NOT anemia, can cause your bones to be weak and break.</answer2comment>
+		<answer3>If your kidneys do not work well, your heart can beat in a way that it should not.  If your heart beats in a strange way that means you have anemia.</answer3>
+		<answer3comment>Eating too much potassium, NOT anemia, could cause your heart to beat in a way that it should not.  Strange heart beats are called "arrhythmias" or "palpitations."</answer3comment>
+		<answer4>If your kidneys do not work well, they do not make enough erythropoietin (also called epo).  Low epo means you make less red blood cells.  If you have less red blood cells that means you have anemia.</answer4>
+		<correctAnswer>4</correctAnswer>
+	</question>
+	<question>
+		<id>9</id>
+		<problem>Your friend has problems with her kidneys makes some bad decisions. She  decides to eat whatever she wants to eat and not to take her medicines.  After a while, it seems like she is having a hard time doing well in school.  What is one reason why she might be having problems in school?</problem>
+		<image>kidneys.png</image>
+		<answer1>A lot of bad stuff is building up in her body because she is not eating right and not taking her medicines. This can make it hard for her to think clearly and do well in school.</answer1>
+		<answer2>A lot of bad stuff is building up in her blood and it is making her vision worse.  So she cannot see the front of the classroom when teachers are explaining things.</answer2>
+		<answer3>A lot of bad stuff is building up in her body and it is making her hearing worse. So she cannot hear what the teachers are saying when they are explaining everything.</answer3>
+		<answer4>None of the above.</answer4>
+		<correctAnswer>1</correctAnswer>
+	</question>
+	<question>
+		<id>10</id>
+		<problem>You really do not like swallowing pills.  Is it okay to crush this medication?</problem>
+		<image>cellcept.png</image>
+		<answer1>No, but it's only because medications taste worse when you crush them.</answer1>
+		<answer1comment>You should not crush it, but the taste of the medication is not an important reason not to crush it.  Look at the pink label.</answer1comment>
+		<answer2>No, because the label says you should not crush it.</answer2>
+		<answer2comment>The pink label says "Do not chew or crush. SWALLOW WHOLE."</answer2comment>
+		<answer3>Yes, as long as you ask your doctor first.</answer3>
+		<answer4>Yes, as long as you take it on an empty stomach.</answer4>
+		<answer4comment>The orange label says "take medication on an empty stomach," but the pink label has some other information about how to take it also.</answer4comment>
+		<correctAnswer>2</correctAnswer>
+	</question>
+	<question>
+		<id>11</id>
+		<problem>How many ingredients on this label contain phosphorus?</problem>
+		<image>Nutrition Label 5.png</image>
+		<answer1>0</answer1>
+		<answer2>1</answer2>
+		<answer3>2</answer3>
+		<answer3comment>Disodium PHOSPHATE and Sodium PHOSPHATE are 2 ingredients listed in the red section of the label.</answer3comment>
+		<answer4>3</answer4>
+		<correctAnswer>3</correctAnswer>
+	</question>
+	<question>
+		<id>12</id>
+		<problem>What is anemia?</problem>
+		<image>kidneys.png</image>
+		<answer1>Anemia is when you have small amounts of protein in your urine.</answer1>
+		<answer1comment>Small amounts of protein in your urine is called "microalbuminuria."</answer1comment>
+		<answer2>Anemia is when you have to connect to a machine so that your blood can get cleaned when your kidneys cannot do it anymore.</answer2>
+		<answer2comment>Dialysis is when you have to connect to a machine so that your blood can get cleaned when your kidneys cannot do it anymore.</answer2comment>
+		<answer3>Anemia is when your heart starts to beat in ways that it should not.</answer3>
+		<answer3comment>Strange heart beats can be called "arrhythmias" or "palpitations," but not anemia.</answer3comment>
+		<answer4>Anemia is when you have a low amount of red blood cells.</answer4>
+		<correctAnswer>4</correctAnswer>
+	</question>
+	<question>
+		<id>13</id>
+		<problem>Does this food have so much phosphorus that you should not eat it?</problem>
+		<image>Nutrition Label 8.png</image>
+		<answer1>There are only 3 items with phosphorus and that is okay to eat sometimes, but not every day.</answer1>
+		<answer2>There is no phosphorus in this food so it is okay to eat.</answer2>
+		<answer3>There are 3 items with phosphorus, so it is NEVER okay to eat this food.</answer3>
+		<answer3comment>You should try to stay away from foods with 3 or more items with phosphorus.</answer3comment>
+		<answer4>There is no phosphorus in this food, but you should NOT eat it because they may have the phosphorus written somewhere else.</answer4>
+		<answer4comment>Nutrition labels must list all ingredients so the phosphorus would not be listed anywhere else.</answer4comment>
+		<correctAnswer>3</correctAnswer>
+	</question>
+	<question>
+		<id>14</id>
+		<problem>How many ingredients on this label contain phosphorus?</problem>
+		<image>Nutrition Label 8.png</image>
+		<answer1>0</answer1>
+		<answer2>1</answer2>
+		<answer3>2</answer3>
+		<answer4>3</answer4>
+		<answer4comment>The three items are Sodium PHOSphate, Tricalcium PHOSphate, and diammonium PHOSphate.</answer4comment>
+		<correctAnswer>4</correctAnswer>
+	</question>
+	<question>
+		<id>15</id>
+		<problem>Which on of these answers correctly shows when you should take this medication (Calcitrol)?</problem>
+		<image>PrescriptionLabelCalcitriol.png</image>
+		<answer1>Monday, Wednesday, and Friday</answer1>
+		<answer1comment>The labels says take "Three days per week."</answer1comment>
+		<answer2>Every day with breakfast</answer2>
+		<answer3>Every day with dinner</answer3>
+		<answer4>On the weekends</answer4>
+		<correctAnswer>1</correctAnswer>
+	</question>
+	<question>
+		<id>16</id>
+		<problem>Which on of these answers correctly shows when you should take this medication (Lisinopril)?</problem>
+		<image>PrescriptionLabelLisinopril.png</image>
+		<answer1>Monday, Wednesday, and Friday</answer1>
+		<answer2>Every day with breakfast</answer2>
+		<answer2comment>The label says to "take one tablet by mouth every morning." It can be taken with or without breakfast.  However, it is easier to remember to take your medications if you take them at the same time as something you do every day like brushing your teeth or eating breakfast.</answer2comment>
+		<answer3>Every day with dinner</answer3>
+		<answer3comment>The label says to "take one tablet by mouth every morning." So you should try to take it in the morning instead of the evening.</answer3comment>
+		<answer4>On the weekends</answer4>
+		<correctAnswer>2</correctAnswer>
+	</question>
+	<question>
+		<id>17</id>
+		<problem>Which on of these answers correctly shows how you should take this medication (Neoral)?</problem>
+		<image>PrescriptionLabelNeoral.png</image>
+		<answer1>Every day with breakfast and dinner</answer1>
+		<answer1comment>This picture only shows 1 pill taken 2 times every day, and the label tells you to take more than that.</answer1comment>
+		<answer2>Every day with breakfast</answer2>
+		<answer2comment>This picture only shows 1 pill taken one time every day, and the label tells you to take more than that.</answer2comment>
+		<answer3>5 capsules 2 times a day</answer3>
+		<answer3comment>The label says to take "5 capsules by mouth twice daily."</answer3comment>
+		<answer4>5 capsules one time each day</answer4>
+		<correctAnswer>3</correctAnswer>
+	</question>
+	<question>
+		<id>18</id>
+		<problem>Which on of these answers correctly shows when you should take this medication (Prograf)?</problem>
+		<image>PrescriptionLabelPrograf.png</image>
+		<answer1>2 capsules 2 times a day</answer1>
+		<answer2>2 capsules one time each day</answer2>
+		<answer3>Every day with breakfast and dinner</answer3>
+		<answer3comment>This picture only shows 1 pill taken 2 times every day, and the label tells you to take more than that.</answer3comment>
+		<answer4>Every day with breakfast</answer4>
+		<answer4comment>This picture only shows 1 pill taken one time every day, and the label tells you to take more than that.</answer4comment>
+		<correctAnswer>1</correctAnswer>
+	</question>
+	<question>
+		<id>19</id>
+		<problem>Which on of these answers correctly shows when you should take this medication (Renagel)?</problem>
+		<image>PrescriptionLabelRenagel.png</image>
+		<answer1>2 capsules 2 times a day</answer1>
+		<answer2>Every day with breakfast and dinner</answer2>
+		<answer2comment>This picture only shows 1 pill taken 2 times every day, and the label tells you to take more than that.</answer2comment>
+		<answer3>2 pills at lunch, dinner, and bedtime</answer3>
+		<answer3comment>The label says "take 2 tablets by mouth three times daily." The yellow label at the bottom tells you something else you need to know.</answer3comment>
+		<answer4>2 pills at breakfast, lunch, and dinner</answer4>
+		<answer4comment>The label says "take 2 tablets by mouth three times daily." The yellow label at the bottom also says "take with food."</answer4comment>
+		<correctAnswer>4</correctAnswer>
+	</question>
+</question_set>
