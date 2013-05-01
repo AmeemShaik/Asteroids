@@ -81,12 +81,15 @@ function Update () {
     sprite.position += sprite.yVector * speed * Time.deltaTime;
     // Destroy bullet as it moves out of view
 
-	if(ammo==0&&(sprite.position.x<leftBorder || sprite.position.x > rightBorder || sprite.position.y<(topBorder) || sprite.position.y>bottomBorder)){
-		for(var c in Camera.allCameras){
-			if(c.gameObject.name == "QuestionPanel"){
-				c.GetComponent.<GameGUI>().ammoEnd = true;
+	if((sprite.position.x<leftBorder || sprite.position.x > rightBorder || sprite.position.y<(topBorder) || sprite.position.y>bottomBorder)){
+		if(ammo==0){
+			for(var c in Camera.allCameras){
+				if(c.gameObject.name == "QuestionPanel"){
+					c.GetComponent.<GameGUI>().ammoEnd = true;
+				}
 			}
 		}
+		Camera.main.GetComponent.<JSExample3>().bulletExists = false;
 		Destroy(sprite);
 		Destroy(this);
 	}
@@ -106,6 +109,8 @@ public function AddDebree(debreeObject:OTAnimatingSprite)
 // collision delegates will not be called
 public function OnCollision(owner:OTObject)
 {   	        
+	if(owner.collisionObject.name!="forceField"){
+	Camera.main.GetComponent.<JSExample3>().bulletExists = false;
     // check if the asteroid we are colliding with is not in our
     // ignore debree list.		
 	var found:boolean = false;
@@ -132,7 +137,7 @@ public function OnCollision(owner:OTObject)
 					c.GetComponent.<GameGUI>().answeredQuestion = 0;
 					c.GetComponent.<GameGUI>().showComment = true;
 					c.GetComponent.<GameGUI>().isWorkingOnQuestion = false;
-														
+					c.GetComponent.<GameGUI>().progress++;							
 					//Populating ammo_remaining element for statistics
 					var innerEle3 = doc.CreateElement("ammo_remaining");
 					var ammo = c.GetComponent.<GameGUI>().ammo;
@@ -204,6 +209,7 @@ public function OnCollision(owner:OTObject)
 		}
 	  }
    }
+  }
   }
 }
 

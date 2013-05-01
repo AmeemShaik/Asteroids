@@ -6,10 +6,9 @@ private var initialized:boolean = false;        // initialization notifier
 private var dp:int = 0;
 public var currentProblem;
 public var ammo:int;
-public var progress:int;
 public var explosionSFX : AudioClip;
 public var laserSFX : AudioClip;
-
+public var bulletExists = false;
 
 function RandomBlock(r:Rect, min:Number, max:Number, o:OTObject)
 {
@@ -59,6 +58,7 @@ function CreateObjectPools()
 // application initialization
 function Initialize()
 {
+	bulletExists = false;
 	explosionSFX = Resources.Load("explosion");
 	laserSFX = Resources.Load("laser");
 	ammo = PlayerPrefs.GetInt("ammo");
@@ -190,26 +190,29 @@ function Update () {
     gun.RotateTowards(OT.view.mouseWorldPosition);
     // Rotate our bullet prototype as well so we will instantiate a
     // 'already rotated' bullet when we shoot
-
-    // check if the left mouse button was clicked
-    if (Input.GetMouseButtonDown(0)&& GUIUtility.hotControl == 0)
-    {   
-    	audio.PlayOneShot(laserSFX);
-    	ammo--;
-    	progress++;
-    	for(var c in Camera.allCameras){
-			if(c.gameObject.name == "QuestionPanel"){
-				c.GetComponent.<GameGUI>().ammo = this.ammo;
+	
+	if(!bulletExists){
+		// check if the left mouse button was clicked
+	    if (Input.GetMouseButtonDown(0)&& GUIUtility.hotControl == 0)
+	    {   
+	    	bulletExists = true;
+	    	audio.PlayOneShot(laserSFX);
+	    	ammo--;
+	    	for(var c in Camera.allCameras){
+				if(c.gameObject.name == "QuestionPanel"){
+					c.GetComponent.<GameGUI>().ammo = this.ammo;
+				}
 			}
-		}
-        // Create a new bullet
-        var nBullet:OTSprite = OT.CreateSprite("bullet");
-        // Set bullet's position at approximately the gun's shooting barrel
-        nBullet.position = gun.position + gun.yVector * (gun.size.y / 2);
-    	nBullet.rotation = gun.rotation;
-        // Play the gun's shooting animation frameset once
-        gun.PlayOnce("shoot");
-    }
+	        // Create a new bullet
+	        var nBullet:OTSprite = OT.CreateSprite("bullet");
+	        // Set bullet's position at approximately the gun's shooting barrel
+	        nBullet.position = gun.position + gun.yVector * (gun.size.y / 2);
+	    	nBullet.rotation = gun.rotation;
+	        // Play the gun's shooting animation frameset once
+	        gun.PlayOnce("shoot");
+	    }
+	}
+    
    /* // If we have less than 15 objects within Orthello we will create a random asteroid
     if (OT.objectCount <= 12)
         RandomBlock(OT.view.worldRect, 0.6f, 1.2f, null);     */

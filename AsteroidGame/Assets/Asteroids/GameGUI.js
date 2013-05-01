@@ -1,5 +1,11 @@
 import System.Xml;
 public var questionsList:XmlNodeList;
+public var levelOne:Array;
+public var levelTwo:Array;
+public var levelThree:Array;
+public var currentQuestionSet: Array;
+public var currentLevel;
+public var questionCount;
 public var style = new GUIStyle();
 public var questionImage : Texture2D;
 public var ammoImage : Texture2D;
@@ -28,9 +34,17 @@ public var ammoEnd = false;
 public var timeSpent = 0.0f;
 var isWorkingOnQuestion = true;
 public var playerName;
-
+public var theRect;
+public var space2:Texture2D;
 
 function Awake(){
+	progress = 0;
+	questionCount = -1;
+	levelOne = new Array();
+	levelTwo = new Array();
+	levelThree = new Array();
+	currentQuestionSet = levelOne;
+	currentLevel = 1;
 	currentQuestion = -1;
 	loadQuestions();
 	Camera.main.GetComponent.<JSExample3>().currentProblem = problem;
@@ -85,20 +99,18 @@ function OnGUI() {
 		GUILayout.BeginHorizontal();
 			GUILayout.BeginVertical();
 				GUILayout.BeginVertical();
-					GUILayout.Label("Warp");
-					GUILayout.Label("Power");
+					GUILayout.Label("Warp Power");
 				GUILayout.EndVertical();
 				GUILayout.FlexibleSpace();
-				var theRect = GUILayoutUtility.GetLastRect();
+				theRect = GUILayoutUtility.GetLastRect();
 				theRect.width = ammoImage.width;
 				theRect.height = ammoImage.height*2.5;
-				progress = Camera.main.GetComponent.<JSExample3>().progress;
-				GUI.DrawTexture(new Rect(theRect.x, theRect.y, theRect.width, theRect.height+theRect.height/10), progressBG);
+				GUI.DrawTexture(new Rect(theRect.x, theRect.y, theRect.width, theRect.height+theRect.height/7), progressBG);
 				GUI.DrawTexture(new Rect(theRect.x+10, theRect.y+10, theRect.width*.5, theRect.height), progressMG);
-				if(progress/10 <= 1){
-					GUI.DrawTexture(new Rect(theRect.x+10, theRect.y+10, theRect.width*.5, theRect.height*(progress/10)), progressFG);
+				if(progress/7 <= 1){
+					GUI.DrawTexture(new Rect(theRect.x+10, theRect.y+theRect.height+10-(theRect.height*(progress/7)), theRect.width*.5, theRect.height*(progress/7)), progressFG);
 				}
-				else{Camera.main.GetComponent.<JSExample3>().progress = 0;}
+				else{progress = 0;}
 				GUILayout.EndVertical();
 		GUILayout.EndHorizontal();
 		GUILayout.Space(20);
@@ -165,18 +177,72 @@ function MakeTex(width: int, height: int, col: Color) {
 }
 
 function loadQuestions(){
-	var xmlFile:TextAsset = Resources.Load("QuestionsXML") as TextAsset;
+	var xmlFile:TextAsset = Resources.Load("test") as TextAsset;
 	var xmlDoc = new XmlDocument();
 	xmlDoc.LoadXml(xmlFile.text);
 	questionsList = xmlDoc.GetElementsByTagName("question");
+	var childNodes;
+	var index;
+	for(var i = 0; i < questionsList.Count; i++){
+		index = -1;
+		childNodes = questionsList[i].ChildNodes;
+		for(var j = 0; j < childNodes.Count; j++){
+			if(childNodes[j].Name == "difficulty"){
+				index = j;
+				break;
+			}
+		}
+		switch(childNodes[index].InnerText)
+		{
+		case "1":
+			levelOne.Add(questionsList[i]);
+			break;
+		case "2":
+			levelTwo.Add(questionsList[i]);
+			break;
+		case "3":
+			levelThree.Add(questionsList[i]);
+			break;
+		}
+	}
+	randomizeArray(levelOne);
+	randomizeArray(levelTwo);
+	randomizeArray(levelThree);
 	nextQuestion();
-}
+} 
 
 function nextQuestion(){
+	
 	timeSpent = 0.0f;
 	//isWorkingOnQuestion=true;
+	questionCount++;
+	if((progress == 8)||(questionCount == 10)){
+		if(progress == 8){
+			if(currentLevel!=3){
+				currentLevel++;
+				var space = GameObject.Find("space");
+				switch(currentLevel)
+				{
+				case 1:
+					currentQuestionSet = levelOne;
+					break;
+				case 2:
+					currentQuestionSet = levelTwo;
+					break;
+				case 3:
+					currentQuestionSet = levelThree;
+					break;
+				}
+				currentQuestion = -1;
+			}
+		}
+		questionCount = 0;
+	}
 	currentQuestion++;
-	problem = questionsList[currentQuestion] as XmlNode;
+	if(currentQuestion == currentQuestionSet.Count){
+		currentQuestion = 0;
+	}
+	problem = currentQuestionSet[currentQuestion] as XmlNode;
 	if(problem.HasChildNodes){
 		var childNodes = problem.ChildNodes;
 		answer1comment=null;answer2comment=null;answer3comment=null;answer4comment=null;
@@ -231,4 +297,13 @@ function nextQuestion(){
 		currentImage = currentImage.Substring(0, currentImage.length-4);
 		questionImage = Instantiate(Resources.Load(currentImage));
 	}
+}
+function randomizeArray(arr : Array)
+{
+    for (var i = arr.length - 1; i > 0; i--) {
+        var r = Random.Range(0,i);
+        var tmp = arr[i];
+        arr[i] = arr[r];
+        arr[r] = tmp;
+    }
 }

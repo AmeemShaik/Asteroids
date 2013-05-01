@@ -99,3 +99,10 @@ function Update () {
         OT.DestroyObject(sprite);
     }*/
 }
+
+public function OnTriggerEnter(collisionInfo : Collider){
+  if(collisionInfo.gameObject.name == "forceField"){
+  	forwardVector.x *= -1;
+  	forwardVector.y *= -1;
+  }
+}
