@@ -159,7 +159,7 @@ questionImage.height/2, questionImage.width, questionImage.height));
 	
 	if(showComment){
 	  	//GUI.Box(Rect(0, Screen.height*.15, Screen.width, Screen.height*.85), answer1comment,style);
-	  	GUILayout.BeginArea(Rect(0, Screen.height*.13, Screen.width, Screen.height));
+	  	GUILayout.BeginArea(Rect(0, Screen.height*.12, Screen.width, Screen.height));
 	  	if(answeredQuestion == 0){
 	  	  if(GUILayout.Button("Correct Answer!", style, GUILayout.Height(Screen.height))){
 	  	  	isWorkingOnQuestion=true;
@@ -183,7 +183,7 @@ questionImage.height/2, questionImage.width, questionImage.height));
 		GUILayout.EndArea();
  	}
  	else if(ammoEnd&&ammo==0){
- 		GUILayout.BeginArea(Rect(0, Screen.height*.15, Screen.width, Screen.height));
+ 		GUILayout.BeginArea(Rect(0, Screen.height*.12, Screen.width, Screen.height));
  		if(GUILayout.Button("No ammo left! \n", style, GUILayout.Height(Screen.height))){
 	   		Camera.main.GetComponent.<Main>().Initialize();
  			nextQuestion();
