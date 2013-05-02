@@ -18,7 +18,7 @@
 // ------------------------------------------------------------------------
 
 private var sprite:OTSprite;                            // this bullet's sprite class
-private var app:JSExample3;                              // main application class
+private var app:Main;                              // main application class
 
 private var speed:int = 1000;                           // bullet speed
 private var ignoreCollisions:Number = 0;                // ignore debree collisions time
@@ -41,7 +41,7 @@ function Start () {
 	populateStatistics();
 
     // Get application main class
-    app = Camera.main.GetComponent("JSExample3");
+    app = Camera.main.GetComponent("Main");
     // Get this bullet's sprite class
     sprite = GetComponent("OTSprite");
 	// Because Javascript does not support C# delegate we have to notify our sprite class that 
@@ -64,19 +64,6 @@ function Start () {
 
 // Update is called once per frame
 function Update () {
-    // Check if we have to ignore colliding with created debree
-    if (ignoreCollisions > 0)
-    {
-        // increase ignore time
-        ignoreCollisions -= Time.deltaTime;
-        if (ignoreCollisions < 0) ignoreCollisions = 0;
-    }
-    else
-    {
-        // we no longer have to ignore the created debree so
-        // lets clear the debree list.
-        debree = new Array();
-    }
     // Update bullet position
     sprite.position += sprite.yVector * speed * Time.deltaTime;
     // Destroy bullet as it moves out of view
@@ -89,19 +76,10 @@ function Update () {
 				}
 			}
 		}
-		Camera.main.GetComponent.<JSExample3>().bulletExists = false;
+		Camera.main.GetComponent.<Main>().bulletExists = false;
 		Destroy(sprite);
 		Destroy(this);
 	}
-}
-
-// This method will add a debree object to the ignore debree list.
-// We will have to maintain a ignore debree list because if we dont,
-// this bullet can generate a 'recursive' exploding state that will
-// create LOTS and LOTS of debree, totaly hanging this application
-public function AddDebree(debreeObject:OTAnimatingSprite)
-{
-    debree.push(debreeObject);
 }
 
 // OnCollision callback function  is called when this bullet collides with another 'collidable' object
@@ -110,14 +88,13 @@ public function AddDebree(debreeObject:OTAnimatingSprite)
 public function OnCollision(owner:OTObject)
 {   	        
 	if(owner.collisionObject.name!="forceField"){
-	Camera.main.GetComponent.<JSExample3>().bulletExists = false;
     // Lets Explode this asteroid
 	var name = owner.collisionObject.name;
 	var obj:GameObject = GameObject.Find(name);
 	OT.DestroyObject(sprite);
-    Destroy(obj.GetComponent.<JSAsteroid3>().textObj);  
+    Destroy(obj.GetComponent.<Asteroid>().textObj);  
     app.Explode(owner.collisionObject, this, true);
-    if(obj.GetComponent.<JSAsteroid3>().isCorrect){
+    if(obj.GetComponent.<Asteroid>().isCorrect){
 		for(var c in Camera.allCameras){
 			if(c.gameObject.name == "QuestionPanel"){
 				c.GetComponent.<GameGUI>().answeredQuestion = 0;
@@ -144,8 +121,8 @@ public function OnCollision(owner:OTObject)
     nextQ();
   }
   else{
-	if(obj.GetComponent.<JSAsteroid3>().textObj != null){
-	    var asteroidMesh = obj.GetComponent.<JSAsteroid3>().textObj.GetComponent(TextMesh) as TextMesh;
+	if(obj.GetComponent.<Asteroid>().textObj != null){
+	    var asteroidMesh = obj.GetComponent.<Asteroid>().textObj.GetComponent(TextMesh) as TextMesh;
 	    var s = asteroidMesh.text as String;
 	    var aQ : int;
 	    switch(s)
@@ -186,6 +163,7 @@ public function OnCollision(owner:OTObject)
 			}
 	 else{
 		if(ammo==0){
+			print("here");
 			for(var c in Camera.allCameras){
 				if(c.gameObject.name == "QuestionPanel"){
 					c.GetComponent.<GameGUI>().ammoEnd = true;
@@ -198,6 +176,7 @@ public function OnCollision(owner:OTObject)
 		}
 	  }
    	}
+   	Camera.main.GetComponent.<Main>().bulletExists = false;
   }
 }
 
@@ -231,7 +210,7 @@ function nextQ(){
 		}
 	}
 	
-	Camera.main.GetComponent.<JSExample3>().Initialize();
+	Camera.main.GetComponent.<Main>().Initialize();
 	populateStatistics();
 
 }

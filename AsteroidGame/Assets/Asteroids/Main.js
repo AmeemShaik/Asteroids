@@ -132,16 +132,16 @@ function Initialize()
 			textMesh.fontSize = 500;
 			textMesh.text = choices[i];
 			textMesh.renderer.material = fontResource.material;
-			obj.GetComponent.<JSAsteroid3>().textObj = textObj;
+			obj.GetComponent.<Asteroid>().textObj = textObj;
 			if(i == correctAnswer){
-				obj.GetComponent.<JSAsteroid3>().isCorrect = true;
+				obj.GetComponent.<Asteroid>().isCorrect = true;
 			}
 		}
 	}
 }
 
 // This method will explode an asteroid
-public function Explode(o:OTObject, bullet:JSBullet3, sound:boolean)
+public function Explode(o:OTObject, bullet:Bullet, sound:boolean)
 {
 	if(sound && explosionSFX.isReadyToPlay){
 		audio.PlayOneShot(explosionSFX, 0.2f);
@@ -160,10 +160,7 @@ public function Explode(o:OTObject, bullet:JSBullet3, sound:boolean)
             o.rect.height / 8);
         // Create a debree that is relatively smaller than the asteroid that was detroyed
         var a:OTAnimatingSprite = RandomBlock(r, 0.65f, 0.8f, o);
-        // Add this debree to the bullet telling the bullet to ignore this debree
-        // in this update cycle - otherwise the bullet explosions could enter some
-        // recursive 'dead' loop creating LOTS of debree
-        bullet.AddDebree(a);
+
         // Recusively explode 2 asteroids if they are big enough, to get a nice
         // exploding debree effect.
         if (b < 2 && a.size.x > 30)
@@ -190,10 +187,9 @@ function Update () {
     gun.RotateTowards(OT.view.mouseWorldPosition);
     // Rotate our bullet prototype as well so we will instantiate a
     // 'already rotated' bullet when we shoot
-	
 	if(!bulletExists){
 		// check if the left mouse button was clicked
-	    if (Input.GetMouseButtonDown(0)&& GUIUtility.hotControl == 0)
+	    if (Input.GetMouseButtonDown(0)&& GUIUtility.hotControl == 0&&ammo>0)
 	    {   
 	    	bulletExists = true;
 	    	audio.PlayOneShot(laserSFX);

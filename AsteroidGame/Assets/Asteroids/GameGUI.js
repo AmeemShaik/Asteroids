@@ -47,7 +47,7 @@ function Awake(){
 	currentLevel = 1;
 	currentQuestion = -1;
 	loadQuestions();
-	Camera.main.GetComponent.<JSExample3>().currentProblem = problem;
+	Camera.main.GetComponent.<Main>().currentProblem = problem;
 	playerName = PlayerPrefs.GetString("playerName");
 	
 	if(image != null){
@@ -146,9 +146,9 @@ function OnGUI() {
 		   		showComment=false;
 			}
 		}
-		if(Camera.main.GetComponent.<JSExample3>().ammo == 0){
+		if(Camera.main.GetComponent.<Main>().ammo == 0){
 			nextQuestion();
-			Camera.main.GetComponent.<JSExample3>().Initialize();
+			Camera.main.GetComponent.<Main>().Initialize();
 		}
 		GUILayout.EndArea();
  	}
@@ -156,7 +156,7 @@ function OnGUI() {
  		GUILayout.BeginArea(Rect(0, Screen.height*.15, Screen.width, Screen.height));
  		if(GUILayout.Button("No ammo left! \n", style, GUILayout.Height(Screen.height))){
  			nextQuestion();
-	   		Camera.main.GetComponent.<JSExample3>().Initialize();
+	   		Camera.main.GetComponent.<Main>().Initialize();
 	   		ammoEnd=false;
 	   		
 		}
@@ -293,7 +293,7 @@ function nextQuestion(){
 		}
 	}
 	
-	Camera.main.GetComponent.<JSExample3>().currentProblem = problem;
+	Camera.main.GetComponent.<Main>().currentProblem = problem;
 
 	
 	if(image != null){
