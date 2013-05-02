@@ -84,10 +84,10 @@ function Update () {
         
     }
  
-	if(sprite.position.x<leftBorder || sprite.position.x > rightBorder ){
+	if(sprite.position.x<(leftBorder+50) || sprite.position.x > (rightBorder-50) ){
 		forwardVector.x *= -1;
 	}
-	else if(sprite.position.y>topBorder || sprite.position.y<bottomBorder){
+	if(sprite.position.y>(topBorder-50) || sprite.position.y<(bottomBorder+50)){
 		forwardVector.y *= -1;
 	}
     // Destroy the asteroid as ist moves out of view

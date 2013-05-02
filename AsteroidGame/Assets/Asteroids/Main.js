@@ -37,10 +37,14 @@ function RandomBlock(r:Rect, min:Number, max:Number, o:OTObject)
             sprite.size = sprite.size * s;
         // Set sprite's random position
        	var xRandom = Random.value;
-       	while(xRandom>0.3 && xRandom<0.7){
+       	while((xRandom>0.3 && xRandom<0.7)||(xRandom>0.9)||(xRandom<0.1)){
        		xRandom = Random.value;
        	}
-        sprite.position = new Vector2(r.xMin + xRandom * r.width, r.yMin + Random.value * r.height);
+       	var yRandom = Random.value;
+       	while((yRandom>0.9)||(yRandom<0.1)){
+       		yRandom = Random.value;
+       	}
+        sprite.position = new Vector2(r.xMin + xRandom * r.width, r.yMin + yRandom * r.height);
         // Set sprote's random rotation
         sprite.rotation = Random.value * 360;
         // Set sprite's name
