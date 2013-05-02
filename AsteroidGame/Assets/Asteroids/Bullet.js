@@ -30,13 +30,19 @@ private var rightBorder;
 private var topBorder;
 private var bottomBorder;
 private var ammo;
-
+var playerName;
 var doc;
 var element;
 // Use this for initialization
 function Start () {
 	doc = new XmlDocument();
-	doc.Load("Assets/Resources/Statistics/Stats.xml");
+	
+	playerName = PlayerPrefs.GetString("playerName");
+	if(System.IO.File.Exists("Assets/Resources/Statistics/" + playerName + ".xml")){
+		doc.Load("Assets/Resources/Statistics/" + playerName + ".xml");
+	}else{
+		doc.LoadXml("<responded></responded>");
+	}
     element = doc.CreateElement("question");
 	populateStatistics();
 
@@ -198,7 +204,7 @@ function nextQ(){
 	//This function calls next question, so this is an appropriate 
 	//time to create a new question node in statistics
 	doc.GetElementsByTagName("responded")[0].AppendChild(element);
-	doc.Save("Assets/Resources/Statistics/Stats.xml");
+	doc.Save("Assets/Resources/Statistics/" + playerName + ".xml");
     element = doc.CreateElement("question");
 	
 	//Question Logic: go to next question

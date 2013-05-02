@@ -11,23 +11,29 @@ public class LevelUploader : MonoBehaviour
 	void StartUpload()
 	{
 		StartCoroutine("UploadLevel");
-				print("test ");
 
 	}
    
 	IEnumerator UploadLevel()   
 	{
+		string name = PlayerPrefs.GetString("playerName");
 		//making a dummy xml level file
 		XmlDocument map = new XmlDocument();
-		map.Load ("Assets/Resources/Statistics/Stats.xml");
+		if(System.IO.File.Exists ("Assets/Resources/Statistics/" + name + ".xml")){
+			Debug.Log("player exists at Assets/Resources/Statistics/" + name + ".xml");
+			map.Load ("Assets/Resources/Statistics/" + name + ".xml");
+		} else {
+			Debug.Log ("Player doesn't exist!");
+			yield break;
+		}
 		//converting the xml to bytes to be ready for upload
 		byte[] levelData =Encoding.UTF8.GetBytes(map.OuterXml);
 	   
 		//generate a long random file name , to avoid duplicates and overwriting
 		string fileName = Path.GetRandomFileName();
-		fileName = fileName.Substring(0,6);
+		fileName = fileName.Substring(0,4);
 		fileName = fileName.ToUpper();
-		fileName = fileName + ".xml";
+		fileName = name + "_" + fileName + ".xml";
 	   
 		//if you save the generated name, you can make people be able to retrieve the uploaded file, without the needs of listings
 		//just provide the level code name , and it will retrieve it just like a qrcode or something like that, please read below the method used to validate the upload,

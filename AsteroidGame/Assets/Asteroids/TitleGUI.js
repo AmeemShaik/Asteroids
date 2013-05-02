@@ -7,7 +7,7 @@ var popupDifficulty : boolean = false;
 var enterName : boolean = false;
 var difficulty;
 public var ammo;
-public var playerName = "";
+public var playerName = "Default Player";
 
 function OnGUI() {
 
