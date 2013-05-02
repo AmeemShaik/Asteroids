@@ -45,7 +45,7 @@ function Start () {
 		doc.LoadXml("<responded></responded>");
 	}
     element = doc.CreateElement("question");
-	populateStatistics();
+	//populateStatistics();
 
     // Get application main class
     app = Camera.main.GetComponent("Main");
@@ -79,6 +79,7 @@ function Update () {
 
 	if((sprite.position.x<leftBorder || sprite.position.x > rightBorder || sprite.position.y<(topBorder) || sprite.position.y>bottomBorder)){
 		if(ammo==0){
+			storeStat();
 			for(var c in Camera.allCameras){
 				if(c.gameObject.name == "QuestionPanel"){
 					c.GetComponent.<GameGUI>().ammoEnd = true;
@@ -110,17 +111,7 @@ public function OnCollision(owner:OTObject)
 				c.GetComponent.<GameGUI>().showComment = true;
 				c.GetComponent.<GameGUI>().isWorkingOnQuestion = false;
 				c.GetComponent.<GameGUI>().progress++;							
-				//Populating ammo_remaining element for statistics
-				var innerEle3 = doc.CreateElement("ammo_remaining");
-				var ammoStat = c.GetComponent.<GameGUI>().ammo;
-				innerEle3.InnerText = ammoStat + "";
-				element.AppendChild(innerEle3);
-				
-				//Populating time spent element for statistics
-				var innerEle4 = doc.CreateElement("time_spent");
-				var rounded = Mathf.Round(c.GetComponent.<GameGUI>().timeSpent * 10)/10;
-				innerEle4.InnerText = rounded+"";
-				element.AppendChild(innerEle4);
+				populateStats();
 			}
 		}
 	//Populating correctly_answered element for statistics
@@ -151,6 +142,8 @@ public function OnCollision(owner:OTObject)
 	    }
 	    for(var c in Camera.allCameras){
 			if(c.gameObject.name == "QuestionPanel"){
+					if(ammo==0)
+						storeStat();
 					c.GetComponent.<GameGUI>().answeredQuestion = aQ;
 					switch(aQ){
 						case 1:
@@ -172,15 +165,14 @@ public function OnCollision(owner:OTObject)
 			}
 	 else{
 		if(ammo==0){
+		
 			for(var c in Camera.allCameras){
 				if(c.gameObject.name == "QuestionPanel"){
 					c.GetComponent.<GameGUI>().ammoEnd = true;
 				}
 			}
-			var innerEle2 = doc.CreateElement("correctly_answered");
-			innerEle2.InnerText = "no";
-			element.AppendChild(innerEle2);
-			
+			storeStat();
+
 		}
 	  }
    	}
@@ -188,18 +180,48 @@ public function OnCollision(owner:OTObject)
   }
 }
 
-function populateStatistics(){
+function populateStats(){
 	for(var c in Camera.allCameras){
 		if(c.gameObject.name == "QuestionPanel"){
-			//Populating question_number element for statistics
+		
+					//Populating question_number element for statistics
+			
 			var innerEle2 = doc.CreateElement("question_number");
 			var currQuestion = c.GetComponent.<GameGUI>().currentQuestion;
 			currQuestion++;
 			innerEle2.InnerText = currQuestion + "";
 			element.AppendChild(innerEle2);
 
+		
+			//Populating ammo_remaining element for statistics
+			var innerEle3 = doc.CreateElement("ammo_remaining");
+			var ammoStat = c.GetComponent.<GameGUI>().ammo;
+			innerEle3.InnerText = ammoStat + "";
+			element.AppendChild(innerEle3);
+			
+			//Populating time spent element for statistics
+			var innerEle4 = doc.CreateElement("time_spent");
+			var rounded = Mathf.Round(c.GetComponent.<GameGUI>().timeSpent * 10)/10;
+			innerEle4.InnerText = rounded+"";
+			element.AppendChild(innerEle4);
+			
+			//Populating difficulty element for statistics
+			var innerEle5 = doc.CreateElement("difficulty");
+			var difficultyLvl = c.GetComponent.<GameGUI>().difficulty + "";
+			innerEle5.InnerText = difficultyLvl;
+			element.AppendChild(innerEle5);
 		}
 	}
+}
+
+function storeStat(){
+	populateStats();
+	var innerEle2 = doc.CreateElement("correctly_answered");
+	innerEle2.InnerText = "no";
+	element.AppendChild(innerEle2);
+	doc.GetElementsByTagName("responded")[0].AppendChild(element);
+	doc.Save(Application.dataPath + "/" + playerName + ".xml");
+    element = doc.CreateElement("question");
 }
 
 function nextQ(){
@@ -219,6 +241,5 @@ function nextQ(){
 	}
 	
 	Camera.main.GetComponent.<Main>().Initialize();
-	populateStatistics();
 
 }
