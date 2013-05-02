@@ -10,6 +10,7 @@ public var ammo;
 public var playerName = "";
 
 function OnGUI() {
+
 	if(titleMenu){
 		GUILayout.BeginArea(Rect(Screen.width/2 - buttonWidth/2, Screen.height/2 - 200, buttonWidth, 500));
 			GUILayout.Space(spacing);
@@ -68,7 +69,7 @@ function OnGUI() {
 			GUILayout.BeginVertical();
 				GUILayout.Label("Enter your name, Space Cadet.");
 				playerName = GUILayout.TextArea(playerName, 25);
-				if(GUILayout.Button("Go", GUILayout.Height(buttonHeight))){
+				if(GUILayout.Button("Go", GUILayout.Height(buttonHeight))|| Event.current.keyCode == KeyCode.Return){
 					//if(isValid(playerName)){
 						PlayerPrefs.SetString("playerName", playerName);
 						popupDifficulty = true;
@@ -82,6 +83,3 @@ function OnGUI() {
 		GUILayout.EndArea();
 	}
 }
-
-//Checks if a string only contains letters and numbers
-//function isValid(str) {return /^\w+$/.test(str);}
