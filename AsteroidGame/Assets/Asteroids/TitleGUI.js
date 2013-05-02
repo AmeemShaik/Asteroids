@@ -11,8 +11,14 @@ var titleStyle = new GUIStyle();
 var difficulty;
 public var ammo;
 public var playerName = "Default Cadet";
+public var font;
+
+function Awake(){
+	font = Resources.Load("Fonts/ContrailOne-Regular");
+}
 
 function OnGUI() {
+	GUI.skin.font = font;
 
 	if(titleMenu){
 		GUILayout.BeginArea(Rect(Screen.width/2 - buttonWidth/2, Screen.height/2 - 200, buttonWidth, 500));
@@ -74,7 +80,7 @@ function OnGUI() {
 			GUILayout.BeginVertical();
 			
 				var currentPlayer = PlayerPrefs.GetString("playerName");
-				if(currentPlayer != "Default Cadet"){
+				if(currentPlayer != ""){
 					if(GUILayout.Button("Continue as " + currentPlayer, GUILayout.Height(buttonHeight))){
 						Application.LoadLevel("mainLevel");
 					}
