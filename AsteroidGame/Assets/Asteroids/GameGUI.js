@@ -153,16 +153,16 @@ function OnGUI() {
 			}
 		}
 		if(Camera.main.GetComponent.<Main>().ammo == 0){
-			nextQuestion();
 			Camera.main.GetComponent.<Main>().Initialize();
+			nextQuestion();
 		}
 		GUILayout.EndArea();
  	}
  	else if(ammoEnd&&ammo==0){
  		GUILayout.BeginArea(Rect(0, Screen.height*.15, Screen.width, Screen.height));
  		if(GUILayout.Button("No ammo left! \n", style, GUILayout.Height(Screen.height))){
- 			nextQuestion();
 	   		Camera.main.GetComponent.<Main>().Initialize();
+	   		nextQuestion();
 	   		ammoEnd=false;
 	   		
 		}

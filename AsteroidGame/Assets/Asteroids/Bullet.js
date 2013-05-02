@@ -33,6 +33,7 @@ private var ammo;
 var playerName;
 var doc;
 var element;
+var MainCamera;
 // Use this for initialization
 function Start () {
 	doc = new XmlDocument();
@@ -63,13 +64,15 @@ function Start () {
 	bottomBorder = Camera.main.ViewportToWorldPoint(Vector3(0,1,dist)).y;
 	for(var c in Camera.allCameras){
 		if(c.gameObject.name == "QuestionPanel"){
-			ammo = c.GetComponent.<GameGUI>().ammo;
+			MainCamera = Camera.main.GetComponent.<Main>();
+			this.ammo = MainCamera.ammo;
 		}
 	}
 }
 
 // Update is called once per frame
 function Update () {
+	this.ammo = MainCamera.ammo;
     // Update bullet position
     sprite.position += sprite.yVector * speed * Time.deltaTime;
     // Destroy bullet as it moves out of view
@@ -169,7 +172,6 @@ public function OnCollision(owner:OTObject)
 			}
 	 else{
 		if(ammo==0){
-			print("here");
 			for(var c in Camera.allCameras){
 				if(c.gameObject.name == "QuestionPanel"){
 					c.GetComponent.<GameGUI>().ammoEnd = true;

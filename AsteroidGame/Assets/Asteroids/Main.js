@@ -36,7 +36,11 @@ function RandomBlock(r:Rect, min:Number, max:Number, o:OTObject)
         else
             sprite.size = sprite.size * s;
         // Set sprite's random position
-        sprite.position = new Vector2(r.xMin + Random.value * r.width, r.yMin + Random.value * r.height);
+       	var xRandom = Random.value;
+       	while(xRandom>0.3 && xRandom<0.7){
+       		xRandom = Random.value;
+       	}
+        sprite.position = new Vector2(r.xMin + xRandom * r.width, r.yMin + Random.value * r.height);
         // Set sprote's random rotation
         sprite.rotation = Random.value * 360;
         // Set sprite's name
@@ -191,9 +195,10 @@ function Update () {
 		// check if the left mouse button was clicked
 	    if (Input.GetMouseButtonDown(0)&& GUIUtility.hotControl == 0&&ammo>0)
 	    {   
+	    	ammo--;
 	    	bulletExists = true;
 	    	audio.PlayOneShot(laserSFX);
-	    	ammo--;
+	    	
 	    	for(var c in Camera.allCameras){
 				if(c.gameObject.name == "QuestionPanel"){
 					c.GetComponent.<GameGUI>().ammo = this.ammo;
