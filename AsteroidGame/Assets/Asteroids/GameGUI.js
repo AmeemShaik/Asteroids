@@ -7,6 +7,9 @@ public var currentQuestionSet: Array;
 public var currentLevel;
 public var questionCount;
 public var style = new GUIStyle();
+public var fontStyle = new GUIStyle();
+public var buttonStyle = new GUIStyle();
+public var interfaceStyle = new GUIStyle();
 public var questionImage : Texture2D;
 public var ammoImage : Texture2D;
 public var progressBG : Texture2D; 
@@ -23,8 +26,8 @@ public var buttonHeight:int = 75;
 public var buttonWidth:int = 100;
 public var problem;
 public var progress : float;
-public var sWidth = Screen.width;
-public var sHeight = Screen.height;
+public var sWidth : int;
+public var sHeight : int;
 public var question; public var image; 
 public var answer1; public var answer1comment;
 public var answer2; public var answer2comment;
@@ -39,8 +42,10 @@ var isWorkingOnQuestion = true;
 public var playerName;
 public var theRect;
 public var space2:Texture2D;
+public var font;
 
 function Awake(){
+	interfaceStyle.normal.background = MakeTex (1,3,Color.white);
 	progress = 0;
 	questionCount = -1;
 	levelOne = new Array();
@@ -58,6 +63,10 @@ function Awake(){
 		currentImage = currentImage.Substring(0, currentImage.length-4);
 		questionImage = Instantiate(Resources.Load(currentImage));
 	}
+	sHeight = Screen.height;
+	sWidth = Screen.width;
+	buttonHeight = (.1111111111 * Screen.height);
+	buttonWidth = (.12 * Screen.width);
 	ammoImage = Instantiate(Resources.Load("missile"));
 	progressBG = Instantiate(Resources.Load("progressBG"));
 	progressMG = Instantiate(Resources.Load("progressMG"));
@@ -65,11 +74,12 @@ function Awake(){
 	spacebg1 = Instantiate(Resources.Load("space"));
 	spacebg2 = Instantiate(Resources.Load("space2"));
 	spacebg3 = Instantiate(Resources.Load("space3"));
+	font = Resources.Load("Fonts/ContrailOne-Regular");
 	progress = 0;
 	style.normal.background = MakeTex(1, 1, Color.black);
   	style.normal.textColor = Color.white;
   	style.alignment = TextAnchor.MiddleCenter;
-
+  	
 }
 function Update () {
 	if (isWorkingOnQuestion)
@@ -78,26 +88,34 @@ function Update () {
 	//Debug.Log(isWorkingOnQuestion);
 }
 function OnGUI() {
+	GUI.Box(Rect(.05 * Screen.width,.1245*sHeight,Screen.width,3),"",interfaceStyle);
+	GUI.Box(Rect(.05 * Screen.width,.1245*sHeight,3,sHeight),"",interfaceStyle);
+
+	GUI.skin.font = font;
 	GUI.contentColor = Color.white;
 	GUILayout.BeginArea (Rect (0,0,Screen.width,Screen.height));
 		GUILayout.BeginHorizontal();
-			if(GUILayout.Button("Go Home", GUILayout.Height(buttonHeight),GUILayout.Width(buttonWidth))){
+			if(GUILayout.Button("Go Home", GUILayout.Height(buttonHeight),GUILayout.Width
+(buttonWidth))){
 				Application.LoadLevel("Title");
 			}
+			GUILayout.Space(5);
 			GUILayout.BeginVertical();
-				GUILayout.Label(question);
+				GUILayout.Space(5);
+				GUILayout.Label(question, fontStyle);
 				GUILayout.BeginHorizontal();
 					GUILayout.BeginVertical();
-						GUILayout.Label("(A) " + answer1);
-						GUILayout.Label("(C) " + answer3);
+						GUILayout.Label("(A) " + answer1, fontStyle);
+						GUILayout.Label("(C) " + answer3, fontStyle);
 					GUILayout.EndVertical();
 					GUILayout.BeginVertical();
-						GUILayout.Label("(B) " + answer2);
-						GUILayout.Label("(D) " + answer4);
+						GUILayout.Label("(B) " + answer2, fontStyle);
+						GUILayout.Label("(D) " + answer4, fontStyle);
 					GUILayout.EndVertical();
 				GUILayout.EndHorizontal();
 			GUILayout.EndVertical();
-			if(GUILayout.Button(correctAnswer, GUILayout.Height(buttonHeight),GUILayout.Width(buttonWidth))){
+			if(GUILayout.Button(questionImage, GUILayout.Height(buttonHeight),GUILayout.Width
+(buttonWidth))){
 				if(popupImage){popupImage = false;}
 				else{popupImage = true;}
 			}
@@ -105,16 +123,21 @@ function OnGUI() {
 		GUILayout.BeginHorizontal();
 			GUILayout.BeginVertical();
 				GUILayout.BeginVertical();
-					GUILayout.Label("Warp Power");
+					GUILayout.Space(10);
+					GUILayout.Label("Warp", fontStyle);
+					GUILayout.Label("Power", fontStyle);
 				GUILayout.EndVertical();
 				GUILayout.FlexibleSpace();
 				theRect = GUILayoutUtility.GetLastRect();
 				theRect.width = ammoImage.width;
 				theRect.height = ammoImage.height*2.5;
-				GUI.DrawTexture(new Rect(theRect.x, theRect.y, theRect.width, theRect.height+theRect.height/8), progressBG);
-				GUI.DrawTexture(new Rect(theRect.x+10, theRect.y+10, theRect.width*.5, theRect.height), progressMG);
+				GUI.DrawTexture(new Rect(theRect.x, theRect.y, theRect.width, theRect.height
++theRect.height/8), progressBG);
+				GUI.DrawTexture(new Rect(theRect.x+10, theRect.y+10, theRect.width*.5, 
+theRect.height), progressMG);
 				if(progress/8 <= 1){
-					GUI.DrawTexture(new Rect(theRect.x+10, theRect.y+theRect.height+10-(theRect.height*(progress/8)), theRect.width*.5, theRect.height*(progress/8)), progressFG);
+					GUI.DrawTexture(new Rect(theRect.x+10, theRect.y+theRect.height+10-
+(theRect.height*(progress/8)), theRect.width*.5, theRect.height*(progress/8)), progressFG);
 				}
 				else{progress = 0;}
 				GUILayout.EndVertical();
@@ -130,7 +153,8 @@ function OnGUI() {
 	GUILayout.EndArea();
 	
 	if(popupImage){
-		GUILayout.BeginArea (Rect (Screen.width/2-questionImage.width/2, Screen.height/2-questionImage.height/2, questionImage.width, questionImage.height));
+		GUILayout.BeginArea (Rect (Screen.width/2-questionImage.width/2, Screen.height/2-
+questionImage.height/2, questionImage.width, questionImage.height));
 		GUILayout.Label (questionImage);
 		GUILayout.EndArea();
 	}
@@ -148,13 +172,15 @@ function OnGUI() {
 			if(answeredQuestionComment==null){
 				answeredQuestionComment = "";
 			}
-		  	if(GUILayout.Button("Wrong Answer! \n" + answeredQuestionComment, style, GUILayout.Height(Screen.height))){
+		  	if(GUILayout.Button("Wrong Answer! \n" + answeredQuestionComment, style, GUILayout.Height
+(Screen.height))){
 		   		showComment=false;
 			}
 		}
 		if(Camera.main.GetComponent.<Main>().ammo == 0){
 			Camera.main.GetComponent.<Main>().Initialize();
 			nextQuestion();
+
 		}
 		GUILayout.EndArea();
  	}
@@ -162,7 +188,7 @@ function OnGUI() {
  		GUILayout.BeginArea(Rect(0, Screen.height*.15, Screen.width, Screen.height));
  		if(GUILayout.Button("No ammo left! \n", style, GUILayout.Height(Screen.height))){
 	   		Camera.main.GetComponent.<Main>().Initialize();
-	   		nextQuestion();
+ 			nextQuestion();
 	   		ammoEnd=false;
 	   		
 		}
