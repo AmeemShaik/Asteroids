@@ -39,8 +39,8 @@ function Start () {
 	doc = new XmlDocument();
 	
 	playerName = PlayerPrefs.GetString("playerName");
-	if(System.IO.File.Exists("Assets/Resources/Statistics/" + playerName + ".xml")){
-		doc.Load("Assets/Resources/Statistics/" + playerName + ".xml");
+	if(System.IO.File.Exists(Application.dataPath + "/" + playerName + ".xml")){
+		doc.Load(Application.dataPath + "/" + playerName + ".xml");
 	}else{
 		doc.LoadXml("<responded></responded>");
 	}
@@ -206,7 +206,7 @@ function nextQ(){
 	//This function calls next question, so this is an appropriate 
 	//time to create a new question node in statistics
 	doc.GetElementsByTagName("responded")[0].AppendChild(element);
-	doc.Save("Assets/Resources/Statistics/" + playerName + ".xml");
+	doc.Save(Application.dataPath + "/" + playerName + ".xml");
     element = doc.CreateElement("question");
 	
 	//Question Logic: go to next question

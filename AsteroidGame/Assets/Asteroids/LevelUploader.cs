@@ -19,9 +19,9 @@ public class LevelUploader : MonoBehaviour
 		string name = PlayerPrefs.GetString("playerName");
 		//making a dummy xml level file
 		XmlDocument map = new XmlDocument();
-		if(System.IO.File.Exists ("Assets/Resources/Statistics/" + name + ".xml")){
+		if(System.IO.File.Exists (Application.dataPath + "/" + name + ".xml")){
 			Debug.Log("player exists at Assets/Resources/Statistics/" + name + ".xml");
-			map.Load ("Assets/Resources/Statistics/" + name + ".xml");
+			map.Load (Application.dataPath + "/" + name + ".xml");
 		} else {
 			Debug.Log ("Player doesn't exist!");
 			yield break;
