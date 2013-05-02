@@ -94,7 +94,7 @@ function Update () {
 }
 function OnGUI() {
 	GUI.Box(Rect(.05 * Screen.width,.125*sHeight,Screen.width,8),"",style);
-
+	GUI.Box(Rect(0,0,.05*Screen.width,Screen.height),"",style);
 	GUI.Box(Rect(.05 * Screen.width,.135*sHeight,Screen.width,3),"",interfaceStyle);
 	GUI.Box(Rect(.05 * Screen.width,.135*sHeight,3,sHeight),"",interfaceStyle);
 
