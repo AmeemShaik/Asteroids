@@ -5,6 +5,8 @@ var spacing:int = 25;
 var titleMenu : boolean = true;
 var popupDifficulty : boolean = false;
 var enterName : boolean = false;
+var help : boolean = false;
+var titleStyle = new GUIStyle();
 var difficulty;
 public var ammo;
 public var playerName = "Default Player";
@@ -13,14 +15,16 @@ function OnGUI() {
 
 	if(titleMenu){
 		GUILayout.BeginArea(Rect(Screen.width/2 - buttonWidth/2, Screen.height/2 - 200, buttonWidth, 500));
+			GUILayout.Label("Shooting STARS", titleStyle);
 			GUILayout.Space(spacing);
 			if(GUILayout.Button("Start Game", GUILayout.Height(buttonHeight))){
 				enterName = true;
 				titleMenu = false;
 			}
 			GUILayout.Space(spacing);
-			if(GUILayout.Button("Tutorial", GUILayout.Height(buttonHeight))){
-				Application.LoadLevel("Tutorial");
+			if(GUILayout.Button("How to Play", GUILayout.Height(buttonHeight))){
+				help = true;
+				titleMenu = false;
 			}
 			
 			GUILayout.Space(spacing);
@@ -78,6 +82,18 @@ function OnGUI() {
 					//else{
 					//	playerName = "Not valid. Try Again!";
 					//}
+				}
+			GUILayout.EndVertical();
+		GUILayout.EndArea();
+	}
+	
+	if(help){
+		GUILayout.BeginArea(new Rect(Screen.width/2-buttonWidth/2, Screen.height/2-buttonHeight/2, buttonWidth, buttonHeight*5));
+			GUILayout.BeginVertical();
+				GUILayout.Label("TUTORIAL TEXT HERE.");
+				if(GUILayout.Button("Return", GUILayout.Height(buttonHeight))|| Event.current.keyCode == KeyCode.Return){
+						titleMenu = true;
+						help = false;
 				}
 			GUILayout.EndVertical();
 		GUILayout.EndArea();
