@@ -1,4 +1,5 @@
 //var cubeRenderer:Renderer;
+import System.Text.RegularExpressions;
 var buttonWidth:int = 200;
 var buttonHeight:int = 25;
 var spacing:int = 25;
@@ -9,7 +10,7 @@ var help : boolean = false;
 var titleStyle = new GUIStyle();
 var difficulty;
 public var ammo;
-public var playerName = "Default Player";
+public var playerName = "Default Cadet";
 
 function OnGUI() {
 
@@ -69,20 +70,29 @@ function OnGUI() {
 	}
 	
 	if(enterName){
-		GUILayout.BeginArea(new Rect(Screen.width/2-buttonWidth/2, Screen.height/2-buttonHeight/2, buttonWidth, buttonHeight*5));
+		GUILayout.BeginArea(new Rect(Screen.width/2-buttonWidth/2, Screen.height/3, buttonWidth, buttonHeight*5));
 			GUILayout.BeginVertical();
+			
+				var currentPlayer = PlayerPrefs.GetString("playerName");
+				if(currentPlayer != "Default Cadet"){
+					if(GUILayout.Button("Continue as " + currentPlayer, GUILayout.Height(buttonHeight))){
+						Application.LoadLevel("mainLevel");
+					}
+				}
+				GUILayout.Space(30);
+
 				GUILayout.Label("Enter your name, Space Cadet.");
+				//playerName = "";
 				playerName = GUILayout.TextArea(playerName, 25);
-				if(GUILayout.Button("Go", GUILayout.Height(buttonHeight))|| Event.current.keyCode == KeyCode.Return){
-					//if(isValid(playerName)){
+				playerName = Regex.Replace(playerName, "[^a-zA-Z0-9 ]", "");
+				if(playerName != ""){
+					if(GUILayout.Button("Go", GUILayout.Height(buttonHeight))|| Event.current.keyCode == KeyCode.Return){
 						PlayerPrefs.SetString("playerName", playerName);
 						popupDifficulty = true;
 						enterName = false;
-					//}
-					//else{
-					//	playerName = "Not valid. Try Again!";
-					//}
+					}
 				}
+
 			GUILayout.EndVertical();
 		GUILayout.EndArea();
 	}
