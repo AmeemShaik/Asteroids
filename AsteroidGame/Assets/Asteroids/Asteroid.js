@@ -52,7 +52,7 @@ function Update () {
         forwardVector = transform.up;
 	
     // Update asteroid's position
-    sprite.position += (forwardVector * 50 * Time.deltaTime);
+    sprite.position += (forwardVector * 200 * Time.deltaTime);
     var newPosition = asteroidObj.transform.position;
     if(textObj){
     	textObj.transform.position = newPosition;
