@@ -202,9 +202,10 @@ function Update () {
 	        // Create a new bullet
 	        
 	        var nBullet:OTSprite = OT.CreateSprite("bullet");
-	        GameObject.Find(nBullet.name).GetComponent(Bullet).Start();
+	      
 	        // Set bullet's position at approximately the gun's shooting barrel
 	        if(nBullet!= null){
+	        	GameObject.Find(nBullet.name).GetComponent(Bullet).Start();
 		        nBullet.position = gun.position + gun.yVector * (gun.size.y / 2);
 		    	nBullet.rotation = gun.rotation;
 		        // Play the gun's shooting animation frameset once

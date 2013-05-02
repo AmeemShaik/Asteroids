@@ -20,6 +20,9 @@ public var spacebg2 : Texture;
 public var spacebg3 : Texture;
 public var popupImage : boolean = false;
 public var showComment : boolean = false;
+public var startGame: boolean = true;
+public var showCongrats: boolean = false;
+public var message;
 public var currentQuestion;
 public var answeredQuestion : int;
 public var buttonHeight:int = 75;
@@ -156,7 +159,13 @@ questionImage.height/2, questionImage.width, questionImage.height));
 		GUILayout.Label (questionImage);
 		GUILayout.EndArea();
 	}
-	
+	if(startGame){
+		GUILayout.BeginArea(Rect(0, Screen.height*.12, Screen.width, Screen.height));
+ 		if(GUILayout.Button("Welcome, space pilot! Get ready!\n", style, GUILayout.Height(Screen.height))){
+	   		startGame = false;
+		}
+		GUILayout.EndArea();
+	}
 	if(showComment){
 	  	//GUI.Box(Rect(0, Screen.height*.15, Screen.width, Screen.height*.85), answer1comment,style);
 	  	GUILayout.BeginArea(Rect(0, Screen.height*.12, Screen.width, Screen.height));
@@ -192,6 +201,13 @@ questionImage.height/2, questionImage.width, questionImage.height));
 		}
 		GUILayout.EndArea();
  	}
+ 	if(showCongrats){
+		GUILayout.BeginArea(Rect(0, Screen.height*.12, Screen.width, Screen.height));
+ 		if(GUILayout.Button(message+"\n", style, GUILayout.Height(Screen.height))){
+	   		showCongrats = false;
+		}
+		GUILayout.EndArea();
+	}
 }
 
 function MakeTex(width: int, height: int, col: Color) {
@@ -258,10 +274,14 @@ function nextQuestion(){
 				case 2:
 					currentQuestionSet = levelTwo;
 					GameObject.Find("space").guiTexture.texture = spacebg2;
+					message = "Congrats! You've been promoted from Space Pilot to Flight Officer!";
+					showCongrats = true;
 					break;
 				case 3:
 					currentQuestionSet = levelThree;
 					GameObject.Find("space").guiTexture.texture = spacebg3;
+					message = "Congrats! You've been promoted from Flight Officer to Command Pilot!";
+					showCongrats = true;
 					break;
 				}
 				currentQuestion = -1;

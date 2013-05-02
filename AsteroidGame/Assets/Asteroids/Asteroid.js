@@ -55,7 +55,7 @@ function Update () {
     sprite.position += (forwardVector * 200 * Time.deltaTime);
     var newPosition = asteroidObj.transform.position;
     if(textObj){
-    	textObj.transform.position = newPosition;
+    	textObj.transform.position = Vector2(newPosition.x-30, newPosition.y+70);
     }
     // Update asteroid's rotation
     sprite.rotation += 30 * Time.deltaTime;
