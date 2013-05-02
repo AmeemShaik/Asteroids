@@ -9,12 +9,16 @@ var enterName : boolean = false;
 var help : boolean = false;
 var titleStyle = new GUIStyle();
 var difficulty;
+var img: Texture2D;
+var cursorMode : CursorMode = CursorMode.Auto;
 public var ammo;
 public var playerName = "Default Cadet";
 public var font;
 
 function Awake(){
 	font = Resources.Load("Fonts/ContrailOne-Regular");
+	var v2 = Vector2(16,16);
+	Cursor.SetCursor(img,v2,cursorMode);
 }
 
 function OnGUI() {

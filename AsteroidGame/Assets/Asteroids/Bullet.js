@@ -209,6 +209,12 @@ function populateStats(){
 			var difficultyLvl = c.GetComponent.<GameGUI>().currentLevel + "";
 			innerEle5.InnerText = difficultyLvl;
 			element.AppendChild(innerEle5);
+			
+			//Populating difficulty element for statistics
+			var innerEle6 = doc.CreateElement("game_mode");
+			var mode = PlayerPrefs.GetInt("difficulty") + "";
+			innerEle6.InnerText = mode;
+			element.AppendChild(innerEle6);
 		}
 	}
 }

@@ -1,11 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Asteroids\GameGUI.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Asteroids\TitleGUI.js">
     <Files>
+      <File FileName="Assets\Asteroids\TitleGUI.js" Line="22" Column="1" />
+      <File FileName="Assets\Asteroids\GameGUI.js" Line="1" Column="1" />
       <File FileName="Assets\Resources\Statistics\TestScript.js" Line="1" Column="1" />
-      <File FileName="Assets\Asteroids\GameGUI.js" Line="235" Column="47" />
       <File FileName="Assets\Asteroids\Asteroid.js" Line="1" Column="1" />
-      <File FileName="Assets\Asteroids\TitleGUI.js" Line="17" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
