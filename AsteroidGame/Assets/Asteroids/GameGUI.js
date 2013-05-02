@@ -70,7 +70,7 @@ function Awake(){
 	}
 	sHeight = Screen.height;
 	sWidth = Screen.width;
-	buttonHeight = (.1111111111 * Screen.height);
+	buttonHeight = (.123 * Screen.height);
 	buttonWidth = (.12 * Screen.width);
 	ammoImage = Instantiate(Resources.Load("missile"));
 	progressBG = Instantiate(Resources.Load("progressBG"));
@@ -93,8 +93,10 @@ function Update () {
 		timeSpent += Time.deltaTime;
 }
 function OnGUI() {
-	GUI.Box(Rect(.05 * Screen.width,.1245*sHeight,Screen.width,3),"",interfaceStyle);
-	GUI.Box(Rect(.05 * Screen.width,.1245*sHeight,3,sHeight),"",interfaceStyle);
+	GUI.Box(Rect(.05 * Screen.width,.125*sHeight,Screen.width,8),"",style);
+
+	GUI.Box(Rect(.05 * Screen.width,.135*sHeight,Screen.width,3),"",interfaceStyle);
+	GUI.Box(Rect(.05 * Screen.width,.135*sHeight,3,sHeight),"",interfaceStyle);
 
 	GUI.skin.font = font;
 	GUI.contentColor = Color.white;
@@ -188,7 +190,7 @@ questionImage.height/2, questionImage.width, questionImage.height));
 		GUILayout.EndArea();
 	}
 	if(startGame){
-		GUILayout.BeginArea(Rect(0, Screen.height*.12, Screen.width, Screen.height));
+		GUILayout.BeginArea(Rect(0, Screen.height*.13, Screen.width, Screen.height));
  		if(GUILayout.Button("Welcome, space pilot! Get ready!\n", style, GUILayout.Height(Screen.height))){
 	   		startGame = false;
 		}
@@ -196,7 +198,7 @@ questionImage.height/2, questionImage.width, questionImage.height));
 	}
 	if(showComment){
 	  	//GUI.Box(Rect(0, Screen.height*.15, Screen.width, Screen.height*.85), answer1comment,style);
-	  	GUILayout.BeginArea(Rect(0, Screen.height*.12, Screen.width, Screen.height));
+	  	GUILayout.BeginArea(Rect(0, Screen.height*.13, Screen.width, Screen.height));
 	  	if(answeredQuestion == 0){
 	  	  if(GUILayout.Button("Correct Answer!", style, GUILayout.Height(Screen.height))){
 	  	  	isWorkingOnQuestion=true;
@@ -220,7 +222,7 @@ questionImage.height/2, questionImage.width, questionImage.height));
 		GUILayout.EndArea();
  	}
  	else if(ammoEnd&&ammo==0){
- 		GUILayout.BeginArea(Rect(0, Screen.height*.12, Screen.width, Screen.height));
+ 		GUILayout.BeginArea(Rect(0, Screen.height*.13, Screen.width, Screen.height));
  		if(GUILayout.Button("No ammo left! \n", style, GUILayout.Height(Screen.height))){
 	   		Camera.main.GetComponent.<Main>().Initialize();
  			nextQuestion();
@@ -230,7 +232,7 @@ questionImage.height/2, questionImage.width, questionImage.height));
 		GUILayout.EndArea();
  	}
  	if(showCongrats){
-		GUILayout.BeginArea(Rect(0, Screen.height*.12, Screen.width, Screen.height));
+		GUILayout.BeginArea(Rect(0, Screen.height*.13, Screen.width, Screen.height));
  		if(GUILayout.Button(message+"\n", style, GUILayout.Height(Screen.height))){
 	   		showCongrats = false;
 		}
@@ -342,24 +344,28 @@ function nextQuestion(){
 				break;
 			case "answer1":
 				answer1 = problem.ChildNodes[i].InnerText;
+				answer1 = Regex.Replace(answer1,"\n"," ");
 				break;
 			case "answer1comment":
 				answer1comment = problem.ChildNodes[i].InnerText;
 				break;
 			case "answer2":
 				answer2 = problem.ChildNodes[i].InnerText;
+				answer2 = Regex.Replace(answer2,"\n"," ");
 				break;
 			case "answer2comment":
 				answer2comment = problem.ChildNodes[i].InnerText;
 				break;
 			case "answer3":
 				answer3 = problem.ChildNodes[i].InnerText;
+				answer3 = Regex.Replace(answer3,"\n"," ");
 				break;
 			case "answer3comment":
 				answer3comment = problem.ChildNodes[i].InnerText;
 				break;
 			case "answer4":
 				answer4 = problem.ChildNodes[i].InnerText;
+				answer4 = Regex.Replace(answer4,"\n"," ");
 				break;
 			case "answer4comment":
 				answer4comment = problem.ChildNodes[i].InnerText;
