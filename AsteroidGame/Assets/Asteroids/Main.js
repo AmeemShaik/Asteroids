@@ -9,6 +9,7 @@ public var ammo:int;
 public var explosionSFX : AudioClip;
 public var laserSFX : AudioClip;
 public var bulletExists = false;
+private var GameGuiCamera;
 
 function RandomBlock(r:Rect, min:Number, max:Number, o:OTObject)
 {
@@ -62,6 +63,11 @@ function CreateObjectPools()
 // application initialization
 function Initialize()
 {
+	for(var c in Camera.allCameras){
+		if(c.gameObject.name == "QuestionPanel"){
+			GameGuiCamera = c.GetComponent.<GameGUI>();
+		}
+	}
 	bulletExists = false;
 	explosionSFX = Resources.Load("explosion");
 	laserSFX = Resources.Load("laser");
@@ -70,11 +76,7 @@ function Initialize()
 	for(var j = 0; j < objects.length; j++){
 			OT.DestroyObject(objects[j]);
 	}
-	for(var c in Camera.allCameras){
-		if(c.gameObject.name == "QuestionPanel"){
-			c.GetComponent.<GameGUI>().ammo = this.ammo;
-		}
-	}
+	GameGuiCamera.ammo = this.ammo;
 	//camera.main.GetComponent.<GameGUI>().ammo = this.ammo;
 	
     // Get reference to gun animation sprite
@@ -191,19 +193,15 @@ function Update () {
     gun.RotateTowards(OT.view.mouseWorldPosition);
     // Rotate our bullet prototype as well so we will instantiate a
     // 'already rotated' bullet when we shoot
-	if(!bulletExists){
+	//if(!bulletExists){
 		// check if the left mouse button was clicked
 	    if (Input.GetMouseButtonDown(0)&& GUIUtility.hotControl == 0&&ammo>0)
 	    {   
-	    	ammo--;
 	    	bulletExists = true;
+	    	ammo--;
 	    	audio.PlayOneShot(laserSFX);
 	    	
-	    	for(var c in Camera.allCameras){
-				if(c.gameObject.name == "QuestionPanel"){
-					c.GetComponent.<GameGUI>().ammo = this.ammo;
-				}
-			}
+	    	GameGuiCamera.ammo = this.ammo;
 	        // Create a new bullet
 	        var nBullet:OTSprite = OT.CreateSprite("bullet");
 	        // Set bullet's position at approximately the gun's shooting barrel
@@ -213,10 +211,12 @@ function Update () {
 		        // Play the gun's shooting animation frameset once
 	        	gun.PlayOnce("shoot");
 	        }
-	        
+	      // yield WaitForSeconds(5); 
 	    }
-	}
-    
+	//}
+	/*if(ammo==0&&(GameGuiCamera.ammoEnd ==false)){
+		GameGuiCamera.ammoEnd =true;
+	}*/
    /* // If we have less than 15 objects within Orthello we will create a random asteroid
     if (OT.objectCount <= 12)
         RandomBlock(OT.view.worldRect, 0.6f, 1.2f, null);     */

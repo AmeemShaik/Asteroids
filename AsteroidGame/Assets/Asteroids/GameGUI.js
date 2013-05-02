@@ -3,7 +3,7 @@ public var questionsList:XmlNodeList;
 public var levelOne:Array;
 public var levelTwo:Array;
 public var levelThree:Array;
-public var currentQuestionSet: Array;
+public var currentQuestionSet: Array; 
 public var currentLevel;
 public var questionCount;
 public var style = new GUIStyle();
@@ -85,7 +85,9 @@ function Update () {
 	if (isWorkingOnQuestion)
 		timeSpent += Time.deltaTime;
 		
-	//Debug.Log(isWorkingOnQuestion);
+	if(ammo==0){
+		ammoEnd = true;
+	}
 }
 function OnGUI() {
 	GUI.Box(Rect(.05 * Screen.width,.1245*sHeight,Screen.width,3),"",interfaceStyle);
@@ -245,7 +247,6 @@ function loadQuestions(){
 } 
 
 function nextQuestion(){
-	
 	timeSpent = 0.0f;
 	//isWorkingOnQuestion=true;
 	questionCount++;
