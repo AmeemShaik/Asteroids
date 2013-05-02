@@ -28,12 +28,12 @@ public var problem;
 public var progress : float;
 public var sWidth : int;
 public var sHeight : int;
-public var question; public var image; 
+public var question; public var image; public var id;
 public var answer1; public var answer1comment;
 public var answer2; public var answer2comment;
 public var answer3; public var answer3comment;
 public var answer4; public var answer4comment;
-public var correctAnswer; public var difficulty;
+public var correctAnswer;
 public var ammo;
 public var answeredQuestionComment;
 public var ammoEnd = false;
@@ -84,10 +84,6 @@ function Awake(){
 function Update () {
 	if (isWorkingOnQuestion)
 		timeSpent += Time.deltaTime;
-		
-	if(ammo==0){
-		ammoEnd = true;
-	}
 }
 function OnGUI() {
 	GUI.Box(Rect(.05 * Screen.width,.1245*sHeight,Screen.width,3),"",interfaceStyle);
@@ -135,10 +131,10 @@ function OnGUI() {
 				theRect.height = ammoImage.height*2.5;
 				GUI.DrawTexture(new Rect(theRect.x, theRect.y, theRect.width, theRect.height
 +theRect.height/8), progressBG);
-				GUI.DrawTexture(new Rect(theRect.x+10, theRect.y+10, theRect.width*.5, 
+				GUI.DrawTexture(new Rect(theRect.x+7.5, theRect.y+10, theRect.width*.5, 
 theRect.height), progressMG);
 				if(progress/8 <= 1){
-					GUI.DrawTexture(new Rect(theRect.x+10, theRect.y+theRect.height+10-
+					GUI.DrawTexture(new Rect(theRect.x+7.5, theRect.y+theRect.height+10-
 (theRect.height*(progress/8)), theRect.width*.5, theRect.height*(progress/8)), progressFG);
 				}
 				else{progress = 0;}
@@ -212,33 +208,30 @@ function MakeTex(width: int, height: int, col: Color) {
 }
 
 function loadQuestions(){
-	var xmlFile:TextAsset = Resources.Load("test") as TextAsset;
-	var xmlDoc = new XmlDocument();
-	xmlDoc.LoadXml(xmlFile.text);
-	questionsList = xmlDoc.GetElementsByTagName("question");
+	var level1xml = Resources.Load("GeneralL1Questions") as TextAsset;
+	var level2xml = Resources.Load("GeneralL2Questions") as TextAsset;
+	var level3xml = Resources.Load("GeneralL3Questions") as TextAsset;
+	var xml1Doc = new XmlDocument();
+	xml1Doc.LoadXml(level1xml.text);
+	var xml2Doc = new XmlDocument();
+	xml2Doc.LoadXml(level2xml.text);
+	var xml3Doc = new XmlDocument();
+	xml3Doc.LoadXml(level3xml.text);
+	questionsList1 = xml1Doc.GetElementsByTagName("question");
+	questionsList2 = xml2Doc.GetElementsByTagName("question");
+	questionsList3 = xml3Doc.GetElementsByTagName("question");
 	var childNodes;
-	var index;
-	for(var i = 0; i < questionsList.Count; i++){
-		index = -1;
-		childNodes = questionsList[i].ChildNodes;
-		for(var j = 0; j < childNodes.Count; j++){
-			if(childNodes[j].Name == "difficulty"){
-				index = j;
-				break;
-			}
-		}
-		switch(childNodes[index].InnerText)
-		{
-		case "1":
-			levelOne.Add(questionsList[i]);
-			break;
-		case "2":
-			levelTwo.Add(questionsList[i]);
-			break;
-		case "3":
-			levelThree.Add(questionsList[i]);
-			break;
-		}
+	for(var i = 0; i < questionsList1.Count; i++){
+		childNodes = questionsList1[i].ChildNodes;
+		levelOne.Add(questionsList1[i]);
+	}
+	for(var j = 0; j < questionsList2.Count; j++){
+		childNodes = questionsList2[j].ChildNodes;
+		levelTwo.Add(questionsList2[j]);
+	}
+	for(var k = 0; k < questionsList3.Count; k++){
+		childNodes = questionsList3[k].ChildNodes;
+		levelThree.Add(questionsList3[k]);
 	}
 	randomizeArray(levelOne);
 	randomizeArray(levelTwo);
@@ -252,6 +245,7 @@ function nextQuestion(){
 	questionCount++;
 	if((progress == 8)||(questionCount == 10)){
 		if(progress == 8){
+			progress = 0;
 			if(currentLevel!=3){
 				currentLevel++;
 				var space = GameObject.Find("space");
@@ -289,6 +283,9 @@ function nextQuestion(){
 		for(var i=0; i<childNodes.Count; i++){
 			switch(childNodes[i].Name)
 			{
+			case "id":
+				id = problem.ChildNodes[i].InnerText;
+				break;
 			case "problem":
 				question = problem.ChildNodes[i].InnerText;
 				break;
@@ -321,9 +318,6 @@ function nextQuestion(){
 				break;
 			case "correctAnswer":
 				correctAnswer = problem.ChildNodes[i].InnerText;
-				break;
-			case "difficulty":
-				difficulty = problem.ChildNodes[i].InnerText;
 				break;
 			}
 		}

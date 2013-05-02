@@ -187,8 +187,7 @@ function populateStats(){
 					//Populating question_number element for statistics
 			
 			var innerEle2 = doc.CreateElement("question_number");
-			var currQuestion = c.GetComponent.<GameGUI>().currentQuestion;
-			currQuestion++;
+			var currQuestion = c.GetComponent.<GameGUI>().id;
 			innerEle2.InnerText = currQuestion + "";
 			element.AppendChild(innerEle2);
 
@@ -207,7 +206,7 @@ function populateStats(){
 			
 			//Populating difficulty element for statistics
 			var innerEle5 = doc.CreateElement("difficulty");
-			var difficultyLvl = c.GetComponent.<GameGUI>().difficulty + "";
+			var difficultyLvl = c.GetComponent.<GameGUI>().currentLevel + "";
 			innerEle5.InnerText = difficultyLvl;
 			element.AppendChild(innerEle5);
 		}
