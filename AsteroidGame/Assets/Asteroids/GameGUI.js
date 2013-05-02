@@ -342,24 +342,28 @@ function nextQuestion(){
 				break;
 			case "answer1":
 				answer1 = problem.ChildNodes[i].InnerText;
+				answer1 = Regex.Replace(answer1,"\n"," ");
 				break;
 			case "answer1comment":
 				answer1comment = problem.ChildNodes[i].InnerText;
 				break;
 			case "answer2":
 				answer2 = problem.ChildNodes[i].InnerText;
+				answer2 = Regex.Replace(answer2,"\n"," ");
 				break;
 			case "answer2comment":
 				answer2comment = problem.ChildNodes[i].InnerText;
 				break;
 			case "answer3":
 				answer3 = problem.ChildNodes[i].InnerText;
+				answer3 = Regex.Replace(answer3,"\n"," ");
 				break;
 			case "answer3comment":
 				answer3comment = problem.ChildNodes[i].InnerText;
 				break;
 			case "answer4":
 				answer4 = problem.ChildNodes[i].InnerText;
+				answer4 = Regex.Replace(answer4,"\n"," ");
 				break;
 			case "answer4comment":
 				answer4comment = problem.ChildNodes[i].InnerText;
