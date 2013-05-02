@@ -82,7 +82,8 @@ function OnGUI() {
 				var currentPlayer = PlayerPrefs.GetString("playerName");
 				if(currentPlayer != ""){
 					if(GUILayout.Button("Continue as " + currentPlayer, GUILayout.Height(buttonHeight))){
-						Application.LoadLevel("mainLevel");
+						popupDifficulty = true;
+						enterName = false;
 					}
 				}
 				GUILayout.Space(30);
