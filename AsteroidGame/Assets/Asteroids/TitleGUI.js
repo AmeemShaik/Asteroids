@@ -104,9 +104,16 @@ function OnGUI() {
 	}
 	
 	if(help){
-		GUILayout.BeginArea(new Rect(Screen.width/2-buttonWidth/2, Screen.height/2-buttonHeight/2, buttonWidth, buttonHeight*5));
+		GUILayout.BeginArea(new Rect(Screen.width/2-buttonWidth/2, Screen.height/8, buttonWidth, buttonHeight*9));
 			GUILayout.BeginVertical();
-				GUILayout.Label("TUTORIAL TEXT HERE.");
+				GUILayout.Label("You are an astronaut, but your ship has run out of warp power, leaving you floating in space.");
+				GUILayout.Label("You must shoot and destroy the right asteroids to power your warp drive to get home...");
+				GUILayout.Label("...but you have limited missiles, so try not to miss or hit the wrong asteroids!");
+				GUILayout.Label("Fill up your warp power three times to make it back home.");				
+				GUILayout.Space(10);
+				GUILayout.Label("Click where you want to shoot to fire a missile in that direction.");
+				GUILayout.Label("Click on the button in the top right corner to see a question's picture.");
+				GUILayout.Label("Click on the button in the top left corner to exit the game.");
 				if(GUILayout.Button("Return", GUILayout.Height(buttonHeight))|| Event.current.keyCode == KeyCode.Return){
 						titleMenu = true;
 						help = false;
