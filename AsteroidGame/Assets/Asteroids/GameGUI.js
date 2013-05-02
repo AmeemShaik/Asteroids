@@ -8,6 +8,8 @@ public var currentLevel;
 public var questionCount;
 public var style = new GUIStyle();
 public var fontStyle = new GUIStyle();
+public var smallerFontStyle = new GUIStyle();
+public var smallestFontStyle = new GUIStyle();
 public var buttonStyle = new GUIStyle();
 public var interfaceStyle = new GUIStyle();
 public var questionImage : Texture2D;
@@ -82,6 +84,8 @@ function Awake(){
 	style.normal.background = MakeTex(1, 1, Color.black);
   	style.normal.textColor = Color.white;
   	style.alignment = TextAnchor.MiddleCenter;
+  	smallerFontStyle.normal.textColor = Color.white;
+  	smallestFontStyle.normal.textColor = Color.white;
   	
 }
 function Update () {
@@ -106,12 +110,36 @@ function OnGUI() {
 				GUILayout.Label(question, fontStyle);
 				GUILayout.BeginHorizontal();
 					GUILayout.BeginVertical();
-						GUILayout.Label("(A) " + answer1, fontStyle);
-						GUILayout.Label("(C) " + answer3, fontStyle);
+						if(answer1.length() > 45){
+							GUILayout.Label("(A) " + answer1, smallestFontStyle);
+						}
+						else if(answer1.length() > 35){
+							GUILayout.Label("(A) " + answer1, smallerFontStyle);
+						}
+						else{GUILayout.Label("(A) " + answer1, fontStyle);}
+						if(answer3.length() > 45){
+							GUILayout.Label("(C) " + answer3, smallestFontStyle);
+						}
+						else if(answer3.length() > 35){
+							GUILayout.Label("(C) " + answer3, smallerFontStyle);
+						}
+						else{GUILayout.Label("(C) " + answer3, fontStyle);}
 					GUILayout.EndVertical();
 					GUILayout.BeginVertical();
-						GUILayout.Label("(B) " + answer2, fontStyle);
-						GUILayout.Label("(D) " + answer4, fontStyle);
+						if(answer2.length() > 45){
+							GUILayout.Label("(B) " + answer2, smallestFontStyle);
+						}
+						else if(answer2.length() > 35){
+							GUILayout.Label("(B) " + answer2, smallerFontStyle);
+						}
+						else{GUILayout.Label("(B) " + answer2, fontStyle);}
+						if(answer4.length() > 45){
+							GUILayout.Label("(D) " + answer4, smallestFontStyle);
+						}
+						else if(answer4.length() > 35){
+							GUILayout.Label("(D) " + answer4, smallerFontStyle);
+						}
+						else{GUILayout.Label("(D) " + answer4, fontStyle);}
 					GUILayout.EndVertical();
 				GUILayout.EndHorizontal();
 			GUILayout.EndVertical();
