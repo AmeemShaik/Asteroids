@@ -30,12 +30,14 @@ private var rightBorder;
 private var topBorder;
 private var bottomBorder;
 private var ammo;
+private var collided;
 var playerName;
 var doc;
 var element;
 var MainCamera;
 // Use this for initialization
 function Start () {
+	collided = false;
 	doc = new XmlDocument();
 	
 	playerName = PlayerPrefs.GetString("playerName");
@@ -86,7 +88,6 @@ function Update () {
 				}
 			}
 		}
-		Camera.main.GetComponent.<Main>().bulletExists = false;
 		Destroy(sprite);
 		Destroy(this);
 	}
@@ -96,8 +97,9 @@ function Update () {
 // !IMPORTANT - This sprite's collidable setting has to be true otherwide
 // collision delegates will not be called
 public function OnCollision(owner:OTObject)
-{   	        
-	if(owner.collisionObject.name!="forceField"){
+{  
+	if(owner.collisionObject.name!="forceField"&&!collided){
+	collided = true;
     // Lets Explode this asteroid
 	var name = owner.collisionObject.name;
 	var obj:GameObject = GameObject.Find(name);
@@ -172,11 +174,9 @@ public function OnCollision(owner:OTObject)
 				}
 			}
 			storeStat();
-
 		}
 	  }
    	}
-   	Camera.main.GetComponent.<Main>().bulletExists = false;
   }
 }
 

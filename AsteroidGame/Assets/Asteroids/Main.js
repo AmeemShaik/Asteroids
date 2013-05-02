@@ -8,9 +8,8 @@ public var currentProblem;
 public var ammo:int;
 public var explosionSFX : AudioClip;
 public var laserSFX : AudioClip;
-public var bulletExists = false;
 private var GameGuiCamera;
-
+var bulletScript: Bullet;
 function RandomBlock(r:Rect, min:Number, max:Number, o:OTObject)
 {
     // Determine random 1-3 asteroid type
@@ -68,7 +67,6 @@ function Initialize()
 			GameGuiCamera = c.GetComponent.<GameGUI>();
 		}
 	}
-	bulletExists = false;
 	explosionSFX = Resources.Load("explosion");
 	laserSFX = Resources.Load("laser");
 	ammo = PlayerPrefs.GetInt("ammo");
@@ -197,13 +195,14 @@ function Update () {
 		// check if the left mouse button was clicked
 	    if (Input.GetMouseButtonDown(0)&& GUIUtility.hotControl == 0&&ammo>0)
 	    {   
-	    	bulletExists = true;
 	    	ammo--;
 	    	audio.PlayOneShot(laserSFX);
 	    	
 	    	GameGuiCamera.ammo = this.ammo;
 	        // Create a new bullet
+	        
 	        var nBullet:OTSprite = OT.CreateSprite("bullet");
+	        GameObject.Find(nBullet.name).GetComponent(Bullet).Start();
 	        // Set bullet's position at approximately the gun's shooting barrel
 	        if(nBullet!= null){
 		        nBullet.position = gun.position + gun.yVector * (gun.size.y / 2);
