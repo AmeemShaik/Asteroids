@@ -12,6 +12,9 @@ public var ammoImage : Texture2D;
 public var progressBG : Texture2D; 
 public var progressMG : Texture2D;
 public var progressFG : Texture2D;
+public var spacebg1 : Texture;
+public var spacebg2 : Texture;
+public var spacebg3 : Texture;
 public var popupImage : boolean = false;
 public var showComment : boolean = false;
 public var currentQuestion;
@@ -59,6 +62,9 @@ function Awake(){
 	progressBG = Instantiate(Resources.Load("progressBG"));
 	progressMG = Instantiate(Resources.Load("progressMG"));
 	progressFG = Instantiate(Resources.Load("progressFG"));
+	spacebg1 = Instantiate(Resources.Load("space"));
+	spacebg2 = Instantiate(Resources.Load("space2"));
+	spacebg3 = Instantiate(Resources.Load("space3"));
 	progress = 0;
 	style.normal.background = MakeTex(1, 1, Color.black);
   	style.normal.textColor = Color.white;
@@ -91,7 +97,7 @@ function OnGUI() {
 					GUILayout.EndVertical();
 				GUILayout.EndHorizontal();
 			GUILayout.EndVertical();
-			if(GUILayout.Button(questionImage, GUILayout.Height(buttonHeight),GUILayout.Width(buttonWidth))){
+			if(GUILayout.Button(correctAnswer, GUILayout.Height(buttonHeight),GUILayout.Width(buttonWidth))){
 				if(popupImage){popupImage = false;}
 				else{popupImage = true;}
 			}
@@ -226,12 +232,15 @@ function nextQuestion(){
 				{
 				case 1:
 					currentQuestionSet = levelOne;
+					GameObject.Find("space").guiTexture.texture = spacebg1;
 					break;
 				case 2:
 					currentQuestionSet = levelTwo;
+					GameObject.Find("space").guiTexture.texture = spacebg2;
 					break;
 				case 3:
 					currentQuestionSet = levelThree;
+					GameObject.Find("space").guiTexture.texture = spacebg3;
 					break;
 				}
 				currentQuestion = -1;
