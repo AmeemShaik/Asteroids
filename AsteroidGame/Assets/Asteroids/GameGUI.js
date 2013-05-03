@@ -155,19 +155,19 @@ function OnGUI() {
 			GUILayout.BeginVertical();
 				GUILayout.BeginVertical();
 					GUILayout.Space(10);
-					GUILayout.Label("Warp", fontStyle);
+					GUILayout.Label(" Warp", fontStyle);
 					GUILayout.Label("Power", fontStyle);
 				GUILayout.EndVertical();
 				GUILayout.FlexibleSpace();
 				theRect = GUILayoutUtility.GetLastRect();
 				theRect.width = ammoImage.width;
 				theRect.height = ammoImage.height*2.5;
-				GUI.DrawTexture(new Rect(theRect.x, theRect.y, theRect.width, theRect.height
+				GUI.DrawTexture(new Rect(theRect.x+4, theRect.y, theRect.width, theRect.height
 +theRect.height/8), progressBG);
-				GUI.DrawTexture(new Rect(theRect.x+7.5, theRect.y+10, theRect.width*.5, 
+				GUI.DrawTexture(new Rect(theRect.x+12, theRect.y+10, theRect.width*.5, 
 theRect.height), progressMG);
 				if(progress/8 <= 1){
-					GUI.DrawTexture(new Rect(theRect.x+7.5, theRect.y+theRect.height+10-
+					GUI.DrawTexture(new Rect(theRect.x+12, theRect.y+theRect.height+10-
 (theRect.height*(progress/8)), theRect.width*.5, theRect.height*(progress/8)), progressFG);
 				}
 				else{progress = 0;}
