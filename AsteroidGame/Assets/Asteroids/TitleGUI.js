@@ -1,4 +1,4 @@
-//var cubeRenderer:Renderer;
+ //var cubeRenderer:Renderer;
 import System.Text.RegularExpressions;
 var buttonWidth:int = 200;
 var buttonHeight:int = 25;
@@ -23,7 +23,8 @@ function Awake(){
 
 function OnGUI() {
 	GUI.skin.font = font;
-
+	if(this.GetComponent("LevelUploader").uploading)
+		GUI.enabled = false;
 	if(titleMenu){
 		GUILayout.BeginArea(Rect(Screen.width/2 - buttonWidth/2, Screen.height/2 - 200, buttonWidth, 500));
 			GUILayout.Label("Shooting STARS", titleStyle);
@@ -72,6 +73,7 @@ function OnGUI() {
 			Application.LoadLevel("mainLevel");
 		}
 		GUILayout.Space(spacing);
+		GUI.enabled = true;
 		if(GUILayout.Button("Go Back", GUILayout.Height(buttonHeight))){
 			popupDifficulty = false;
 			titleMenu = true;
@@ -80,7 +82,7 @@ function OnGUI() {
 	}
 	
 	if(enterName){
-		GUILayout.BeginArea(new Rect(Screen.width/2-buttonWidth/2, Screen.height/3, buttonWidth, buttonHeight*5));
+		GUILayout.BeginArea(new Rect(Screen.width/2-buttonWidth/2, Screen.height/3, buttonWidth, Screen.height));
 			GUILayout.BeginVertical();
 			
 				var currentPlayer = PlayerPrefs.GetString("playerName");
@@ -90,18 +92,24 @@ function OnGUI() {
 						enterName = false;
 					}
 				}
-				GUILayout.Space(30);
+				GUILayout.Space(20);
 
 				GUILayout.Label("Enter your name, Space Cadet.");
 				//playerName = "";
 				playerName = GUILayout.TextArea(playerName, 25);
 				playerName = Regex.Replace(playerName, "[^a-zA-Z0-9 ]", "");
-				if(playerName != ""){
-					if(GUILayout.Button("Go", GUILayout.Height(buttonHeight))|| Event.current.keyCode == KeyCode.Return){
-						PlayerPrefs.SetString("playerName", playerName);
-						popupDifficulty = true;
-						enterName = false;
-					}
+				if(playerName == "")
+						GUI.enabled = false;
+				if(GUILayout.Button("Go", GUILayout.Height(buttonHeight))|| Event.current.keyCode == KeyCode.Return){
+					PlayerPrefs.SetString("playerName", playerName);
+					popupDifficulty = true;
+					enterName = false;
+				}
+				GUI.enabled = true;
+				GUILayout.Space(30);
+				if(GUILayout.Button("Go Back", GUILayout.Height(buttonHeight))){
+					enterName = false;
+					titleMenu = true;
 				}
 
 			GUILayout.EndVertical();
