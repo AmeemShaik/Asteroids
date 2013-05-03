@@ -215,8 +215,8 @@ questionImage.height/2, questionImage.width, questionImage.height));
 			}
 		}
 		if(Camera.main.GetComponent.<Main>().ammo == 0){
-			Camera.main.GetComponent.<Main>().Initialize();
 			nextQuestion();
+			Camera.main.GetComponent.<Main>().Initialize();
 
 		}
 		GUILayout.EndArea();
@@ -224,10 +224,10 @@ questionImage.height/2, questionImage.width, questionImage.height));
  	else if(ammoEnd&&ammo==0){
  		GUILayout.BeginArea(Rect(0, Screen.height*.13, Screen.width, Screen.height));
  		if(GUILayout.Button("No ammo left! \n", style, GUILayout.Height(Screen.height))){
+	   		nextQuestion();
 	   		Camera.main.GetComponent.<Main>().Initialize();
- 			nextQuestion();
-	   		ammoEnd=false;
-	   		
+ 			ammoEnd=false;
+	
 		}
 		GUILayout.EndArea();
  	}
