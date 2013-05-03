@@ -27,7 +27,7 @@ function OnGUI() {
 		GUI.enabled = false;
 	if(titleMenu){
 		GUILayout.BeginArea(Rect(Screen.width/2 - buttonWidth/2, Screen.height/2 - 200, buttonWidth, 500));
-			GUILayout.Label("Shooting STARS", titleStyle);
+			GUILayout.Label("Space TAKERS", titleStyle);
 			GUILayout.Space(spacing);
 			if(GUILayout.Button("Start Game", GUILayout.Height(buttonHeight))){
 				enterName = true;
