@@ -48,7 +48,7 @@ public var playerName;
 public var theRect;
 public var space2:Texture2D;
 public var font;
-
+public var victory = false;
 function Awake(){
 	interfaceStyle.normal.background = MakeTex (1,3,Color.white);
 	progress = 0;
@@ -182,7 +182,7 @@ theRect.height), progressMG);
 				GUILayout.EndVertical();
 		GUILayout.EndHorizontal();
 	GUILayout.EndArea();
-	
+
 	if(popupImage){
 		GUILayout.BeginArea (Rect (Screen.width/2-questionImage.width/2, Screen.height/2-
 questionImage.height/2, questionImage.width, questionImage.height));
@@ -235,6 +235,13 @@ questionImage.height/2, questionImage.width, questionImage.height));
 		GUILayout.BeginArea(Rect(0, Screen.height*.13, Screen.width, Screen.height));
  		if(GUILayout.Button(message+"\n", style, GUILayout.Height(Screen.height))){
 	   		showCongrats = false;
+		}
+		GUILayout.EndArea();
+	}
+	if(victory){
+		GUILayout.BeginArea(Rect(0, Screen.height*.13, Screen.width, Screen.height));
+ 		if(GUILayout.Button("CONGRATS!! You've won!!\n", style, GUILayout.Height(Screen.height))){
+	   		Application.LoadLevel("Title");
 		}
 		GUILayout.EndArea();
 	}
@@ -315,6 +322,9 @@ function nextQuestion(){
 					break;
 				}
 				currentQuestion = -1;
+			}
+			else if(currentLevel == 3){
+				victory = true;
 			}
 		}
 		else{

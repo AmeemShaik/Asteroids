@@ -97,7 +97,7 @@ function OnGUI() {
 				GUILayout.Label("Enter your name, Space Cadet.");
 				//playerName = "";
 				playerName = GUILayout.TextArea(playerName, 25);
-				playerName = Regex.Replace(playerName, "[^a-zA-Z0-9 ]", "");
+				playerName = Regex.Replace(playerName, "[^a-zA-Z0-9]", "");
 				if(playerName == "")
 						GUI.enabled = false;
 				if(GUILayout.Button("Go", GUILayout.Height(buttonHeight))|| Event.current.keyCode == KeyCode.Return){
